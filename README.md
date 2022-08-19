@@ -1,6 +1,6 @@
-# Obsibian Template for Gatsby Theme Primer Wiki
+# What Template
 
-**👋Another Obsibian template that use [gatsby-theme-primer-wiki](https://github.com/theowenyoung/gatsby-theme-primer-wiki), Welcome to your new Foam Knowledge Base!**
+**👋Another Obsidian template that use [gatsby-theme-primer-wiki](https://github.com/theowenyoung/gatsby-theme-primer-wiki), Welcome to your new Foam Knowledge Base!**
 
 ## Examples
 
