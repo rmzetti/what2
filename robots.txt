@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://whatamigoingtodonow.net/sitemap/sitemap-index.xml
+Host: https://whatamigoingtodonow.net
