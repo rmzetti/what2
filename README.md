@@ -1,6 +1,6 @@
 # What Template
 
-**👋Another Obsidian template that use [gatsby-theme-primer-wiki](https://github.com/theowenyoung/gatsby-theme-primer-wiki), Welcome to your new Foam Knowledge Base!**
+**👋What Am I Going to do Now?**
 
 ## Examples
 
