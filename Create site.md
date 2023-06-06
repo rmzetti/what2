@@ -15,3 +15,5 @@
    - Generate /network.html for producing the on-line network graph
    - Generate /sitemap.txt for SEO
    - Generate the 'sitesearch.txt' file for search
+6. Use the Obsidian git extension to commit and push the files up to the repo
+
