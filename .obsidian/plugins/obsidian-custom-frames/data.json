@@ -1,0 +1,38 @@
+{
+  "frames": [
+    {
+      "url": "https://forum.obsidian.md/",
+      "displayName": "Obsidian Forum",
+      "icon": "edit",
+      "hideOnMobile": true,
+      "addRibbonIcon": true,
+      "openInCenter": true,
+      "zoomLevel": 1,
+      "forceIframe": false,
+      "customCss": ""
+    },
+    {
+      "url": "file://C:/Users/ralph/OneDrive/Documents/Notes/aa.md",
+      "displayName": "Test",
+      "icon": "atom",
+      "hideOnMobile": true,
+      "addRibbonIcon": true,
+      "openInCenter": false,
+      "zoomLevel": 1,
+      "forceIframe": false,
+      "customCss": ""
+    },
+    {
+      "url": "https://keep.google.com",
+      "displayName": "Google Keep",
+      "icon": "files",
+      "hideOnMobile": true,
+      "addRibbonIcon": true,
+      "openInCenter": false,
+      "zoomLevel": 1,
+      "forceIframe": false,
+      "customCss": "/* hide the menu bar and the \"Keep\" text */\nhtml > body > div:nth-child(2) > div:nth-child(2) > div:first-child,\nhtml > body > div:first-child > header:first-child > div > div:first-child > div > div:first-child > a:first-child > span {\n\tdisplay: none !important;\n}"
+    }
+  ],
+  "padding": 5
+}

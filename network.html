@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="./lib/zetti.css">
+<style>.vis-tooltip { position: absolute;}
+</style><!-- this enables showing title on hover -->
+</head>
+<body>
+<span style="position:absolute; top:0; right:0; z-index:1;">
+  <button title="more" onclick="ndepth++;subsetNodes();draw();" class="btn">+</button>
+  <button title="less" onclick="ndepth--;if(ndepth==0)ndepth=1;subsetNodes();draw();" class="btn">-</button>
+</span>
+<div id="mynetwork" style="position:absolute;width: 100%; height: 100%;"></div>
+<script src="./lib/vis-network.min.js"></script>
+<script>
+let param=''+window.location;
+if (param.indexOf('?')<0) param='index.md';
+else param=param.substring(param.indexOf('?')+6).replace(/%20/g,' ');
+param=param.toLowerCase();
+// if(parent.ifid=='peek2') document.getElementById('btnnet').style.display='none';
+let ndepth=1;
+var allNodes=[{ id: 0, label: "Accepted file formats", group: 1, title: "Advanced topics/Accepted file formats.md"  },
+{ id: 1, label: "Contributing to Obsidian", group: 1, title: "Advanced topics/Contributing to Obsidian.md"  },
+{ id: 2, label: "Customizing CSS", group: 1, title: "Advanced topics/Customizing CSS.md"  },
+{ id: 3, label: "Deleting files", group: 1, title: "Advanced topics/Deleting files.md"  },
+{ id: 4, label: "Drag and Drop", group: 1, title: "Advanced topics/Drag and Drop.md"  },
+{ id: 5, label: "How Obsidian stores data", group: 1, title: "Advanced topics/How Obsidian stores data.md"  },
+{ id: 6, label: "HTML sanitization", group: 1, title: "Advanced topics/HTML sanitization.md"  },
+{ id: 7, label: "Insider builds", group: 1, title: "Advanced topics/Insider builds.md"  },
+{ id: 8, label: "Third-party plugins", group: 1, title: "Advanced topics/Third-party plugins.md"  },
+{ id: 9, label: "Using obsidian URI", group: 1, title: "Advanced topics/Using obsidian URI.md"  },
+{ id: 10, label: "YAML front matter", group: 1, title: "Advanced topics/YAML front matter.md"  },
+{ id: 11, label: "Slides demo", group: 2, title: "Attachments/Slides demo.md"  },
+{ id: 12, label: "Appearance", group: 3, title: "Customization/Appearance.md"  },
+{ id: 13, label: "Custom hotkeys", group: 3, title: "Customization/Custom hotkeys.md"  },
+{ id: 14, label: "Add aliases to note", group: 4, title: "How to/Add aliases to note.md"  },
+{ id: 15, label: "Add custom styles", group: 4, title: "How to/Add custom styles.md"  },
+{ id: 16, label: "Basic note taking", group: 4, title: "How to/Basic note taking.md"  },
+{ id: 17, label: "Capture information", group: 4, title: "How to/Capture information.md"  },
+{ id: 18, label: "Change settings", group: 4, title: "How to/Change settings.md"  },
+{ id: 19, label: "Create notes", group: 4, title: "How to/Create notes.md"  },
+{ id: 20, label: "Embed files", group: 4, title: "How to/Embed files.md"  },
+{ id: 21, label: "Folding", group: 4, title: "How to/Folding.md"  },
+{ id: 22, label: "Format your notes", group: 4, title: "How to/Format your notes.md"  },
+{ id: 23, label: "Import data", group: 4, title: "How to/Import data.md"  },
+{ id: 24, label: "Internal link", group: 4, title: "How to/Internal link.md"  },
+{ id: 25, label: "Keyboard shortcuts", group: 4, title: "How to/Keyboard shortcuts.md"  },
+{ id: 26, label: "Link to blocks", group: 4, title: "How to/Link to blocks.md"  },
+{ id: 27, label: "Manage attachments", group: 4, title: "How to/Manage attachments.md"  },
+{ id: 28, label: "Preview and edit modes", group: 4, title: "How to/Preview and edit modes.md"  },
+{ id: 29, label: "Rename notes", group: 4, title: "How to/Rename notes.md"  },
+{ id: 30, label: "Update Obsidian", group: 4, title: "How to/Update Obsidian.md"  },
+{ id: 31, label: "Working with backlinks", group: 4, title: "How to/Working with backlinks.md"  },
+{ id: 32, label: "Working with multiple cursors", group: 4, title: "How to/Working with multiple cursors.md"  },
+{ id: 33, label: "Working with multiple notes", group: 4, title: "How to/Working with multiple notes.md"  },
+{ id: 34, label: "Working with multiple vaults", group: 4, title: "How to/Working with multiple vaults.md"  },
+{ id: 35, label: "Working with tags", group: 4, title: "How to/Working with tags.md"  },
+{ id: 36, label: "Catalyst license", group: 5, title: "Licenses & add-on services/Catalyst license.md"  },
+{ id: 37, label: "Commercial license", group: 5, title: "Licenses & add-on services/Commercial license.md"  },
+{ id: 38, label: "Obsidian Publish", group: 5, title: "Licenses & add-on services/Obsidian Publish.md"  },
+{ id: 39, label: "Obsidian Sync", group: 5, title: "Licenses & add-on services/Obsidian Sync.md"  },
+{ id: 40, label: "Obsidian Unlimited", group: 5, title: "Licenses & add-on services/Obsidian Unlimited.md"  },
+{ id: 41, label: "Refund policy", group: 5, title: "Licenses & add-on services/Refund policy.md"  },
+{ id: 42, label: "Android app", group: 6, title: "Obsidian/Android app.md"  },
+{ id: 43, label: "Credits", group: 6, title: "Obsidian/Credits.md"  },
+{ id: 44, label: "Index", group: 6, title: "Obsidian/Index.md"  },
+{ id: 45, label: "iOS app", group: 6, title: "Obsidian/iOS app.md"  },
+{ id: 46, label: "Mobile app beta", group: 6, title: "Obsidian/Mobile app beta.md"  },
+{ id: 47, label: "Obsidian Mobile", group: 6, title: "Obsidian/Obsidian Mobile.md"  },
+{ id: 48, label: "Obsidian", group: 6, title: "Obsidian/Obsidian.md"  },
+{ id: 49, label: "Linked pane", group: 7, title: "Panes/Linked pane.md"  },
+{ id: 50, label: "Pane layout", group: 7, title: "Panes/Pane layout.md"  },
+{ id: 51, label: "Audio recorder", group: 8, title: "Plugins/Audio recorder.md"  },
+{ id: 52, label: "Backlinks", group: 8, title: "Plugins/Backlinks.md"  },
+{ id: 53, label: "Command palette", group: 8, title: "Plugins/Command palette.md"  },
+{ id: 54, label: "Daily notes", group: 8, title: "Plugins/Daily notes.md"  },
+{ id: 55, label: "File explorer", group: 8, title: "Plugins/File explorer.md"  },
+{ id: 56, label: "File recovery", group: 8, title: "Plugins/File recovery.md"  },
+{ id: 57, label: "Graph view", group: 8, title: "Plugins/Graph view.md"  },
+{ id: 58, label: "List of plugins", group: 8, title: "Plugins/List of plugins.md"  },
+{ id: 59, label: "Markdown format converter", group: 8, title: "Plugins/Markdown format converter.md"  },
+{ id: 60, label: "Note composer", group: 8, title: "Plugins/Note composer.md"  },
+{ id: 61, label: "Open in default app", group: 8, title: "Plugins/Open in default app.md"  },
+{ id: 62, label: "Outgoing links", group: 8, title: "Plugins/Outgoing links.md"  },
+{ id: 63, label: "Outline", group: 8, title: "Plugins/Outline.md"  },
+{ id: 64, label: "Page preview", group: 8, title: "Plugins/Page preview.md"  },
+{ id: 65, label: "Publish", group: 8, title: "Plugins/Publish.md"  },
+{ id: 66, label: "Quick switcher", group: 8, title: "Plugins/Quick switcher.md"  },
+{ id: 67, label: "Random note", group: 8, title: "Plugins/Random note.md"  },
+{ id: 68, label: "Search", group: 8, title: "Plugins/Search.md"  },
+{ id: 69, label: "Slides", group: 8, title: "Plugins/Slides.md"  },
+{ id: 70, label: "Starred notes", group: 8, title: "Plugins/Starred notes.md"  },
+{ id: 71, label: "Tag pane", group: 8, title: "Plugins/Tag pane.md"  },
+{ id: 72, label: "Templates", group: 8, title: "Plugins/Templates.md"  },
+{ id: 73, label: "Word count", group: 8, title: "Plugins/Word count.md"  },
+{ id: 74, label: "Workspaces", group: 8, title: "Plugins/Workspaces.md"  },
+{ id: 75, label: "Zettelkasten prefixer", group: 8, title: "Plugins/Zettelkasten prefixer.md"  },
+{ id: 76, label: "Create site", group: 0, title: "Create site.md"  },
+{ id: 77, label: "index", group: 0, title: "index.md"  },
+{ id: 78, label: "README", group: 0, title: "README.md"  },
+{ id: 79, label: "Start here", group: 0, title: "Start here.md"  },
+];
+var edges=[{ from: 0, to: 20 },
+{ from: 1, to: 37 },
+{ from: 1, to: 38 },
+{ from: 1, to: 39 },
+{ from: 1, to: 36 },
+{ from: 1, to: 7 },
+{ from: 1, to: 36 },
+{ from: 1, to: 8 },
+{ from: 4, to: 55 },
+{ from: 4, to: 68 },
+{ from: 4, to: 52 },
+{ from: 4, to: 70 },
+{ from: 4, to: 55 },
+{ from: 4, to: 70 },
+{ from: 7, to: 36 },
+{ from: 10, to: 35 },
+{ from: 10, to: 14 },
+{ from: 11, to: 24 },
+{ from: 13, to: 25 },
+{ from: 13, to: 53 },
+{ from: 14, to: 10 },
+{ from: 14, to: 14 },
+{ from: 14, to: 52 },
+{ from: 15, to: 57 },
+{ from: 15, to: 38 },
+{ from: 16, to: 52 },
+{ from: 16, to: 22 },
+{ from: 16, to: 16 },
+{ from: 16, to: 24 },
+{ from: 16, to: 34 },
+{ from: 19, to: 55 },
+{ from: 19, to: 53 },
+{ from: 19, to: 24 },
+{ from: 19, to: 55 },
+{ from: 19, to: 29 },
+{ from: 20, to: 0 },
+{ from: 22, to: 24 },
+{ from: 22, to: 24 },
+{ from: 22, to: 20 },
+{ from: 22, to: 9 },
+{ from: 22, to: 0 },
+{ from: 23, to: 59 },
+{ from: 23, to: 59 },
+{ from: 23, to: 59 },
+{ from: 23, to: 75 },
+{ from: 24, to: 24 },
+{ from: 24, to: 64 },
+{ from: 25, to: 53 },
+{ from: 26, to: 20 },
+{ from: 27, to: 0 },
+{ from: 27, to: 55 },
+{ from: 28, to: 49 },
+{ from: 28, to: 53 },
+{ from: 28, to: 25 },
+{ from: 29, to: 55 },
+{ from: 31, to: 49 },
+{ from: 31, to: 49 },
+{ from: 31, to: 50 },
+{ from: 31, to: 53 },
+{ from: 33, to: 55 },
+{ from: 33, to: 52 },
+{ from: 33, to: 68 },
+{ from: 33, to: 57 },
+{ from: 33, to: 25 },
+{ from: 33, to: 49 },
+{ from: 33, to: 49 },
+{ from: 33, to: 49 },
+{ from: 33, to: 50 },
+{ from: 34, to: 58 },
+{ from: 34, to: 5 },
+{ from: 34, to: 24 },
+{ from: 35, to: 71 },
+{ from: 35, to: 68 },
+{ from: 36, to: 7 },
+{ from: 36, to: 37 },
+{ from: 36, to: 7 },
+{ from: 38, to: 65 },
+{ from: 38, to: 65 },
+{ from: 38, to: 65 },
+{ from: 38, to: 57 },
+{ from: 38, to: 63 },
+{ from: 38, to: 64 },
+{ from: 38, to: 65 },
+{ from: 40, to: 36 },
+{ from: 40, to: 7 },
+{ from: 41, to: 36 },
+{ from: 41, to: 37 },
+{ from: 41, to: 38 },
+{ from: 41, to: 39 },
+{ from: 42, to: 39 },
+{ from: 42, to: 39 },
+{ from: 42, to: 9 },
+{ from: 44, to: 43 },
+{ from: 44, to: 48 },
+{ from: 44, to: 53 },
+{ from: 44, to: 22 },
+{ from: 44, to: 19 },
+{ from: 44, to: 24 },
+{ from: 44, to: 20 },
+{ from: 44, to: 25 },
+{ from: 44, to: 35 },
+{ from: 44, to: 31 },
+{ from: 44, to: 33 },
+{ from: 44, to: 50 },
+{ from: 44, to: 34 },
+{ from: 44, to: 32 },
+{ from: 44, to: 9 },
+{ from: 45, to: 9 },
+{ from: 46, to: 47 },
+{ from: 46, to: 36 },
+{ from: 46, to: 7 },
+{ from: 47, to: 42 },
+{ from: 47, to: 45 },
+{ from: 48, to: 24 },
+{ from: 48, to: 24 },
+{ from: 48, to: 57 },
+{ from: 48, to: 48 },
+{ from: 48, to: 51 },
+{ from: 48, to: 69 },
+{ from: 48, to: 52 },
+{ from: 48, to: 57 },
+{ from: 48, to: 73 },
+{ from: 48, to: 2 },
+{ from: 49, to: 28 },
+{ from: 49, to: 31 },
+{ from: 50, to: 55 },
+{ from: 50, to: 68 },
+{ from: 50, to: 52 },
+{ from: 50, to: 57 },
+{ from: 50, to: 74 },
+{ from: 54, to: 53 },
+{ from: 54, to: 25 },
+{ from: 54, to: 72 },
+{ from: 55, to: 0 },
+{ from: 57, to: 24 },
+{ from: 57, to: 2 },
+{ from: 58, to: 48 },
+{ from: 58, to: 8 },
+{ from: 58, to: 55 },
+{ from: 58, to: 68 },
+{ from: 58, to: 66 },
+{ from: 58, to: 57 },
+{ from: 58, to: 52 },
+{ from: 58, to: 62 },
+{ from: 58, to: 71 },
+{ from: 58, to: 64 },
+{ from: 58, to: 54 },
+{ from: 58, to: 72 },
+{ from: 58, to: 60 },
+{ from: 58, to: 53 },
+{ from: 58, to: 70 },
+{ from: 58, to: 59 },
+{ from: 58, to: 75 },
+{ from: 58, to: 67 },
+{ from: 58, to: 63 },
+{ from: 58, to: 73 },
+{ from: 58, to: 69 },
+{ from: 58, to: 51 },
+{ from: 58, to: 61 },
+{ from: 58, to: 74 },
+{ from: 58, to: 56 },
+{ from: 58, to: 65 },
+{ from: 58, to: 39 },
+{ from: 59, to: 22 },
+{ from: 60, to: 53 },
+{ from: 60, to: 53 },
+{ from: 60, to: 56 },
+{ from: 62, to: 52 },
+{ from: 62, to: 14 },
+{ from: 65, to: 38 },
+{ from: 65, to: 10 },
+{ from: 65, to: 64 },
+{ from: 67, to: 13 },
+{ from: 68, to: 55 },
+{ from: 68, to: 38 },
+{ from: 69, to: 11 },
+{ from: 70, to: 53 },
+{ from: 70, to: 25 },
+{ from: 72, to: 54 },
+{ from: 72, to: 75 },
+{ from: 74, to: 53 },
+{ from: 75, to: 72 },
+{ from: 78, to: 53 },
+{ from: 78, to: 19 },
+{ from: 78, to: 24 },
+{ from: 78, to: 22 },
+{ from: 78, to: 20 },
+{ from: 78, to: 25 },
+{ from: 78, to: 33 },
+{ from: 78, to: 58 },
+{ from: 78, to: 48 },
+{ from: 78, to: 16 },
+{ from: 78, to: 7 },
+{ from: 78, to: 16 },
+{ from: 78, to: 23 },
+{ from: 78, to: 48 },
+{ from: 79, to: 48 },
+{ from: 79, to: 53 },
+{ from: 79, to: 19 },
+{ from: 79, to: 24 },
+{ from: 79, to: 22 },
+{ from: 79, to: 20 },
+{ from: 79, to: 25 },
+{ from: 79, to: 33 },
+{ from: 79, to: 58 },
+{ from: 79, to: 48 },
+{ from: 79, to: 16 },
+{ from: 79, to: 7 },
+{ from: 79, to: 16 },
+{ from: 79, to: 23 },
+{ from: 79, to: 48 },
+];
+function getNodes(nodes1) { // get nodes connected to the nodes in nodes1
+    function unique(value, index, self) { return self.indexOf(value) === index; }
+    let nodes2=[];
+    for (let n of nodes1) {
+      nodes2.push(n);
+      for (let e of edges) {
+        if (e.from == n) { nodes2.push(e.to); }
+        else if (e.to == n) { nodes2.push(e.from); }
+      }
+    }
+    return nodes2.filter(unique).sort(function(a, b) {return a-b;});
+}
+let nodeNumsOrig=[];
+if (param!='' && param.endsWith('.md')) { //param is the file name
+    for (let i=0;i<allNodes.length;i++){
+        if (allNodes[i].title.toLowerCase()==param) { nodeNumsOrig.push(i); }
+    }
+}
+if (!param.endsWith('.md') || getNodes(nodeNumsOrig).length<=1) { 
+      param=param.substring(0,param.lastIndexOf('/'));
+      for (let i=0;i<allNodes.length;i++){ //if not markdown or only 1 node, get other nodes in same folder
+        if (allNodes[i].title.substring(0,allNodes[i].title.lastIndexOf('/')).toLowerCase()==param) { nodeNumsOrig.push(i); }
+      }
+      ndepth=1;
+}
+function subsetNodes() {
+    let nodeNums=[...nodeNumsOrig];
+    for (let i=1;i<=ndepth;i++) nodeNums=[...getNodes(nodeNums)];
+    let nodes=[...allNodes];
+    for (let i=0;i<nodes.length;i++){ //draw orig node(s) square
+      if (nodeNumsOrig.indexOf(i)>=0) {nodes[i].shape="square";nodes[i].size=25;nodes[i].group=255;}
+    }
+    for (let i=nodes.length-1;i>=0;i--){ //remove nodes not in nodeNums
+      if (nodeNums.indexOf(i)<0)nodes.splice(i,1);
+    }
+    return nodes;
+}
+function draw() {
+  if (parent.usedark) {
+    document.body.style.backgroundColor = "#111";
+    document.styleSheets[0].insertRule(".vis-tooltip { color: white;}", 0);
+  } else document.body.style.backgroundColor = "#eee";
+  // create a network
+  var container = document.getElementById("mynetwork");
+  let nodes1=new vis.DataSet(subsetNodes());
+  let edges1=new vis.DataSet(edges);
+  var data = {
+    nodes: nodes1,
+    edges: edges1,
+  };
+  var options = {
+    nodes: {
+      shape: "dot",
+      size: 16,
+      font: {color: color()},
+    },
+    edges: {
+      arrows: "to",
+    },
+    interaction: {hover: true, hoverConnectedEdges:true, tooltipDelay: 300,},
+    physics: {
+      forceAtlas2Based: {
+        gravitationalConstant: -26,
+        centralGravity: 0.005,
+        springLength: 230,
+        springConstant: 0.18,
+      },
+      maxVelocity: 146,
+      solver: "forceAtlas2Based",
+      timestep: 0.35,
+      stabilization: { iterations: 150 },
+    },
+  };
+  var network = new vis.Network(container, data, options);
+  network.on('click',function(properties){ 
+    if(properties.nodes.length>0  && getNodes([properties.nodes[0]]).length>1){
+      ndepth=1; //reset depth for quick response
+      let temp=allNodes[properties.nodes[0]].label.replace(/%20/g,' ');
+      let temp2=window.parent.hroot+'?file='+allNodes[properties.nodes[0]].title;
+      parent.window.history.pushState({},"",parent.window.location.href);
+      parent.hfile = allNodes[properties.nodes[0]].title;
+      parent.loadfile(parent.hfile,parent.main,false);
+      nodeNumsOrig=[properties.nodes[0]];subsetNodes();draw();
+    } 
+  });
+}
+function color() {
+  if (parent.usedark) return '#ffffff';
+  else return '#000000';
+}
+window.addEventListener("load", () => { if (window.innerWidth!=0) draw(); });
+window.addEventListener("resize", () => { if (window.innerWidth!=0) draw(); });
+</script></body></html>

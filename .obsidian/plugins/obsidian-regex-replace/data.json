@@ -1,0 +1,10 @@
+{
+  "findText": "%%(.*)<br>",
+  "replaceText": "<h2>$1</h2><br>",
+  "useRegEx": true,
+  "selOnly": true,
+  "caseInsensitive": false,
+  "processLineBreak": false,
+  "processTab": false,
+  "prefillFind": false
+}

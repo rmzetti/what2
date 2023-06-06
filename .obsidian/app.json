@@ -1,6 +1,17 @@
 {
-  "useTab": false,
-  "tabSize": 2,
-  "useMarkdownLinks": true,
-  "attachmentFolderPath": "Attachments"
+  "showUnsupportedFiles": true,
+  "showFrontmatter": false,
+  "strictLineBreaks": false,
+  "showLineNumber": true,
+  "showInlineTitle": false,
+  "promptDelete": false,
+  "userIgnoreFilters": [
+    "media/node_modules/",
+    "node_modules/",
+    "/.*node_modules\\/.*/"
+  ],
+  "readableLineLength": false,
+  "newFileLocation": "current",
+  "attachmentFolderPath": "./",
+  "alwaysUpdateLinks": true
 }

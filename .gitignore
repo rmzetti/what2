@@ -147,3 +147,7 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+
+# Ignore Smart Connections folder because embeddings file is large and updated frequently
+.smart-connections

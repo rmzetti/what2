@@ -1,0 +1,9 @@
+{
+  "id": "edit-exec",
+  "name": "Editor execute",
+  "version": "0.4.1",
+  "description": "Execute javascript and shell codeblocks and oneliners.",
+  "isDesktopOnly": false,
+  "author": "rmzetti",
+  "authorUrl": "https://github.com/rmzetti"
+}

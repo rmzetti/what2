@@ -1,0 +1,3241 @@
+0 1: Obsidian recognizes the following file formats right now:
+0 2: 
+0 3: 1. Markdown files: `md`;
+0 4: 2. Image files: `png`, `jpg`, `jpeg`, `gif`, `bmp`, `svg`;
+0 5: 3. Audio files: `mp3`, `webm`, `wav`, `m4a`, `ogg`, `3gp`, `flac`;
+0 6: 4. Video files: `mp4`, `webm`, `ogv`;
+0 7: 5. PDF files: `pdf`.
+0 8: 
+0 9: All these types of files can be [[Embed files|embedded]] in a note.
+0 10: 
+1 1: Thanks for the interest in contributing to Obsidian!
+1 2: 
+1 3: There are three major ways you can contribute:
+1 4: 
+1 5: ### 1. Financial contribution
+1 6: 
+1 7: #### Commercial license
+1 8: 
+1 9: If you'd like to use Obsidian for work activities, try to let your work get you a [[Commercial license|commercial license]].
+1 10: 
+1 11: #### Add-on services
+1 12: 
+1 13: If you'd like to make a website from your notes, consider getting [[Obsidian Publish]] if the price works for you.
+1 14: 
+1 15: If you're interested in an end-to-end encryption syncing solution, we also offer [[Obsidian Sync]]. In addition to end-to-end encryption, Obsidian Sync also comes with version history.
+1 16: 
+1 17: #### Catalyst
+1 18: 
+1 19: If you don't need any of the above, you can get a [[Catalyst license]] to support our developer, which also gives you access to [[Insider builds]].
+1 20: 
+1 21: #### Obsidian Unlimited
+1 22: 
+1 23: For those very passionate about the project, there's also the Obsidian Unlimited option, which lets you pay as much as you want to support development and help us stay independent. We recommend going for this option after you've purchased the VIP tier of [[Catalyst license]] so that you can enjoy the benefits.
+1 24: 
+1 25: ### 2. Extending Obsidian
+1 26: 
+1 27: #### CSS themes
+1 28: 
+1 29: If you're proficient in CSS, another way is to contribute a theme, so that people who don't know CSS can enjoy your work. If you decide to do so, feel free to share it on the #css-themes channel on Discord, or in the Share & Showcase category on our forum.
+1 30: 
+1 31: If you'd like to add your theme to the community theme list, let us know! (Or we might reach out to you first!)
+1 32: 
+1 33: #### Plugins
+1 34: 
+1 35: If you're a JavaScript/TypeScript programmer, you can write [[Third-party plugins]] for Obsidian, now that our plugin API is in alpha.
+1 36: 
+1 37: ### 3. Translation and proofreading
+1 38: 
+1 39: #### Translating the interface
+1 40: 
+1 41: If you know another language (preferably natively), you can help with translating the Obsidian interface into your language. You can do that by submitting a pull request in [our translation GitHub repository](https://github.com/obsidianmd/obsidian-translations) to get it into the next version of the app.
+1 42: 
+1 43: #### Translating the docs
+1 44: 
+1 45: We're in the middle of reorganizing and stabilizing the documentation you're reading right now. Once it's in a good shape, you can also help translate it, so that people who don't know English can also easily learn to use Obsidian.
+1 46: 
+1 47: #### Found a typo?
+1 48: 
+1 49: If you found a typo or a grammar mistake in these documentation, feel free to submit a pull request in [our documentation repository](https://github.com/obsidianmd/obsidian-docs).
+1 50: 
+2 1: If you are building or modifying your own css, you can open the developer tools by using `Ctrl+Shift+I` on Windows/Linux or `Cmd+Opt+I` on macOS to get information on the elements you want to customize. 
+2 2: 
+2 3: Changes to themes and snippets will be detected automatically and reapplied. You do not need to restart the app.
+2 4: 
+2 5: ### New to CSS
+2 6: 
+2 7: If you're new to CSS, our community has put together a quick guide to get comfortable with CSS:
+2 8: 
+2 9: > [Getting Comfortable with CSS](https://forum.obsidian.md/t/getting-comfortable-with-obsidian-css/133)
+2 10: 
+2 11: Klaas also put together a helpful index of common CSS snippets that you can feel free to mix and match:
+2 12: 
+2 13: > [Obsidian CSS Snippets (on GitHub)](https://github.com/Dmitriy-Shulha/obsidian-css-snippets/tree/master/Snippets)
+3 1: Obsidian has several options for dealing with deleted files, depending on your needs.
+3 2: 
+3 3: - By default, deleted files are sent to your system trash. Here you can use whatever means your system has for recovering files you've accidentally deleted. 
+3 4: - Deleted files can be sent to a special `.trash` directory in your Vault. This can be useful if you want the ability to recover your Vault files separate from your system trash. 
+3 5: - You can also set obsidian to just delete files without possibility of recovery. 
+3 6: 
+3 7: These options can be found in Settings => Files & Links.
+4 1: There are many ways to drag and drop things around Obsidian to make the experience smoother:
+4 2: 
+4 3: ### Drag panes
+4 4: 
+4 5: See [[Working with multiple notes#5 Panes can be rearranged by dragging|dragging panes]]
+4 6: 
+4 7: ### Drag sources
+4 8: 
+4 9: - You can drag a file, or multiple files from the [[file explorer]].
+4 10: - You can drag a file from a [[search]] result.
+4 11: - You can drag a file from [[backlinks]] or unlinked references.
+4 12: - You can drag a file from the [[starred notes]].
+4 13: - You can drag a file from a link inside the note, in preview mode.
+4 14: 
+4 15: ### Drop destinations
+4 16: 
+4 17: - You can drop a file on a pane header to open the file there. Hold `Alt` (or `Shift` on MacOS) to drop anywhere on the pane.
+4 18: - You can drop a file on a folder in the [[file explorer]] to move the file there.
+4 19: - You can drop a file into an editor to insert it as a link. The generated link also follows your preferences, such as relative paths, or using markdown links.
+4 20: - You can drop a file on the [[starred notes]] to star it.
+4 21: 
+4 22: ### Dragging from outside Obsidian
+4 23: 
+4 24: - You can drag any HTML content from the browser into Obsidian to automatically convert them into Markdown
+4 25: - You can drag and drop any files from your native file explorer to have Obsidian import (make a copy of) those files in your vault's attachment folder and insert them as internal links. Hold `Ctrl` to create `file:///` absolute links to those files instead of importing a copy.
+4 26: 
+4 27: ### Dropping files outside Obsidian
+4 28: 
+4 29: - This will create an `obsidian://` URL in the external application for the Obsidian note that you dragged.
+4 30: 
+5 1: We believe [[Obsidian#How we're different|your data is always yours to own and control]]. Your notes are stored in markdown, which is an open format based on plain text files, and so should be readable in the future by any computer that can deal with text files. You can freely edit notes in other software, even while having them open in Obsidian.
+5 2: 
+5 3: ### Per vault data
+5 4: 
+5 5: There is, however, some data that is needed by the software that is not stored in markdown. Obsidian creates a directory called `.obsidian` in the root of any vault you create. This contains your configuration, including custom hotkeys and which plugins are enabled. Any directory starting with a `.` is invisible on most systems, so you will probably never see it unless you try. If you delete this directory, none of your data will be gone, but you will lose your custom settings. It will be recreated when you open that vault in Obsidian again. If you are using `git`, it's probably best to `ignore` the `.obsidian/workspace` file, because the this file stores your panes and opened files, but we haven't observed any other issues with including it.
+5 6: 
+5 7: ### System directory
+5 8: 
+5 9: Obsidian also stores some information in the system directory. This is different per Operating System; on Mac it's `/Users/yourusername/Library/Application Support/obsidian`, on Windows `%APPDATA%\Obsidian\`, and `$XDG_CONFIG_HOME/Obsidian/` or `~/.config/Obsidian/` on Linux. As a result, we recommend against creating a vault in this directory.
+5 10: 
+5 11: Aside from that, though, you can create a Vault anywhere your operating system will allow. Obsidian files sync fine with Dropbox, iCloud, OneDrive, git, and every other syncing service we've tried thus far.
+5 12: 
+5 13: ### Symbolic Links
+5 14: 
+5 15: Starting in v0.11.1, Obsidian will recognize symbolic links and junctions. We do not officially recommend using these, but we recognize there are valid use-cases for them. Use them at your own risk.
+5 16: 
+5 17: Beware that there are many pitfalls to using symbolic links, and some of them could have serious consequences such as data-loss, file corruption, or could crash Obsidian.
+5 18: 
+5 19: Below are some limitations or issues we are aware of that you may want to keep in mind:
+5 20: 
+5 21: - Symlink loops are disallowed, to prevent crashing Obsidian due to an infinite loop.
+5 22: - Symlink targets must be fully disjoint from the vault root or any other symlink targets. Disjoint means one folder does not contain another, or vice versa. Obsidian will ignore any symlink to a parent folder of the vault, or from one folder in the vault to another folder in the same vault. It is a safeguard to ensure you don't end up with duplicated files in your vault, which could cause links to become ambiguous.
+5 23: - Symlinks may not play well with Obsidian sync, or _any other kind of sync_. If the target of a symlink is itself a directory that's synced by a different Obsidian vault, you could (potentially) end up with sync conflicts or data loss. Some sync tools (e.g. git) do not follow symlinks, but rather synchronize the _path_ the symlink points to, which may produce undesirable results if you share your vault with other people that way.
+5 24: - Obsidian's file manager cannot move files across device boundaries, so if you symlink to a folder on a different drive from your vault, you will not be able to drag files between that folder and other folders using Obsidian's file explorer. (You'll need to use your OS's explorer for such moves, and Obsidian will see the move as a deletion and the creation of a new file. It will also _not_ update any links that depended on the path of that file.)
+5 25: - File symlinks (as opposed to folder symlinks) _may_ work, but are not officially supported at this time. Changes performed outside of Obsidian are not watched for, so if you change the file directly, Obsidian will not detect the change, update search indexes, etc.
+5 26: - Symlinking things under the `.obsidian/` directory in order to share them between vaults **has a high chance of corrupting your settings**, unless you _really really_ know what you're doing. If you decide to go this way, at least have backups.
+5 27: 
+6 1: Obsidian sanitizes html for security reasons. Because it runs locally, scripting vulnerabilities are a more serious problem than they would be in a web applications. Accordingly, we are probably a bit more strict than you may be used to, and you may run into issues if you try to do things like embedding `<script>` tags in a note. However, the vast majority of people will never encounter issues with this.
+6 2: 
+7 1: Insider builds are experimental versions of Obsidian that are released to Catalyst license owners, on an opt-in basis.
+7 2: 
+7 3: Please note that insider builds are less stable than public versions, so if you prefer a smoother version, you don't have to enable it.
+7 4: 
+7 5: ### How to enable insider build
+7 6: 
+7 7: If you are a [[Catalyst license|Catalyst supporter]], you have access to Insider Builds before the general public. To access these, go to Settings => Account, and log in with the password you used on the Obsidian site. Then go to Settings => About, and turn on Insider Builds there.
+7 8: 
+7 9: ![[Insider.png]]
+7 10: 
+7 11: ### Report issues
+7 12: 
+7 13: If you're on our Discord server, you can go to the #insider-build channel to report issues. If you're filing a bug report on the forum, be sure to note the version you're using, so that we can improve it before rolling it out to everyone.
+8 1: Obsidian allows developers to write third-party plugins to extend Obsidian's functionality.
+8 2: 
+8 3: Right now, the plugin API is in alpha status. This means any part of the API could introduce breaking changes in a future release.
+8 4: 
+8 5: ### For developers
+8 6: 
+8 7: For instructions on creating new plugins, see [our sample plugin](https://github.com/obsidianmd/obsidian-sample-plugin).
+8 8: 
+8 9: For documentation on the API, check out [our plugin API repo](https://github.com/obsidianmd/obsidian-api).
+8 10: 
+8 11: After you created your plugin, you can add it to our community plugin marketplace by creating a pull request in [our releases repo](https://github.com/obsidianmd/obsidian-releases). Refer to the sample plugin on how to release updates for your plugin.
+8 12: 
+8 13: ### For users
+8 14: 
+8 15: #### Safe Mode
+8 16: 
+8 17: By default, Obsidian has Safe Mode turned on to protect you from potential harm. Under Safe Mode, no third-party plugin will run.
+8 18: 
+8 19: Please be aware that third-party plugins can access files on your computer, connect to the internet, and even install additional programs. To read more about plugin security, [[#Plugin security|see here]].
+8 20: 
+8 21: In order to install third-party plugins, you need to turn off Safe Mode in Settings => Community plugins => Safe mode.
+8 22: 
+8 23: #### Discover and install community plugins
+8 24: 
+8 25: After disabling Safe Mode, you can find third-party plugins created by the community in Settings => Community plugins => Browse.
+8 26: 
+8 27: On this page, you can browse plugins by popularity, or search for specific plugins. Click on a plugin to see details and instruction from the plugin author. In the details page, you can click "Install" to install a plugin.
+8 28: 
+8 29: After installing, you can then find the installed plugins under Settings => Community plugins. They need to be enabled in order to take effect. You can also uninstall them there.
+8 30: 
+8 31: ### Plugin security
+8 32: 
+8 33: Thanks for trusting Obsidian with your data! It means a lot to us, and we take security very seriously. That includes third-party plugins too.
+8 34: 
+8 35: Due to technical reasons with our platform, we're unable to restrict plugins to a specific permission or access level. Since we offer Obsidian for free, currently we're unable to manually review each plugin.
+8 36: 
+8 37: The good news is that Obsidian has an amazing and passionate community, so we rely on community trust to ensure security of third-party plugins.
+8 38: 
+8 39: In general, you should be able to trust most of the popular plugins from the community. We require all community third-party plugins to be open sourced on GitHub. **If you're working with sensitive data, we recommend you to inspect the plugin code before installing it, so that your security needs are met.** You can find a link to the plugin repository on the plugin detail page.
+8 40: 
+8 41: If you find any security flaws with third-party plugins, contact the plugin author by adding an issue on GitHub. If you believe the plugin is malicious, contact us to get the plugin investigated and removed.
+8 42: 
+9 1: Obsidian supports a custom URI protocol `obsidian://` which can be used to trigger various actions within the app. This is commonly used on MacOS and mobile apps for automation and cross-app workflows.
+9 2: 
+9 3: If you have Obsidian installed, this link will open the app on your device: [Click here](obsidian://open)
+9 4: 
+9 5: ## Installing Obsidian URI
+9 6: 
+9 7: To make sure your operating system redirect `obsidian://` URIs to the Obsidian app, there may be additional steps you need to perform.
+9 8: 
+9 9: - On Windows, running the app once should be sufficient. This will register for the `obsidian://` custom protocol handler in the Windows registry.
+9 10: - On MacOS, running the app once should be sufficient, however, your app **must** be installer version 0.8.12 or later.
+9 11: - On Linux, there's a much more involved process:
+9 12: 	- First, ensure you create a `obsidian.desktop` file. [See here for details](https://developer.gnome.org/integration-guide/stable/desktop-files.html.en)
+9 13: 	- Ensure that your desktop file specifies the `Exec` field as `Exec=executable %u`. The `%u` is used to pass the `obsidian://` URIs to the app.
+9 14: 	- If you're using the AppImage installer, you may have to unpack it using `Obsidian-x.y.z.AppImage --appimage-extract`. Then make sure the `Exec` directive points to the unpacked executable.
+9 15: 
+9 16: ## Using Obsidian URIs
+9 17: 
+9 18: Obsidian URIs are typically in this format:
+9 19: 
+9 20: ```
+9 21: obsidian://action?param1=value&param2=value
+9 22: ```
+9 23: 
+9 24: - The `action` is usually the action that you would like to perform.
+9 25: 
+9 26: ### Encoding
+9 27: 
+9 28: ==Important==
+9 29: 
+9 30: Ensure that your values are properly URI encoded. For example, forward slash characters `/` must be encoded as `%2F` and space characters must be encoded as `%20`.
+9 31: 
+9 32: This is especially important because an improperly encoded "reserved" character may break the interpretation of the URI. [See here for details](https://en.wikipedia.org/wiki/Percent-encoding)
+9 33: 
+9 34: ### Available actions
+9 35: 
+9 36: #### Action `open`
+9 37: 
+9 38: Description: Opens an Obsidian vault, and possibly open a file within that vault.
+9 39: 
+9 40: Possible parameters:
+9 41: 
+9 42: - `vault` can be either the vault name, or the vault ID.
+9 43: 	- The vault name is simply the name of the vault folder.
+9 44: 	- The vault ID is the random 16-character code assigned to the vault. This ID is unique per folder on your computer. Example: `ef6ca3e3b524d22f`. There isn't an easy way to find this ID yet, one will be offered at a later date in the vault switcher. Currently it can be found in `%appdata%/obsidian/obsidian.json` for Windows. For MacOS, replace `%appdata%` with `~/Library/Application Support/`. For Linux, replace `%appdata%` with `~/.config/`.
+9 45: - `file` can be either a file name, or a path from the vault root to the specified file.
+9 46: 	- To resolve the target file, Obsidian uses the same link resolution system as a regular `[[wikilink]]` within the vault.
+9 47: 	- If the file extension is `md`, the extension can be omitted.
+9 48: - `path` an absolute file system path to a file.
+9 49: 	- Using this parameter will override both `vault` and `file`.
+9 50: 	- This will cause the app to search for the most specific vault which contains the specified file path.
+9 51: 	- Then the rest of the path replaces the `file` parameter.
+9 52: 
+9 53: Examples:
+9 54: 
+9 55: - `obsidian://open?vault=my%20vault`
+9 56: 	This opens the vault `my vault`. If the vault is already open, focus on the window.
+9 57: 
+9 58: - `obsidian://open?vault=ef6ca3e3b524d22f`
+9 59: 	This opens the vault identified by the ID `ef6ca3e3b524d22f`.
+9 60: 
+9 61: - `obsidian://open?vault=my%20vault&file=my%20note`
+9 62: 	This opens the note `my note` in the vault `my vault`, assuming `my note` exists and the file is `my note.md`.
+9 63: 
+9 64: - `obsidian://open?vault=my%20vault&file=my%20note.md`
+9 65: 	This also opens the note `my note` in the vault `my vault`.
+9 66: 
+9 67: - `obsidian://open?vault=my%20vault&file=path%2Fto%2Fmy%20note`
+9 68: 	This opens the note located at `path/to/my note` in the vault `my vault`.
+9 69: 
+9 70: - `obsidian://open?path=%2Fhome%2Fuser%2Fmy%20vault%2Fpath%2Fto%2Fmy%20note`
+9 71: 	This will look for any vault that contains the path `/home/user/my vault/path/to/my note`. Then, the rest of the path is passed to the `file` parameter. For example, if a vault exists at `/home/user/my vault`, then this would be equivalent to `file` parameter set to `path/to/my note`.
+9 72: 
+9 73: - `obsidian://open?path=D%3A%5CDocuments%5CMy%20vault%5CMy%20note`
+9 74: 	This will look for any vault that contains the path `D:\Documents\My vault\My note`. Then, the rest of the path is passed to the `file` parameter. For example, if a vault exists at `D:\Documents\My vault`, then this would be equivalent to `file` parameter set to `My note`.
+9 75: 	
+9 76: #### Action `search`
+9 77: 
+9 78: Description: Opens the search pane for a vault, and optionally perform a search query.
+9 79: 
+9 80: Possible parameters:
+9 81: 
+9 82: - `vault` can be either the vault name, or the vault ID. Same as action `open`.
+9 83: - `query` (optional) The search query to perform.
+9 84: 
+9 85: Examples:
+9 86: 
+9 87: - `obsidian://search?vault=my%20vault`
+9 88: 	This opens the vault `my vault`, and opens the search pane.
+9 89: 
+9 90: - `obsidian://search?vault=my%20vault&query=MOC`
+9 91: 	This opens the vault `my vault`, opens the search pane, and performs a search for `MOC`.
+9 92: 	
+9 93: #### Action `new`
+9 94: 
+9 95: Description: Creates a new note in the vault, optionally with some content.
+9 96: 
+9 97: Possible parameters:
+9 98: 
+9 99: - `vault` can be either the vault name, or the vault ID. Same as action `open`.
+9 100: - `name` the file name to be created. If this is specified, the file location will be chosen based on your "Default location for new notes" preferences.
+9 101: - `file` a vault absolute path, including the name. Will override `name` if specified.
+9 102: - `path` a globally absolute path. Works similar to the `path` option in the `open` action, which will override both `vault` and `file`.
+9 103: - `content` (optional) the contents of the note.
+9 104: - `silent` (optional) set this if you don't want to open the new note.
+9 105: 
+9 106: Examples:
+9 107: 
+9 108: - `obsidian://new?vault=my%20vault&name=my%20note`
+9 109: 	This opens the vault `my vault`, and creates a new note called `my note`.
+9 110: - `obsidian://new?vault=my%20vault&path=path%2Fto%2Fmy%20note`
+9 111: 	This opens the vault `my vault`, and creates a new note at `path/to/my note`.
+9 112: 	
+9 113: #### Action `hook-get-address`
+9 114: 
+9 115: Description: Endpoint for use with [Hook](https://hookproductivity.com/). Copies a markdown link of the current focused note to the clipboard, as an `obsidian://open` URL. Use: `obsidian://hook-get-address`
+9 116: 
+9 117: Possible parameters:
+9 118: 
+9 119: - `vault` (optional) can be either the vault name, or the vault ID. If not provided, the current or last focused vault will be used.
+9 120: 
+9 121: ## Shorthand formats
+9 122: 
+9 123: In addition to the formats above, there are two more "shorthand" formats available to open vaults and files:
+9 124: 
+9 125: - `obsidian://vault/my vault/my note` is equivalent to `obsidian://open?vault=my%20vault&file=my%20note`
+9 126: - `obsidian:///absolute/path/to/my note` is equivalent to `obsidian://open?path=%2Fabsolute%2Fpath%2Fto%2Fmy%20note`
+9 127: 
+10 1: ---
+10 2: aliases: front matter
+10 3: ---
+10 4: 
+10 5: YAML, also known as front matter, is designed to be file-level metadata that is readable by humans *and* Obsidian.
+10 6: 
+10 7: Front matter is a section of plain text attributes that starts at the first line of the file. It is one of the most popular ways to add metadata in a Markdown file, and has been popularized by static generators such as Jekyll, Hugo, and Gatsby.
+10 8: 
+10 9: A YAML block needs **triple dashes** at the start and end to be read by Obsidian (and other apps). ==It also needs to be placed at the very top of the file.==
+10 10: 
+10 11: For example:
+10 12: 
+10 13: ```
+10 14: ---
+10 15: key: value
+10 16: key2: value2
+10 17: key3: [one, two, three]
+10 18: key4:
+10 19: - four
+10 20: - five
+10 21: - six
+10 22: ---
+10 23: ```
+10 24: 
+10 25: As of 0.12.12, there are four keys natively supported:
+10 26: - `tags` ([[Working with tags|more information]])
+10 27: - `aliases` ([[Add aliases to note|more information]])
+10 28: - `cssclass`
+10 29: - `publish`([[Publish#YAML support for Publish|more information]])
+10 30: 
+10 31: As Obsidian continues to develop, we will gradually make it more accessible by plugin developers, and make it more user friendly.
+10 32: 
+34 1: ## Obsidian slides demo
+34 2: 
+34 3: To view slides, you'll need to enable the "Slides" plugin.
+34 4: This can be done through the Settings => Core plugins.
+34 5: 
+34 6: ---
+34 7: 
+34 8: ## Obsidian goals
+34 9: 
+34 10: - Longevity
+34 11: - Foster network
+34 12: - Personalized
+34 13: 
+34 14: ---
+34 15: 
+34 16: ## Longevity
+34 17: 
+34 18: - Local files on your hard disk
+34 19: - Plain text, no proprietary format
+34 20: - Markdown for maximum portability
+34 21:   - the most popular plain text format that can be edited in other apps
+34 22: 
+34 23: ---
+34 24: 
+34 25: ## Foster knowledge network
+34 26: 
+34 27: - [[Internal link|Internal links]]
+34 28: - Link auto-complete
+34 29: - See backlinks to and unlinked mentions of current note
+34 30: - Graph view
+34 31: 
+34 32: ---
+34 33: 
+34 34: ## Personalized
+34 35: 
+34 36: - We don't believe in a single, opinionated solution would work for everyone
+34 37: - Obsidian is plugin-based
+34 38:     - Enable or disable them based on your workflow
+34 39:     - Looking to allow third-party plugins to be developed after v1.0.0
+34 40: 
+36 1: ### Base theme
+36 2: 
+36 3: Obsidian comes with two base themes, light and dark. This option sets the default color scheme your theme will use to either display its light or dark mode version.
+36 4: 
+36 5: ### Custom theme
+36 6: 
+36 7: There are lots of community themes contributed by our amazing community that you can easily choose from.
+36 8: 
+36 9: You can easily tweak it by adding [[Add custom styles#Use Themes and or CSS snippets|CSS snippets]].
+36 10: 
+36 11: ### Translucency
+36 12: 
+36 13: You can make the window translucent by enabling this option in the settings appearance tab. Currently this option is only available for Windows and macOS.
+36 14: 
+36 15: There is a known issue under Windows where dragging the window is extremely slow when translucency is enabled. This is due to a Windows bug. A Github issue tracking the status of a fix can be found here: https://github.com/riverar/sample-win32-acrylicblur/issues/2
+37 1: Most hotkeys are customizable in Obsidian.
+37 2: 
+37 3: We only defined default hotkeys for the most commonly used commands, but if you frequently use a command, it would save you lots of time if you add a hotkey for it.
+37 4: 
+37 5: For a list of default hotkeys, [[Keyboard shortcuts|see here]].
+37 6: 
+37 7: ### Viewing hotkeys
+37 8: 
+37 9: The fastest way to see the hotkey set for a command is to find the command in [[Command palette]]. If there's a hotkey listed for that command, it's set.
+37 10: 
+37 11: ### Setting hotkeys
+37 12: 
+37 13: To add a hotkey, remove a hotkey, or restore hotkeys to default, go to Settings => Hotkeys. Note that you can also filter the list, as the list of commands is quite long.
+38 1: ---
+38 2: aliases: alias, aliases
+38 3: ---
+38 4: 
+38 5: Sometimes, you might want to refer to the same file with multiple names in different contexts. These alternative names are what we call "aliases".
+38 6: 
+38 7: For example, you might want to refer to your partner by their full name, first name, or a nickname. Or you might want to refer to "artificial intelligence" by its abbreviation "AI". If you know multiple languages, you may want to refer to the same concept with their name in the same language that the rest of the note is written in.
+38 8: 
+38 9: ### Set aliases
+38 10: 
+38 11: Starting in 0.9.16, you're able to specify the "aliases" property in a note's [[YAML front matter]] like so:
+38 12: 
+38 13: ```
+38 14: ---
+38 15: aliases: [AI, Artificial Intelligence]
+38 16: ---
+38 17: ```
+38 18: 
+38 19: Please note that this section must be placed at the very top of a note to take effect.
+38 20: 
+38 21: In the future, we'll consider more user-friendly ways to manage aliases than manually writing them in front matter.
+38 22: 
+38 23: ### Link with aliases
+38 24: 
+38 25: Once you've set aliases for a file, you can write `[[alias]]` to link to the original page. A redirect icon will show up in the auto-complete list like so:
+38 26: 
+38 27: ![[Insert alises.png]]
+38 28: 
+38 29: An internal link with display text will get inserted like so: `[[Add aliases to note|alias]]`.
+38 30: 
+38 31: Note: the link to alias is **NOT** inserted as `[[alias]]` for interoperability, so that other software can recognize it as well.
+38 32: 
+38 33: ### Find unlinked mentions
+38 34: 
+38 35: After you've set aliases for a note, you can find unlinked mentions by both its name and its aliases.
+38 36: 
+38 37: For example, after setting "AI" as an alias for "Artificial intelligence", you'll see mentions of "AI" in other files in the [[Backlinks]] section.
+38 38: 
+38 39: If you decide to link this mention, a link with display text set to the alias will be created for you. Following the example above, `AI` will become `[[Artificial intelligence|AI]]` once you click on the "Link" button.
+39 1: When you want to add custom styles to your vault, there are two main ways to do this:
+39 2: 
+39 3: ## Vault styles
+39 4: 
+39 5: ### Themes
+39 6: 
+39 7: Themes allow you to toggle the appearance of your vault with a dropdown menu once they have been added to your vault's theme directory.
+39 8: 
+39 9: This configuration can be found in `Settings` => `Appearance` => `Themes` section of your vault settings.
+39 10: 
+39 11: ### Create a custom theme
+39 12: 
+39 13: If you are creating your own theme, you can do this by:
+39 14: 
+39 15: 1. Creating your custom theme CSS file in the themes directory `YOUR_VAULT/.obsidian/themes/YOUR_CUSTOM_THEME.css`
+39 16: 2. Enabling it in the theme dropdown under `Settings` => `Appearance` => `Themes`
+39 17: 
+39 18: For more information on how to customize styles of the graph, you can find more information in [[Graph view]].
+39 19: 
+39 20: ### Use Themes and/or CSS snippets
+39 21: 
+39 22: You can find this configuration in `Settings` => `Appearance`. You can choose a community theme or set the theme you developed yourself. If you set a community theme, it will be automatically placed in the correct folder. If you develop your own theme, you have to put it in the shown folder location yourself.
+39 23: 
+39 24: CSS snippets are supposed to be small pieces of CSS for small changes you want to make/things you want to add. These snippets have to be placed in the shown directory.
+39 25: 
+39 26: You can go to the respective directories by clicking on the folder buttons. If the folder isn't created yet, it will be. In case your snippets or theme don't show up after you've put them there, you can click the button next to the folder icon to refresh the list.
+39 27: 
+39 28: ## Obsidian Publish styles
+39 29: 
+39 30: At this time, [[Obsidian Publish]] is unable to automatically detect the vault's configured [[Add custom styles#Themes|theme]] and publish the respective styles. 
+39 31: 
+39 32: A workaround for this limitation is to:
+39 33: 
+39 34: 1. Go into `YOUR_VAULT/.obsidian/themes/CURRENT_THEME_FOLDER`;
+39 35: 2. Copy the primary CSS file `CURRENT_THEME.css` in the folder;
+39 36: 3. Paste it in the root directory of your vault (`YOUR_VAULT`);
+39 37: 4. Rename the CSS file as `publish.css`;
+39 38: 5. In the publish plugin, upload the `publish.css` file;
+39 39: 6. If your CSS doesn't take effect in a few minutes, try refreshing the browser cache as the stale CSS might have been cached.
+39 40: 
+40 1: If you've just opened Obsidian, you'll see two documents here. The one in the left pane is a text file, which you can edit using Markdown syntax. The one in the right pane is a _Preview_ of the same text file if you were to export it as HTML, or as a PDF document. Note that some things look different in Preview, and, most obviously, links are not in brackets. To follow a link, click on it in the Preview pane. You can follow links in the Editor pane as well, by holding down `Ctrl/Cmd` and clicking on the link. If you want to go back to the page you were on before, use the shortcut `Ctrl/Cmd-alt-LeftArrow`
+40 2: 
+40 3: Alternatively, the notes that link to the one you're currently on will be shown in the **Backlinks Panel** on the right (find more about Backlinks [[Backlinks|here.]])
+40 4: 
+40 5: If you get lost at any time, or just want to explore what else Obsidian can do, `Ctrl/Cmd-P` brings up the Command Palette. You can type commands there, like "Navigate back", and you'll see options filter to a short list, along with hotkey shortcuts if they have them. 
+40 6: 
+40 7: At base, Obsidian is a tool for working with a bunch of markdown files that are stored on your computer. If you're not familiar with markdown, it's just plain text with some formatting that makes it powerful (for more on that, see [[Format your notes|Markdown]]) . As a result, if you want to use obsidian for keeping regular notes on just about anything, it will work great. 
+40 8: 
+40 9: Let's say you want to write a note about your favorite band. Just type the name of the note surrounded by two square brackets, like `[[My Favorite Band]]`
+40 10: 
+40 11: Try it here (make sure you're typing in the Editor pane): 
+40 12: 
+40 13: You'll notice that the text and the brackets turn blue. That means it's a link now. Click on that link in the Preview (or `Cmd-click` in the Editor), and you'll see a blank note. Write whatever you want there, and when you're done, come back here with `Cmd-alt-left`, or by clicking the name of this note ([[Basic note taking]]) in the **Backlinks** to the right. To learn more about navigating links, see [[Internal link]].
+40 14: 
+40 15: ---
+40 16: 
+40 17: Notice that your new note showed up automatically in the File Explorer to the left. Obsidian automatically creates files when you click a link to a file that does not exist. This means you can `[[write naturally]]` about `[[whatever comes to mind]]` and then go back and create the new notes at your leisure. This makes Obsidian a fantastic tool for thinking freely in notes without having to worry about where to file them. And if you decide that a title is not what you actually meant, you can change the file name at the top of this window, and Obsidian will automatically update all links to it.
+40 18: 
+40 19: From there, you can make any kind of structure you want. Many people will want to make a `Table of Contents` note for listing major groups of notes. You can also use #tags to create categories (if you click that it will show you every note that contains #tags ). Really, the structure you build should be whatever works for you. We suggest you just start with what feels natural. Obsidian is flexible enough that it should be relatively simple to rearrange things later.
+40 20: 
+40 21: Be aware! The note you just created is in these Help documents, which will be overwritten on new releases. ==If you created anything you care to keep, it should be put into a different vault==. For details on how to do that, see [[Working with multiple vaults]].
+40 22: 
+40 23: If you want an example of a more advanced technique, you might look into the [sample workflows on our forum](https://forum.obsidian.md/t/example-workflows-in-obsidian/1093).
+40 24: 
+41 1: ### Copy and paste
+41 2: 
+41 3: When you see something useful online, you can simply select the text, copy, and paste in Obsidian. Obsidian will try to convert it into proper Markdown so that it fits right in.
+41 4: 
+41 5: If you only wish to copy the text without the formatting, please use `Ctrl-Shift-V` on Windows and Linux and `Cmd-Shift-V` on macOS to do so.
+41 6: 
+41 7: ### Use a clipper extension
+41 8: 
+41 9: Because Obsidian accepts any Markdown file, you can clip entire web pages by clipping to Markdown files and downloading them into your vault.
+41 10: 
+41 11: death_au's "MarkDownload" browser extension works well for this purpose. You can get it for:
+41 12: 
+41 13: - [Google Chrome](https://chrome.google.com/webstore/detail/markdownload-markdown-web/pcmpcfapbekmbjjkdalcgopdkipoggdi)
+41 14: - [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/markdownload/)
+41 15: - [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/markdownload-markdown-w/hajanaajapkhaabfcofdjgjnlgkdkknm)
+41 16: 
+42 1: The settings can be found by clicking the gear in the bottom left corner, or by hitting `Ctrl/Cmd-,`. Most of them are fairly self-explanatory, but here are some notes that might be helpful.
+42 2: 
+42 3: - Most of the settings are toggle switches. If there are more details to a setting, it may have a gear next to the switch for additional settings. For example, the gear next to Spell Check reveals the custom dictionary, so you can remove words you may have accidentally added.
+42 4: - Enabling plugins will cause their settings to appear in the list of tabs. For example, if you have the Daily Note plugin enabled, a setting tab will appear that allows you to further configure it.
+42 5: 
+43 1: Notes are created in a few ways, depending on your workflow:
+43 2: 
+43 3: 1. **Note-first approach**. If you need to create a note, you can do so in [[File explorer]]. The keyboard shortcut is `Ctrl/Cmd+N`. Also, if you have the [[Command palette]] plugin enabled (it's on by default), press `Ctrl/Cmd-p` and type ‘new’, then select **********
+43 4:  
+43 5: 1. **Link-first approach**. If you like to freely create notes, just use an [[Internal link]] to link to any note name (it doesn't need to exist at the time of creating the link). To write in the newly created note, simply click on the link name. It will be automatically created in your Vault and ready to type!
+43 6: 
+43 7: ![[Pasted image 3.png]]
+43 8: 
+43 9: After creating it, the note title will appear in the internal link auto-completion, so you don't need to type out the note name every time. When you type `[[` a popup will come up showing all the notes in your vault. Just type until you see the one you want, and hit `Return` or click on it, and the name will be automatically filled in.
+43 10: 
+43 11: If you already have folders set up in [[File explorer]], you can right-click on a folder to create notes inside it:
+43 12: 
+43 13: ![[Pasted image 4.png]]
+43 14: 
+43 15: There are also buttons at the top of the file explorer for creating new notes or folders. 
+43 16: 
+43 17: Obsidian automatically saves your note two seconds after you stop typing, or if you close a pane. You can also manually save at any time by typing `Ctrl/Cmd-S`
+43 18: 
+43 19: ---
+43 20: 
+43 21: ### Related:
+43 22: 
+43 23: - [[Rename notes]]
+43 24: 
+44 1: ### Embed attachments
+44 2: 
+44 3: You can embed attachment files like images or audio in your notes. Use the `![[filename.png]]` syntax like so:
+44 4: 
+44 5: ![[Engelbart.jpg]]
+44 6: 
+44 7: ![[Excerpt from Mother of All Demos (1968).ogg]]
+44 8: 
+44 9: You can embed a PDF file in your notes with the same syntax. Additionally, you can write `![[My File.pdf#page=number]]` to open to that specific page of the PDF directly.
+44 10: 
+44 11: ### Embed notes
+44 12: 
+44 13: You can embed a note also, with the same syntax:
+44 14: 
+44 15: ![[Accepted file formats]]
+44 16: 
+44 17: ### iframe
+44 18: 
+44 19: "iframe" is a way to embed a web page in another. It's useful because Markdown can accept HTML, which is a simple language to construct the web pages we see every day.
+44 20: 
+44 21: For example:
+44 22: 
+44 23: ```html
+44 24: <iframe src="https://www.youtube.com/embed/NnTvZWp5Q7o"></iframe>
+44 25: ```
+44 26: 
+44 27: Produces:
+44 28: 
+44 29: <iframe src="https://www.youtube.com/embed/NnTvZWp5Q7o"></iframe>
+44 30: 
+44 31: The basic syntax is:
+44 32: 
+44 33: ```html
+44 34: <iframe src="INSERT YOUR URL HERE"></iframe>
+44 35: ```
+44 36: 
+44 37: Some websites have quirks that don't allow you to embed them. For example, you can't embed a YouTube video by using its normal URL, but you can use its embed URL which is `https://www.youtube.com/embed/VIDEO_ID`.
+44 38: 
+44 39: If you want to embed a website, try searching for "{website} embed iframe".
+44 40: 
+44 41: For example, you can embed Twitter tweets like so as suggested by search results:
+44 42: 
+44 43: ```html
+44 44: <iframe
+44 45:   border="0"
+44 46:   frameborder="0"
+44 47:   height="250"
+44 48:   width="550"
+44 49:   src="https://twitframe.com/show?url=https%3A%2F%2Ftwitter.com%2Fjack%2Fstatus%2F20"
+44 50: >
+44 51: </iframe>
+44 52: ```
+44 53: 
+44 54: <iframe border="0" frameborder="0" height="250" width="550"  
+44 55:  src="https://twitframe.com/show?url=https%3A%2F%2Ftwitter.com%2Fjack%2Fstatus%2F20"></iframe>
+44 56: 
+44 57: ---
+44 58: 
+44 59: ### Developer notes
+44 60: 
+44 61: The syntax is inspired by Markdown's image syntax. We had two observations:
+44 62: 
+44 63: 1.  `[Image](link.png)` links to the image, but `![Image](link.png)` actually displays it.
+44 64: 
+44 65: 2.  The internal link syntax is based on this assumption: `[[My page]]` is a shortcut (or "syntactic sugar" if you will) for `[My page](My page)`.
+44 66: 
+44 67: To combine these two things, we can come up with a third pattern:`![[My page]]` should be equivalent to `![My page](My page)` , which by the image convention, if the title is the same as the link, should display it.
+44 68: 
+44 69: There are other implementations out there, for example Roam Research uses `{{embed: ((NODE_ID))}}`. We have also considered using the `((Page name))` syntax too, but we feel like `![[Page name]]` is more consistent, more familiar, and leaves more room so that the other symbols to have their own meanings.
+44 70: 
+44 71: #### Resize images
+44 72: 
+44 73: You can resize images using the following syntax:
+44 74: 
+44 75: For markdown images, use `![AltText|100x100](https://url/to/image.png)`
+44 76: 
+44 77: For embeds, use `![[image.png|100x100]]`
+44 78: 
+44 79: To have the image scale according to its aspect ratio, omit the height `![[image.png|100]]`
+44 80: 
+44 81: 
+44 82: 
+45 1: Folding text is an extremely powerful tool for outlining or writing, in order to focus on what you're working on. 
+45 2: 
+45 3: To use folding, go to Settings (the gear icon on the left) => Editor and turn on `Fold indent` and `Fold heading`.
+45 4: 
+45 5: Obsidian has the ability to fold both markdown headers and indented lists. Note that at the top of this note there is a downward pointing arrow next to the title. If clicked, it will fold the entire note up, and if clicked again, it will show the note. This can be applied at multiple levels of markdown, as well as multiple levels of indentation in lists.
+45 6: 
+45 7: ## By way of example
+45 8: 
+45 9: 1. Categories of things
+45 10:    1. A subcategory
+45 11:    1. Another subcategory
+45 12:       1. An example of an item
+45 13:       1. A different, equally important item.
+45 14: 
+45 15: 
+45 16: 
+46 1: Obsidian is a Markdown-based note-taking and knowledge base app.
+46 2: 
+46 3: We currently support the formats below:
+46 4: 
+46 5: ---
+46 6: 
+46 7: ### Internal linking
+46 8: 
+46 9: ```md
+46 10: Link to a page: [[Internal link]].
+46 11: ```
+46 12: 
+46 13: Link to a page: [[Internal link]].
+46 14: 
+46 15: ---
+46 16: 
+46 17: ### Embeds
+46 18: 
+46 19: Embed another file (read more about [[Embed files]]). Here's an embedded section:
+46 20: 
+46 21: ```md
+46 22: ![[Obsidian#What is Obsidian]]
+46 23: ```
+46 24: 
+46 25: ![[Obsidian#What is Obsidian]]
+46 26: 
+46 27: ---
+46 28: 
+46 29: ### Headers
+46 30: 
+46 31: ```md
+46 32: # This is a heading 1
+46 33: 
+46 34: ## This is a heading 2
+46 35: 
+46 36: ### This is a heading 3
+46 37: 
+46 38: #### This is a heading 4
+46 39: 
+46 40: ##### This is a heading 5
+46 41: 
+46 42: ###### This is a heading 6
+46 43: ```
+46 44: 
+46 45: # This is a heading 1
+46 46: 
+46 47: ## This is a heading 2
+46 48: 
+46 49: ### This is a heading 3
+46 50: 
+46 51: #### This is a heading 4
+46 52: 
+46 53: ##### This is a heading 5
+46 54: 
+46 55: ###### This is a heading 6
+46 56: 
+46 57: ---
+46 58: 
+46 59: ### Emphasis
+46 60: 
+46 61: ```md
+46 62: _This text will be italic_
+46 63: _This will also be italic_
+46 64: ```
+46 65: 
+46 66: _This text will be italic_
+46 67: _This will also be italic_
+46 68: 
+46 69: ```md
+46 70: **This text will be bold**
+46 71: **This will also be bold**
+46 72: ```
+46 73: 
+46 74: **This text will be bold**
+46 75: **This will also be bold**
+46 76: 
+46 77: ```md
+46 78: _You **can** combine them_
+46 79: ```
+46 80: 
+46 81: _You **can** combine them_
+46 82: 
+46 83: ---
+46 84: 
+46 85: ### Lists
+46 86: 
+46 87: ```md
+46 88: - Item 1
+46 89: - Item 2
+46 90:   - Item 2a
+46 91:   - Item 2b
+46 92: 
+46 93: 1. Item 1
+46 94: 1. Item 2
+46 95: 1. Item 3
+46 96:    1. Item 3a
+46 97:    1. Item 3b
+46 98: ```
+46 99: 
+46 100: - Item 1
+46 101: - Item 2
+46 102:   - Item 2a
+46 103:   - Item 2b
+46 104: 
+46 105: 1. Item 1
+46 106: 1. Item 2
+46 107: 1. Item 3
+46 108:    1. Item 3a
+46 109:    1. Item 3b
+46 110: 
+46 111: ---
+46 112: 
+46 113: ### Images
+46 114: 
+46 115: ```md
+46 116: ![Engelbart](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)
+46 117: ```
+46 118: 
+46 119: ![Engelbart](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)
+46 120: 
+46 121: #### Resizing images
+46 122: 
+46 123: Example of this above image resized to 100 pixels wide:
+46 124: 
+46 125: ```md
+46 126: ![Engelbart|100](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)
+46 127: ```
+46 128: 
+46 129: ![Engelbart|100](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)
+46 130: 
+46 131: ---
+46 132: 
+46 133: ### Links
+46 134: 
+46 135: #### External links
+46 136: 
+46 137: Markdown style links can be used to refer to either external objects, such as web pages, or an internal page or image.
+46 138: 
+46 139: ```md
+46 140: http://obsidian.md - automatic!
+46 141: [Obsidian](http://obsidian.md)
+46 142: ```
+46 143: 
+46 144: http://obsidian.md - automatic!
+46 145: [Obsidian](http://obsidian.md)
+46 146: 
+46 147: #### Obsidian URI links
+46 148: 
+46 149: [[Using obsidian URI|Obsidian URI]] links can be used to open notes in Obsidian either from another Obsidian vault or another program.
+46 150: 
+46 151: For example, you can link to a file in a vault like so (please note the [[Using obsidian URI#Encoding|required encoding]]):
+46 152: 
+46 153: ```md
+46 154: [Link to note](obsidian://open?path=D:%2Fpath%2Fto%2Ffile.md)
+46 155: ```
+46 156: 
+46 157: [Link to note](obsidian://open?path=D:%2Fpath%2Fto%2Ffile.md)
+46 158: 
+46 159: You can link to a note by its vault name and file name instead of path as well:
+46 160: 
+46 161: ```md
+46 162: [Link to note](obsidian://open?vault=MainVault&file=MyNote.md)
+46 163: ```
+46 164: 
+46 165: [Link to note](obsidian://open?vault=MainVault&file=MyNote.md)
+46 166: 
+46 167: #### Escaping
+46 168: 
+46 169: If there are spaces in the url, they can be escaped by either using `%20` as a space, such as:
+46 170: 
+46 171: ```md
+46 172: [Export options](Pasted%20image)
+46 173: ```
+46 174: 
+46 175: [Export options](Pasted%20image)
+46 176: 
+46 177: Or you can enclose the target in `<>`, such as:
+46 178: 
+46 179: ```md
+46 180: [Slides Demo](<Slides Demo>)
+46 181: ```
+46 182: 
+46 183: [Slides Demo](<Slides Demo>)
+46 184: 
+46 185: ---
+46 186: 
+46 187: ### Blockquotes
+46 188: 
+46 189: ```md
+46 190: > Human beings face ever more complex and urgent problems, and their effectiveness in dealing with these problems is a matter that is critical to the stability and continued progress of society.
+46 191: 
+46 192: \- Doug Engelbart, 1961
+46 193: ```
+46 194: 
+46 195: > Human beings face ever more complex and urgent problems, and their effectiveness in dealing with these problems is a matter that is critical to the stability and continued progress of society.
+46 196: 
+46 197: \- Doug Engelbart, 1961
+46 198: 
+46 199: ---
+46 200: 
+46 201: ### Inline code
+46 202: 
+46 203: ```md
+46 204: Text inside `backticks` on a line will be formatted like code.
+46 205: ```
+46 206: 
+46 207: Text inside `backticks` on a line will be formatted like code.
+46 208: 
+46 209: ---
+46 210: 
+46 211: ### Code blocks
+46 212: 
+46 213: Syntax highlight is supported with the language specified after the first set of backticks. We use prismjs for syntax highlighting, a list of supported languages can be found [at their site](https://prismjs.com/#supported-languages)
+46 214: 
+46 215: ```js
+46 216: function fancyAlert(arg) {
+46 217:   if (arg) {
+46 218:     $.facebox({ div: "#foo" });
+46 219:   }
+46 220: }
+46 221: ```
+46 222: 
+46 223: ```js
+46 224: function fancyAlert(arg) {
+46 225:   if (arg) {
+46 226:     $.facebox({ div: "#foo" });
+46 227:   }
+46 228: }
+46 229: ```
+46 230: 
+46 231: ```md
+46 232:     Text indented with a tab is formatted like this, and will also look like a code block in preview.
+46 233: ```
+46 234: 
+46 235:     Text indented with a tab is formatted like this, and will also look like a code block in preview.
+46 236: 
+46 237: ---
+46 238: 
+46 239: ### Task list
+46 240: 
+46 241: ```md
+46 242: - [x] #tags, [links](), **formatting** supported
+46 243: - [x] list syntax required (any unordered or ordered list supported)
+46 244: - [x] this is a complete item
+46 245: - [?] this is also a complete item (works with every character)
+46 246: - [ ] this is an incomplete item
+46 247: - [ ] tasks can be clicked in Preview to be checked off
+46 248: ```
+46 249: 
+46 250: - [x] #tags, [links](), **formatting** supported
+46 251: - [x] list syntax required (any unordered or ordered list supported)
+46 252: - [x] this is a complete item
+46 253: - [?] this is also a complete item (works with every character)
+46 254: - [ ] this is an incomplete item
+46 255: - [ ] tasks can be clicked in Preview to be checked off
+46 256: 
+46 257: ---
+46 258: 
+46 259: ### Tables
+46 260: 
+46 261: You can create tables by assembling a list of words and dividing them with hyphens `-` (for the first row), and then separating each column with a pipe `|`:
+46 262: 
+46 263: ```md
+46 264: | First Header                | Second Header                |
+46 265: | --------------------------- | ---------------------------- |
+46 266: | Content from cell 1         | Content from cell 2          |
+46 267: | Content in the first column | Content in the second column |
+46 268: ```
+46 269: 
+46 270: | First Header                | Second Header                |
+46 271: | --------------------------- | ---------------------------- |
+46 272: | Content from cell 1         | Content from cell 2          |
+46 273: | Content in the first column | Content in the second column |
+46 274: 
+46 275: ---
+46 276: 
+46 277: ```md
+46 278: | Tables can be justified with a colon | Another example with a long title |
+46 279: | :----------------------------------- | --------------------------------: |
+46 280: | because of the `:`                   |           these will be justified |
+46 281: 
+46 282: If you put links in tables, they will work, but if you use Piped Links, the pipe must be escaped with a `\` to prevent it being read as a table element.
+46 283: ```
+46 284: 
+46 285: | Tables can be justified with a colon | Another example with a long title |
+46 286: | :----------------------------------- | --------------------------------: |
+46 287: | because of the `:`                   |           these will be justified |
+46 288: 
+46 289: If you put links in tables, they will work, but if you use Piped Links, the pipe must be escaped with a `\` to prevent it being read as a table element.
+46 290: 
+46 291: ```md
+46 292: | First Header                      | Second Header                   |
+46 293: | --------------------------------- | ------------------------------- |
+46 294: | [[Format your notes\|Formatting]] | [[Keyboard shortcuts\|hotkeys]] |
+46 295: ```
+46 296: 
+46 297: | First Header                      | Second Header                   |
+46 298: | --------------------------------- | ------------------------------- |
+46 299: | [[Format your notes\|Formatting]] | [[Keyboard shortcuts\|hotkeys]] |
+46 300: 
+46 301: ---
+46 302: 
+46 303: ### Strikethrough
+46 304: 
+46 305: ```md
+46 306: Any word wrapped with two tildes (like ~~this~~) will appear crossed out.
+46 307: ```
+46 308: 
+46 309: Any word wrapped with two tildes (like ~~this~~) will appear crossed out.
+46 310: 
+46 311: ---
+46 312: 
+46 313: ### Highlighting
+46 314: 
+46 315: ```md
+46 316: Use two equal signs to ==highlight text==.
+46 317: ```
+46 318: 
+46 319: Use two equal signs to ==highlight text==.
+46 320: 
+46 321: ---
+46 322: 
+46 323: ### Footnotes
+46 324: 
+46 325: ```md
+46 326: Here's a simple footnote,[^1] and here's a longer one.[^bignote]
+46 327: 
+46 328: [^1]: meaningful!
+46 329: [^bignote]: Here's one with multiple paragraphs and code.
+46 330: 
+46 331:     Indent paragraphs to include them in the footnote.
+46 332: 
+46 333:     `{ my code }`
+46 334: 
+46 335:     Add as many paragraphs as you like.
+46 336: ```
+46 337: 
+46 338: Here's a simple footnote,[^1] and here's a longer one.[^bignote]
+46 339: 
+46 340: [^1]: meaningful!
+46 341: [^bignote]: Here's one with multiple paragraphs and code.
+46 342: 
+46 343:     Indent paragraphs to include them in the footnote.
+46 344: 
+46 345:     `{ my code }`
+46 346: 
+46 347:     Add as many paragraphs as you like.
+46 348: 
+46 349: ```md
+46 350: You can also use inline footnotes. ^[notice that the carat goes outside of the brackets on this one.]
+46 351: ```
+46 352: 
+46 353: You can also use inline footnotes. ^[notice that the carat goes outside of the brackets on this one.]
+46 354: 
+46 355: ### Math
+46 356: 
+46 357: ```md
+46 358: $$
+46 359: \begin{vmatrix}a & b\\
+46 360: c & d
+46 361: \end{vmatrix}=ad-bc
+46 362: $$
+46 363: ```
+46 364: 
+46 365: $$
+46 366: \begin{vmatrix}a & b\\
+46 367: c & d
+46 368: \end{vmatrix}=ad-bc
+46 369: $$
+46 370: 
+46 371: You can also do inline math like $e^{2i\pi} = 1$ .
+46 372: 
+46 373: Obsidian uses [Mathjax](http://docs.mathjax.org/en/latest/basic/mathjax.html). You can check which packages are supported in Mathjax [here](http://docs.mathjax.org/en/latest/input/tex/extensions/index.html).
+46 374: 
+46 375: ### Comments
+46 376: 
+46 377: Use `%%` to enclose comments, which will be parsed as Markdown, but will not show up in the preview.
+46 378: 
+46 379: ```md
+46 380: Here is some inline comments: %%You can't see this text%% (Can't see it)
+46 381: 
+46 382: Here is a block comment:
+46 383: %%
+46 384: It can span
+46 385: multiple lines
+46 386: %%
+46 387: ```
+46 388: 
+46 389: Here is some inline comments: %%You can't see this text%% (can't see it in preview)
+46 390: 
+46 391: Here is a block comment: (can't see it in preview either)
+46 392: %%
+46 393: It can span
+46 394: multiple lines
+46 395: %%
+46 396: 
+46 397: ### Diagram
+46 398: 
+46 399: Obsidian uses [Mermaid](https://mermaid-js.github.io/) to render diagrams and charts. Mermaid also provides [a helpful live editor](https://mermaid-js.github.io/mermaid-live-editor).
+46 400: 
+46 401: ````mermaid
+46 402: sequenceDiagram
+46 403:     Alice->>+John: Hello John, how are you?
+46 404:     Alice->>+John: John, can you hear me?
+46 405:     John-->>-Alice: Hi Alice, I can hear you!
+46 406:     John-->>-Alice: I feel great!
+46 407: ```</code></pre>
+46 408: 
+46 409: ```mermaid
+46 410: sequenceDiagram
+46 411:     Alice->>+John: Hello John, how are you?
+46 412:     Alice->>+John: John, can you hear me?
+46 413:     John-->>-Alice: Hi Alice, I can hear you!
+46 414:     John-->>-Alice: I feel great!
+46 415: ````
+46 416: 
+46 417: Obsidian supports linking to notes in Mermaid:
+46 418: 
+46 419: ````mermaid
+46 420: graph TD
+46 421: 
+46 422: Biology --> Chemistry
+46 423: 
+46 424: class Biology,Chemistry internal-link;
+46 425: ```</code></pre>
+46 426: 
+46 427: An easier way to do it is the following: ^376b9d
+46 428: 
+46 429: ```mermaid
+46 430: graph TD
+46 431: 
+46 432: A[Biology]
+46 433: B[Chemistry]
+46 434: 
+46 435: A --> B
+46 436: 
+46 437: class A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z internal-link;
+46 438: ```</code></pre>
+46 439: 
+46 440: This way, all the note names (at least until `Z[note name]`) are all automatically assigned the class `internal-link` when you use this snippet.
+46 441: 
+46 442: If you use special characters in your note names, you need to put the note name in double quotes.
+46 443: `"⨳ special character"`
+46 444: It looks like this if you follow the [[Format your notes#^376b9d|second option]]:
+46 445: `A["⨳ special character"]`
+46 446: 
+46 447: ## Developer notes
+46 448: 
+46 449: We strive for maximum capability without breaking any existing formats, therefore we use a slightly unorthodox combination of flavors of markdown. It is broadly CommonMark, with the addition of some functionality from GitHub Flavored Markdown (GFM), some latex support, and our chosen embed syntax, which you can read more about at [[Accepted file formats]].
+46 450: 
+46 451: 
+46 452: ````
+46 453: 
+47 1: There are a few differences between the way various PKM and note taking systems work that mean moving between them can be a little complicated. For the most part, if whatever you're using can be converted to markdown, it will work fairly well within Obsidian. But some things, like tags and links, can be tricky.
+47 2: 
+47 3: On our Forum there is a [post collecting methods that other people have developed](https://forum.obsidian.md/t/meta-post-migration-workflows/768). Right now, it includes:
+47 4: 
+47 5: - [Import from Notion](https://forum.obsidian.md/t/import-from-notion/636)
+47 6: - [Import from Notion (automated)](https://forum.obsidian.md/t/notion-2-obsidian-migration-instructions/2728)
+47 7: - [Import from Evernote](https://forum.obsidian.md/t/import-from-evernote/108)
+47 8: - [Import from OneNote](https://forum.obsidian.md/t/new-tool-for-migration-from-onenote-updated-and-improved-version/3055)
+47 9: - [Import from Apple Notes](https://forum.obsidian.md/t/migrate-from-apple-notes-to-obsidian/732)
+47 10: - [Import from Bear](https://forum.obsidian.md/t/import-from-bear-app/2284)
+47 11: - [Import from Zkn3](https://forum.obsidian.md/t/migrating-from-zkn3-to-obsidian-without-losing-your-tags-and-internal-links-documentation/7457)
+47 12: - [Import from TiddlyWiki 5](https://forum.obsidian.md/t/migrate-from-tiddlywiki-5-to-obsidian/731)
+47 13: 
+47 14: But if you don't see your system on this list, check out the forum post, someone may have solved your issue since this document was written.
+47 15: 
+47 16: Also of note, the makers of nvUltra, another markdown-based note-taking program, have a list on their website of [ways to export to nvUltra](https://nvultra.com/help/importing). In a lot of cases, these will be the same, or at least a helpful place to start.
+47 17: 
+47 18: ## Built-in tools
+47 19: 
+47 20: ### From Roam Research
+47 21: 
+47 22: If you have data in Roam, it's easy to export and play around with it in Obsidian.
+47 23: 
+47 24: > 1. Choose "Export all" in the menu:
+47 25: > ![[Pasted image.png]]
+47 26: 
+47 27: > 2. Click the blue "Export all" button:
+47 28: > ![[Pasted image 1.png]]
+47 29: 
+47 30: > 3. Unzip the "Roam-Export-xxxxxxxxxxxxx.zip" into a folder.
+47 31: 
+47 32: > 4. Click on the vault icon (the tooltip should say "Open another vault") on the bottom left corner in the app, and select "Open folder as vault".
+47 33: > Pick the folder you just unzipped to.
+47 34: 
+47 35: > 5. Use our [[markdown format converter]] to convert Roam Research's Markdown format into Obsidian's format.
+47 36: > It can be used turn `#tag` into Obsidian `[[links]]`.
+47 37: > It can also convert `^^highlight^^` into `==highlight==`.
+47 38: 
+47 39: 
+47 40: ### From Bear
+47 41: 
+47 42: If you're importing from Bear, the [[Markdown format converter]] plugin has an option to convert `::highlight::` to `==highlight==`.
+47 43: 
+47 44: ### Using Zettelkasten
+47 45: 
+47 46: If you've been using the Zettelkasten method to structure your notes, here's something you might want to know:
+47 47: 
+47 48: Links in Obsidian require a full match to the note name. This means that `[[202001010000]]` will not properly link to `[[202001010000 My Note]]`.
+47 49: 
+47 50: In order to fix that, you can use our [[markdown format converter]] to convert your Zettelkasten links into either `[[202001010000 My Note]]` or `[[202001010000 My Note|My Note]]`.
+47 51: 
+47 52: You might also be interested in the [[Zettelkasten prefixer]] plugin.
+47 53: 
+48 1: Internal links are the backbone of your knowledge network.
+48 2: 
+48 3: ### Link to files
+48 4: 
+48 5: To create an internal link, simply type `[[`. This will prompt you with the list of notes you can link to. Use `Up arrow` and `Down arrow` to navigate the suggestion list and `Enter` to select the current highlighted link.
+48 6: 
+48 7: ### Link to headings
+48 8: 
+48 9: You can also link to specific headers in files. Start typing a link like you would normally. When the note you want is highlighted, press `#` instead of `Enter` and you'll see a list of headings in that file. Continue typing or navigate with arrow keys as before, press `#`again at each subheading you want to add, and `Enter` to complete the link. 
+48 10: 
+48 11: To make the link display different text than its real note name in Preview, use the vertical pipe (`Shift+|`) For example: [[Internal link|Custom Link Name in Preview!]] This can be combined with linking to headers, as in [[Folding#By way of example|Example of Folding]].
+48 12: 
+48 13: ### Following Links
+48 14: 
+48 15: - To follow a link in the Preview pane, simply click on the link.
+48 16: - To follow a link in a new panel from Preview, click while pressing `Ctrl/Cmd`''
+48 17: - To follow a link in the Editor pane, click the link while pressing `Ctrl/Cmd`.
+48 18: - To follow a link in a new panel from the Editor, click the link while pressing `Ctrl/Cmd-Shift`''
+48 19: - To see a preview of the linked content without leaving the current note, enable the [[page preview]] plugin and a popup window will be displayed.
+48 20: 
+49 1: If you have the [[Command palette]] enabled, You can use `Ctrl/Cmd+P` to bring it up, which will show you all currently available commands and their keyboard shortcuts.
+49 2: 
+49 3: Most keyboard shortcuts can be customized for your needs in Settings => Hotkeys. 
+49 4: 
+49 5: The default keyboard shortcuts are listed below. 
+49 6: 
+49 7: Function                                            |   | Shortcut
+49 8: --------------------------------------------------- | - | --------------------------
+49 9: Save current file                                   |   | `Ctrl/Cmd+S`
+49 10: Create new note                                     |   | `Ctrl/Cmd+N`
+49 11: Command palette: Open command palette               |   | `Ctrl/Cmd+P`
+49 12: Quick switcher: Open quick switcher                 |   | `Ctrl/Cmd+O`
+49 13: Search: Search in all files                         |   | `Ctrl/Cmd+Shift+F`
+49 14: Graph view: Open graph view                         |   | `Ctrl/Cmd+G`
+49 15: Starred: Star/unstar current file                   |   | Blank
+49 16: Audio recorder: start recording                     |   | Blank
+49 17: Audio recorder: stop recording                      |   | Blank
+49 18: Markdown format importer: Open Markdown converter   |   | Blank
+49 19: Daily notes: Open today's note                      |   | Blank
+49 20: Zettelkasten prefixer: Create new Zettelkasten note |   | Blank
+49 21: Random note: Open random note                       |   | Blank
+49 22: Navigate back                                       |   | `Ctrl/Cmd-Alt+Left arrow`
+49 23: Navigate forward                                    |   | `Ctrl/Cmd-Alt+Right arrow`
+49 24: Open vault location                                 |   | Blank
+49 25: Use dark mode                                       |   | Blank
+49 26: Use light mode                                      |   | Blank
+49 27: Search current file                                 |   | `Ctrl/Cmd-F`
+49 28: Toggle edit/preview mode                            |   | `Ctrl/Cmd E`
+49 29: Delete current file                                 |   | Blank
+49 30: Split vertical                                      |   | Blank
+49 31: Split horizontal                                    |   | Blank
+49 32: Close active pane                                   |   | Blank
+49 33: Close all other panes                               |   | Blank
+49 34: Open settings                                       |   | `Ctrl/Cmd ,`
+49 35: 
+49 36: **Editing**
+49 37: 
+49 38: Function                    |   | Shortcut
+49 39: --------------------------- | - | ---------------
+49 40: Bold Selected Text          |   | `Ctrl/Cmd-B`
+49 41: Italic Selected Text        |   | `Ctrl/Cmd-I`
+49 42: Insert External link        |   | `Ctrl/Cmd-K`
+49 43: Indent                      |   | `Ctrl/Cmd-]`
+49 44: Unindent                    |   | `Ctrl/Cmd-[`
+49 45: Jump into selected backlink |   | `Alt/Opt-Enter`
+49 46: 
+50 1: In Obsidian 0.9.5 or higher, in addition to [[Internal link#Link to headings|linking to headings]], you can also link to blocks.
+50 2: 
+50 3: ### What is a block
+50 4: 
+50 5: A "block" can be a paragraph, a blockquote, a list item, etc. In general, anything that has empty lines before and after is a block. ^dcf64c
+50 6: 
+50 7: ### Link to blocks
+50 8: 
+50 9: To link to a block in a specific file, first type `[[filename` to bring up a list of matched files. After selecting a file, type `^` and continue typing to search for blocks to link to.
+50 10: 
+50 11: Once you hit enter, a link to that block will be generated for you, in the format similar to `[[filename#^dcf64c]]`, where `dcf64c` is the block ID that was just generated for you.
+50 12: 
+50 13: If you're not sure which file the block is in, another method is to type `[[^^` and search for blocks in all files. This will search through all the blocks in your vault, so expect a bit of delay if your vault is large.
+50 14: 
+50 15: For example, [[#^dcf64c]] is a link to a block above.
+50 16: 
+50 17: ### Embed or transclude blocks
+50 18: 
+50 19: Similar to [[Embed files|files embeds]], you can simply use `!` in front of a block link to embed it.
+50 20: 
+50 21: Here's an example:
+50 22: 
+50 23: ![[#^dcf64c]]
+50 24: 
+50 25: ### Manual block IDs
+50 26: 
+50 27: If you want human readable block IDs, you can manually put `^your-id` after a block. Make sure there's at least one space if you're putting the ID at end of a line.
+50 28: 
+50 29: To refer to complex blocks like tables, put the block ID on its own after the block, and make sure there is an empty line both before and after the block ID.
+50 30: 
+50 31: After you add the block ID manually, when you refer to that block, `your-id` will be used instead of a randomly generated block ID.
+50 32: 
+50 33: Note that only letters, numbers, and dashes are allowed in manual block IDs.
+50 34: 
+50 35: ### Interoperability
+50 36: 
+50 37: Please be aware that block reference is not part of standard Markdown, but rather Obsidian's specific flavor of Markdown. That means these links will not work outside of Obsidian.
+50 38: 
+50 39: You can still find referenced block by searching for the block ID, although that's a rather manual process. The connection is not lost as long as you have software that can search in a folder.
+50 40: 
+51 1: ## Add an attachment
+51 2: 
+51 3: There are several ways to include attachments in your notes:
+51 4: 
+51 5: 1. Copy and paste;
+51 6: 2. Drag and drop;
+51 7: 3. Download or copy file to vault folder.
+51 8: 
+51 9: After being added, these attachment files are just normal files and can still be accessed through your file system. 
+51 10: 
+51 11: Please note that only [[Accepted file formats]] are handled.
+51 12: 
+51 13: ### Copy and paste
+51 14: 
+51 15: Pasting a local file from your system explorer or your clipboard will put the file into your vault.
+51 16: 
+51 17: This is very handy when combined with screenshot tools.
+51 18: 
+51 19: ### Drag and drop
+51 20: 
+51 21: If you drag and drop a file from your file explorer, it will be copied to your vault as well.
+51 22: 
+51 23: ### Download or copy to vault folder
+51 24: 
+51 25: This can work well when paired with [[Capture information#Use a clipper extension|clipper extensions]].
+51 26: 
+51 27: You can also download images from your browser into your vault folder directly for later reference.
+51 28: 
+51 29: ## Change default attachment location
+51 30: 
+51 31: By default, new attachments will be dropped in the root of your vault. You can fine tune this setting in Settings => Files & Links => "Default location for new attachments".
+51 32: 
+51 33: ### Choose a folder
+51 34: 
+51 35: You can choose a fixed folder to always place your attachments in. To do this, choose "In the folder specified below", and choose a folder in your vault in the new field that appears.
+51 36: 
+51 37: Alternatively, you can right click on a folder in [[File explorer]] and choose "Set as attachment folder".
+51 38: 
+51 39: ### Same folder as current file
+51 40: 
+51 41: Sometimes, you may want the attachment files to always be in the same folder as the note you're working on. In this case, choose "Same folder as current file".
+51 42: 
+51 43: ### Under the current folder
+51 44: 
+51 45: You can also choose to save attachments to a folder underneath the folder that the current file is in.
+51 46: 
+51 47: To do this, choose the "Subfolder under current folder" option, and write the name of the subfolder in the field that appears. For example, if you write `assets`, and your note is in `VAULT/folder/path/`, the attachments will be added to `VAULT/folder/path/assets` when you're working on this note.
+51 48: 
+51 49: You don't need to create the subfolder beforehand; if it doesn't exist, Obsidian will create it for you.
+52 1: In obsidian, a document can be viewed in either edit mode or preview mode. In edit mode, you will see basic markdown rendering, but certain things, like code syntax highlighting and embedded files, will only show up in preview mode. Most notably, any images you embed will only be visible in preview mode.
+52 2: 
+52 3: To toggle between preview and edit mode, click the preview button in the title bar. In edit mode, it will appear as a page; in preview mode, a pencil. If you `Cmd/Ctrl`- click, the preview will be opened in a [[linked pane]]. You can also toggle Preview Mode by hitting `Cmd/Ctrl-E`, but this hotkey can, of course, be changed.
+52 4: 
+52 5: If you want to default to opening in preview rather than edit mode, a toggle for that can be found in the [[Command palette]]. You can also set a [[Keyboard shortcuts|Keyboard Shortcut]] for toggling between default states.
+52 6: 
+53 1: If you're already editing the note, you can rename it simply by editing the text in the title:
+53 2: 
+53 3: ![[Pasted image 6.png]]
+53 4: 
+53 5: If you want to rename a note that you're not editing, go to [[file explorer]], right-click on the note or folder and choose "Rename":
+53 6: 
+53 7: ![[Pasted image 7.png]]
+53 8: 
+53 9: An even faster way is to press `F2` while your mouse is over a note, which will take you straight to the renaming function.
+53 10: 
+54 1: ### How auto-update works
+54 2: 
+54 3: Obsidian checks for update every 12 hours. Once an update is available, restarting the app will automatically bring you to the latest version.
+54 4: 
+54 5: You can check your current version, check for updates in Settings => About. You can also turn off "automatic updates" there.
+54 6: 
+54 7: ### Insider build
+54 8: 
+54 9: If you're looking to update to the latest insider build, please refer to [[Insider builds#How to enable insider build|this guide]] on how to turn it on.
+54 10: 
+54 11: ### Current version vs installed version
+54 12: 
+54 13: If you look closely in Settings => About, you can find your current version and your installer version.
+54 14: 
+54 15: Your current version is your Obsidian version. This is the version of the app on top of the engine (which is Electron). It will increase when you auto-update, but your installer version will not. Your installer version will only increase when you install Obsidian with a new installer.
+54 16: 
+54 17: Most features can be delivered by auto-updating, but to update the engine for certain new features Obsidian, we encourage you to grab the latest installer from [our official website](https://obsidian.md) from time to time, when your current version is above the installer version by a lot, for example when your current version is 0.10.8 while installer version is 0.8.3.
+54 18: 
+55 1: Backlinks are one of the most powerful features of Obsidian. As a result, they can sometimes be a bit confusing, so here's some things that might help.
+55 2: 
+55 3: The Backlinks panel has two sections, Linked mentions and Unlinked mentions.
+55 4: 
+55 5: ![[Backlinks.png]]
+55 6: 
+55 7: As you can see, from this document, there is currently one entry in each section. Under Linked mentions you can see that I made a link to this document in the [[Linked pane]] note. But, you can also see under Unlinked mentions that I wrote the name of this note but did not make it a link.
+55 8: 
+55 9: This can be a very powerful way of seeing connections between your notes that you did not know you were making when you wrote them. If, for example, you have a note named for a concept that comes up often in your field, you will be able to see easily when it is mentioned in other notes, and thus understand relationships between ideas you might not have otherwise.
+55 10: 
+55 11: If a reference appears in the Unlinked mentions, and you want to link it, hovering over the text will bring up a Link button. Clicking this will automatically surround the highlighted text in the referenced note with brackets, making it into an explicit link.
+55 12: 
+55 13: You can also create a separate, dedicated backlinks pane for a note under the More Options menu. This will be a [[linked pane]] connected to the note, and can be moved around anywhere, as described in [[Pane layout]]. There's also an option to do this in the [[Command palette]].
+55 14: 
+56 1: If you hold down `Alt` (`option` on mac) and click, you can create multiple cursors. This can be useful when modifying a lot of lines in the same way, for example putting `-` at the beginning of multiple lines to turn them into a list, or appending `[[` to a series of links you've copied from elsewhere. 
+56 2: 
+56 3: To cancel multiple cursors, either click somewhere in the note (without a modifier key), or hit escape. 
+57 1: You can edit and view multiple files in Obsidian.
+57 2: 
+57 3: To effectively use split view, you only need to know a few things:
+57 4: 
+57 5: ##### 1. ==Use Ctrl/Cmd key== when you want to open things in a new pane.
+57 6: 
+57 7: By default, when you click something, it will open in the active pane. The active pane is marked with highlighted bar under the title, and its title is more visible than the inactive panes.
+57 8: 
+57 9: To open files in new panes, hold down `Ctrl/Cmd` while you click in Preview mode (`Shift + Ctrl/Cmd` in Edit mode). This applies to a number of places, including [[file explorer]], [[backlinks]] (both links and unlinked mentions), [[search]] results, and [[graph view]]. It also applies to buttons; instead of previewing in the current pane, you can `Cmd+click` the preview button to preview in a new pane. When using the Quick Switcher, holding down `Cmd/Ctrl`when hitting `Enter` will open in a new pane. 
+57 10: 
+57 11: ---
+57 12: 
+57 13: ##### 2. You can also create new panes by ==splitting==.
+57 14: 
+57 15: To create other layouts, you can split the current pane in half either horizontally or vertically. Do this with the menu at the top right of the pane, use the command palette, or set a [[Keyboard shortcuts]].
+57 16: 
+57 17: ![[Pasted image 16.png]]
+57 18: 
+57 19: ---
+57 20: 
+57 21: ##### 3. If you want a sticky pane that does not get replaced even when it's active, ==pin it==.
+57 22: 
+57 23: This is great if you're working on something and want to use the other panes as temporary reference panes. Pin it to make sure it never gets replaced.
+57 24: 
+57 25: ![[Pasted image 17.png]]
+57 26: 
+57 27: Pinned panes will have a highlighted pin icon instead of a grey one.
+57 28: 
+57 29: ---
+57 30: 
+57 31: ##### 4. Use ==linked panes== for previewing.
+57 32: 
+57 33: When creating [[Linked pane|linked panes]], `Ctrl/Cmd+click` the preview or edit button when a Markdown file is open.
+57 34: 
+57 35: When linked to another pane, the panes' scroll position will be synced, and if you open a file in one pane, the other pane will open the same file.
+57 36: 
+57 37: [[Linked pane|Linked panes]] will be marked with a link icon. You can hover the link to see which pane it's linked to, or click the icon to release it, so that they are no longer linked.
+57 38: 
+57 39: For more information see [[Linked pane|linked panes]].
+57 40: 
+57 41: ![[Pasted image 18.png]]
+57 42: 
+57 43: ##### 5. Panes can be ==rearranged by dragging==.
+57 44: 
+57 45: Grab the icon in the upper left corner to arrange them however you need. For detailed information, see [[Pane layout]].
+57 46: 
+57 47: ---
+57 48: 
+57 49: Useful tips:
+57 50: 
+57 51: 1. You can resize the panes however you want, by dragging the resize handle that's between each pane.
+57 52: 
+57 53: 2. Your file layout, including their sizes, will be remembered when you close the app, so don't worry about having to set them up every time you open the app!
+57 54: 
+58 1: Each collection of notes in Obsidian is known as a Vault. A Vault consists of a folder, and any sub-folders within it. Right now, you're looking at the `Obsidian Help` Vault, which is just a folder of files included with Obsidian.
+58 2: 
+58 3: You can open another Vault anywhere on your computer, and it will retain its own individual [[List of plugins|Plugins]] and [[Add custom styles|custom styling]]. This is useful, for example, if you have one Vault where you keep notes but a different one in which you do long-form writing.
+58 4: 
+58 5: A new or existing Vault can be opened from the button just above the Settings gear.
+58 6: 
+58 7: ![[Vault picker.png]]
+58 8: 
+58 9: You have the option to either open an existing folder of markdown files, create a new vault (which essentially just creates a new folder that you will put markdown files into), or opening a special vault containing these help files. The Help Vault is stored in a special Obsidian directory (see [[How Obsidian stores data]]), but aside from that, it's a directory of files just like any other.
+58 10: 
+58 11: [[Internal link|Internal Links]] are not shared across Vaults. If you have one Vault inside another Vault, this can get confusing, so we recommend not doing that.
+58 12: 
+58 13: Always remember, a Vault is just a collection of markdown files. You can use whatever file management techniques you would normally to move them around on your file system, and Obsidian will automatically refresh to keep up.
+58 14: 
+58 15: ### Transfer settings between vaults
+58 16: 
+58 17: All settings, themes, and plugins are stored in the `.obsidian` folder under your vault. If you copy this folder from one vault to another, all the settings will be transferred as well. You may need to restart Obsidian for all of the settings to take effect.
+58 18: 
+58 19: This folder is hidden in some operating systems. Notably, you can use `Cmd-Shift-Period` to show hidden files on macOS in order to reveal the `.obsidian` folder.
+59 1: Tags are a very useful way of grouping multiple notes so they are easy to find. A tag is essentially a clickable search through your entire Vault for a term. For example, clicking on #tags will bring up a search with all notes that contain that tag. Most people use them for broad categories of things, like a class you might be taking notes in or a type of idea. Some Zettelkasten practitioners like to use them as "entry points" for thinking about connected ideas. But ultimately, they are flexible enough that you can use them in any way you would like.
+59 2: 
+59 3: ### Tag pane
+59 4: 
+59 5: If you have the [[Tag pane]] plugin enabled, you will see a list of all tags that are used across all of your notes, sorted by frequency. Clicking on any of those will activate that search.
+59 6: 
+59 7: This will allow you to search exact matches of a tag. For example, when clicking , as per usual, but if you want to find all instances of `maintag` with all subtags, you can still use the [[Search]] to look for `#maintag`. This is useful in cases where you have subcategories of things but you also want to be able to easily find all instances of the higher category.
+59 8: 
+59 9: ### Allowed characters
+59 10: 
+59 11: Spaces are not allowed in tags. So, if you want to have multiple words in a tag, you can use these formats:
+59 12: 
+59 13: - CamelCase: #TwoWords
+59 14: - Underscore: #two_words
+59 15: - Dash: #two-words
+59 16: 
+59 17: The only symbols allowed are:
+59 18: 
+59 19: 1. `_` (underscore) and `-` (dash) to separate words;
+59 20: 2. `/` (forward slash) for [[Tag pane#Nested tags|nested tags]].
+59 21: 
+59 22: Numbers are allowed in the tag, ==as long as the tag is not purely numeric==. For example, #1984 does not form a valid tag, but #y1984 is valid.
+60 1: Obsidian is free for personal use. A Catalyst license is an optional license that provides the following benefits:
+60 2: 
+60 3: 1. It gives you early access to the latest, cutting edge versions of the app;
+60 4: 2. Provides you cool badges on our community Discord server and forum; and
+60 5: 3. It helps support the development of Obsidian (thank you 💜!)
+60 6: 
+60 7: There are three tiers of the Catalyst license: Insider ($25), Supporter ($50), and VIP ($100) - each of which gives you [[Insider builds|access to insider builds]].
+60 8: 
+60 9: Please note that Catalyst is optional and ==does not give you any additional app features==.
+60 10: 
+60 11: To upgrade to Catalyst, please visit [our pricing page](https://obsidian.md/pricing).
+60 12: 
+60 13: If you use Obsidian for work-related activities, you may need a [[Commercial license|commercial license]].
+60 14: 
+60 15: ## FAQ
+60 16: 
+60 17: ### How do I get my shiny badges after I upgrade?
+60 18: 
+60 19: Congratulations! After upgrading, you will find two buttons in the "Catalyst" section in your Account page.
+60 20: 
+60 21: #### Discord badge
+60 22: 
+60 23: ==Please make sure to join [our Discord server](https://discord.gg/veuWUTm) first.==
+60 24: 
+60 25: In [your account page](https://obsidian.md/account), click on "Get Discord badge", which will authenticate with Discord and add the badge for you automatically.
+60 26: 
+60 27: #### Forum badge
+60 28: 
+60 29: ==Please make sure you've registered an account at [our forum](https://forum.obsidian.md) with the same email address.==
+60 30: 
+60 31: In [your account page](https://obsidian.md/account), click on "Get forum badge" , which will add the badge to your forum account.
+60 32: 
+60 33: If your forum email doesn't match your account email, the badge can't be added. In that case, please change your email in the forum to be consistent with your account email.
+60 34: 
+60 35: Please note that your forum badge is not a "badge" in the forum system, but a shiny gold tag right next to your name in all of your posts.
+60 36: 
+60 37: ### What do I get when I pay for Catalyst?
+60 38: 
+60 39: You get access to our [[Insider builds]]. On top of that, if you get Supporter or VIP tier, you can access an exclusive Discord channel to hang out with the developers.
+60 40: 
+60 41: When we do closed beta for a big new feature (such as mobile apps or a Typora-like WYSIWYM mode), we will roll out the beta to VIPs, Supporters, Insiders, and then everyone else, fixing issues along the way.
+60 42: 
+60 43: ### What payment methods do you accept?
+60 44: 
+60 45: Our website accepts credit cards and some debit cards. This method is the quickest and easiest.
+60 46: 
+60 47: If you need to pay via PayPal or Wechat, it's also possible. Please find the instructions by logging in on our website and select the "Catalyst" option.
+61 1: ### About Obsidian commercial license
+61 2: 
+61 3: Obsidian is free for personal use. For commercial (business) use in a company of two (2) or more employees, a commercial license is required. Business use includes any work-related activities such as capturing meeting notes, maintaining team project notes, configuring an organizational wiki, and similar note taking, document management, or knowledge management functionality.
+61 4: 
+61 5: To purchase a commercial license, please visit [our pricing page](https://obsidian.md/pricing).
+61 6: 
+61 7: ### Frequently asked questions
+61 8: 
+61 9: ##### Can I try Obsidian for commercial use before paying?
+61 10: 
+61 11: Yes. You may evaluate Obsidian for commercial use for 14 days.
+61 12: 
+61 13: ##### Do non-profit organizations require a commercial license?
+61 14: 
+61 15: No, non-profit organizations may use Obsidian without a commercial license.
+61 16: 
+61 17: ##### Are there bulk discounts?
+61 18: 
+61 19: For bulk discount inquiry, please contact us at support@obsidian.md.
+61 20: 
+61 21: ##### How can I ask my company to purchase licenses for me or my team?
+61 22: 
+61 23: Ask your IT department to contact support@obsidian.md if they have questions or require any specific paperwork.
+61 24: 
+61 25: ##### Do I need a commercial license?
+61 26: 
+61 27: From our EULA:
+61 28: 
+61 29: > If you use OBSIDIAN for commercial use, you must obtain a commercial license. Commercial use is defined as using OBSIDIAN for work-related activities in a company with two (2) or more employees.
+61 30: 
+61 31: Some examples to help determine if you require a commercial license:
+61 32: 
+61 33: > *Q1. I'm a freelancer/writer/blogger, do I need a commercial license?*
+61 34: > \
+61 35: > A: Unless you hire at least one additional person, you do not need a commercial license.
+61 36: 
+61 37: > *Q2. I'm a teacher/professor and I use Obsidian for my teaching/lectures, do I need a commercial license?*
+61 38: > \
+61 39: > A: Obsidian usage for education-related activities within schools and other recognized educational institutions does not require a commercial license. 
+61 40: 
+61 41: > *Q3. I'm a researcher and I use Obsidian for my research, do I need a commercial license?*
+61 42: > \
+61 43: > A: If your organization consists of two or more people and the research is on behalf of a commercial product, then you would require a commercial license. If the research is not for any commercial purpose, then you may use Obsidian without a commercial license. 
+61 44: 
+61 45: > *Q4. I use Obsidian during work for things like writing down team processes and taking notes for team meetings, do I need a commercial license?*
+61 46: > \
+61 47: > A: If you are a single-person company, then you do not require a commercial license. Otherwise, if you have more than one person in the company, then you would require a commercial license.
+61 48: 
+61 49: > *Q5. I use Obsidian to store all of my knowledge, both personal and professional, because it's difficult to separate them. Do I need a commercial license?*
+61 50: > \
+61 51: > A: If your notes contain content directly related to work projects or processes for a greater-than-one-person company, then you require a commercial license.
+61 52: 
+61 53: If you still have questions regarding the commercial license requirements, email us at support@obsidian.md and describe your situation in detail.
+62 1: Obsidian Publish™ is a paid hosting service for your notes.
+62 2: 
+62 3: For instructions on how to publish your notes from within the Obsidian app, refer to the [[Publish|Publish plugin]].
+62 4: 
+62 5: ### Privacy
+62 6: 
+62 7: You have total control over what to publish via the [[Publish|Publish plugin]] - either your entire vault or just selected notes within your vault. As for any notes you choose **not** to publish, you can be confident that those notes remain completely private, and Obsidian Publish has no knowledge of them.
+62 8: 
+62 9: ### Backing up
+62 10: 
+62 11: Please note that Obsidian Publish is not to be used as a backup for your content. Make sure you always have a personal backup copy of your site using your preferred backup method. Our efforts on Obsidian Publish will be more focused on functionality, ease of use, and site availability.
+62 12: 
+62 13: ### Demo
+62 14: 
+62 15: There's a good chance that you're already viewing this article on our official site powered by Obsidian Publish.
+62 16: 
+62 17: If not, you can visit it here: https://publish.obsidian.md/help.
+62 18: 
+62 19: ### What's included
+62 20: 
+62 21: The Obsidian Publish service lets you create your site directly from within the Obsidian app by choosing the notes you want to publish.
+62 22: 
+62 23: To customize your site, you can choose between light and dark mode, and also toggle between readable line length and full page length.
+62 24: 
+62 25: There are several components which can be turned on or off from the [[Publish|Publish plugin]]. Changes to these options will be reflected on your published site once the cache clears, typically within 5 minutes.
+62 26: 
+62 27: ##### Navigation
+62 28: 
+62 29: Enabling this option adds a navigation sidebar displaying all published pages and the folders that contain them. Viewers will see the current open note highlighted, and can click on any other note to navigate.
+62 30: 
+62 31: ##### Search bar
+62 32: 
+62 33: Adds a search bar to page. This bar can be used to search for pages, aliases, and headings within pages. It does not currently search through the full text content of the site.
+62 34: 
+62 35: ##### Graph view
+62 36: 
+62 37: Displays a local graph of the page currently open. This uses the same rendering engine as the [[Graph view]] plugin in Obsidian.
+62 38: 
+62 39: ##### Table of contents
+62 40: 
+62 41: Displays a table of contents for the page currently open. The list is generated from headings within the page, similar to the [[Outline]] plugin. Viewers navigating the note will see the corresponding heading highlighted as they scroll, and can click on another heading to immediately navigate to it.
+62 42: 
+62 43: ##### Backlinks
+62 44: 
+62 45: Displays a section at the end of each page called "Linked to this page", containing backlinks from other pages. If there are no backlinks, the section will not be displayed.
+62 46: 
+62 47: ##### Tags
+62 48: 
+62 49: When the reader clicks on a tag, they can see a list of other pages that includes the same tag.
+62 50: 
+62 51: ##### Hover preview
+62 52: 
+62 53: When hovering over links, their content is displayed within a popup box. This works similarly to the [[Page preview]] plugin in Obsidian.
+62 54: 
+62 55: ##### Custom CSS
+62 56: 
+62 57: To customize the styling of your site, you can upload a `publish.css`. This file must be stored in the root folder of your site. You can use your existing theme and add some extra tweaks for publish in `publish.css`.
+62 58: 
+62 59: ##### Favicon
+62 60: 
+62 61: To change the favicon of your site, you can upload `png` icons of any size in the format of `favicon-32.png` or `favicon-32x32.png`. You can also upload the file `favicon.ico`. These files can be stored in any folder. The current recommendation (as of 2020) is to provide sizes `32×32`, `128x128`, `152×152`, `167x167`, `180x180`, `192x192`, and `196x196`.
+62 62: 
+62 63: ##### Custom JS
+62 64: 
+62 65: If you wish to execute your own JavaScript code to change the visitor experience, or add various integrations like Discus!, Discourse, etc. you can do so by uploading `publish.js` inside the root of your vault. Note that these scripts will only run for visitors to your custom domain.
+62 66: 
+62 67: ##### Disallow search engine indexing
+62 68: 
+62 69: This option adds a meta noindex tag to all your pages so search engines like Google does not index your site. Note that search engines won't be able to index your site anyway if it's password protected.
+62 70: 
+62 71: ##### Google Analytics
+62 72: 
+62 73: If you wish to setup Google Analytics for your site, first make sure your local laws and regulations allows. Then, you just need to put the tracking code, in the form of `UA-XXXXX-Y` into the text box and your site will automatically track page views. Note that Google Analytics is only available to visitors from your custom domain.
+62 74: 
+62 75: When testing Google Analytics, please make sure to disable any ad-blocking browser extensions like uBlock Origin which blocks Google Analytics scripts from running.
+62 76: 
+62 77: Also, Obsidian Publish isn't directly compatible with Google Tag Manager at the moment - you can set it up using custom javascript if you wish to use Google Tag Manager instead of Google Analytics.
+62 78: 
+62 79: ### Custom domain
+62 80: 
+62 81: You can setup a custom domain or subdomain for your Obsidian Publish site. Currently, we don't yet have a way to provision SSL certificate on your behalf, so you need to resort to either an SSL-enabled server of your own, or to setup your site on CloudFlare, which provides SSL for free.
+62 82: 
+62 83: You can also setup Obsidian Publish as a sub-URL of a site you own. For example, `https://mysite.com/my-notes/`. To achieve this, you must host your own server and proxy all requests to our server at `https://publish.obsidian.md/`.
+62 84: 
+62 85: Continue reading for setup details.
+62 86: 
+62 87: #### CloudFlare setup
+62 88: 
+62 89: The easiest way to setup a custom domain or subdomain is by making an account with [CloudFlare](https://cloudflare.com) and letting CloudFlare manage your domain. This allows you to add SSL to your site for free, as well as ensure your site is fast wherever in the world it's accessed from. Typically users will host their Obsidian Publish content on a root domain (e.g. `mysite.com`) or an immediate subdomain (e.g. `notes.mysite.com`). These instructions work for both cases.
+62 90: 
+62 91: 1. Open Cloudflare to the domain you wish to add Publish to (e.g. `mysite.com`, even if you want a subdomain like `notes.mysite.com`).
+62 92: 2. Go to DNS and click Add Record. Select CNAME, and in 'name' enter the domain or subdomain you wish (e.g. `notes.mysite.com`). In 'target', enter the value `publish-main.obsidian.md`. Do not include your personal sub-URL in this value, as Obsidian Publish handles this from your configuration. 
+62 93: 3. Go to SSL/TLS and set the SSL/TLS encryption mode to `Full`. This will configure the SSL/TLS certificate automatically.
+62 94: 
+62 95: Once you are done with configuring CloudFlare, you can head to your site options in Obsidian, and set the URL to your domain or subdomain. This allows our server to associate the domain to your site.
+62 96: 
+62 97: Troubleshooting: If your custom domain setup ends up in a redirect loop, it's likely that the encryption mode in CloudFlare to `Flexible` instead of `Full`.
+62 98: 
+62 99: If you wish to configure both `mysite.com` and `www.mysite.com` to Obsidian Publish, you will need to create a [Page Rule](https://support.cloudflare.com/hc/en-us/articles/200172336-Creating-Page-Rules) as follows:
+62 100: - URL match: `www.mysite.com/*`
+62 101: - Foward URL - 301 Permanent Redirect
+62 102: - Redirect URL: `https://mysite.com/$1`
+62 103: 
+62 104: Once you create the page rule, you should also create a CNAME record for `www.mysite.com` just like you created for `mysite.com`
+62 105: 
+62 106: #### Proxy/redirect setup
+62 107: 
+62 108: If you wish to host your own web server and setup your own SSL encryption, you can choose this option. If you are already hosting a website under your domain or subdomain, you can also use this option and setup your website to load your Obsidian Publish site under a specific URL path, instead of hosting the full site.
+62 109: 
+62 110: Simply proxy all requests under that URL path to `https://publish.obsidian.md/serve?url=mysite.com/my-notes/...` and **configure the site options in Obsidian to the same URL path** by setting **Custom URL** to `mysite.com/my-notes`.
+62 111: 
+62 112: ##### NGINX
+62 113: 
+62 114: ```nginx
+62 115: location /my-notes {
+62 116:   proxy_pass https://publish.obsidian.md/serve?url=mysite.com/my-notes/;
+62 117:   proxy_ssl_server_name on;
+62 118: }
+62 119: ```
+62 120: 
+62 121: ##### Apache
+62 122: 
+62 123: Add to `.htaccess`:
+62 124: 
+62 125: ```htaccess
+62 126: RewriteEngine  on
+62 127: RewriteRule    "^my-notes/(.*)$"  "https://publish.obsidian.md/serve?url=mysite.com/my-notes/$1"  [L,P]
+62 128: ```
+62 129: 
+62 130: Note: mod_rewrite must be enabled, and you may also need to configure [SSLProxyEngine](https://stackoverflow.com/questions/40938148/reverse-proxy-for-external-url-apache)
+62 131: 
+62 132: ##### Netlify
+62 133: 
+62 134: ```
+62 135: [[redirects]]
+62 136:   from = "https://mysite.com/my-notes/*"
+62 137:   to = "https://publish.obsidian.md/serve?url=mysite.com/my-notes/:splat"
+62 138:   status = 200
+62 139:   force = true
+62 140: ```
+62 141: 
+62 142: ##### Vercel
+62 143: 
+62 144: In `vercel.json` [configure rewrites](https://vercel.com/docs/configuration#project/rewrites):
+62 145: 
+62 146: ```json
+62 147: {
+62 148:   ...
+62 149: 
+62 150:   "rewrites": [
+62 151:     {
+62 152:       "source": "/my-notes/",
+62 153:       "destination": "https://publish.obsidian.md/serve?url=mysite.com/my-notes"
+62 154:     },
+62 155:     {
+62 156:       "source": "/my-notes/:path*",
+62 157:       "destination": "https://publish.obsidian.md/serve?url=mysite.com/my-notes/:path*"
+62 158:     }
+62 159:   ]
+62 160: }
+62 161: ```
+62 162: 
+62 163: ##### Supported HTTP X-Headers
+62 164: 
+62 165: Alternatively, if your proxy service does not allow query paths, you can use `https://publish.obsidian.md/` with a custom header `x-obsidian-custom-domain` set to your site url `mysite.com/my-subpath`.
+62 166: 
+62 167: #### Custom domain post-setup issues
+62 168: 
+62 169: Once you setup your custom domain, if you've visited your site from your previous `https://publish.obsidian.md/slug` link, you may have to clear your browser cache for certain things (like fonts, graphs, or password access) to work properly. This is due to the cross-domain security restrictions that are imposed by modern browsers. The good news is that readers of your site should never run into issue this if you only let visitors use your custom domain.
+62 170: 
+62 171: #### Redirect old site to custom domain
+62 172: 
+62 173: If you'd like to redirect your visitors from the old `publish.obsidian.md` site to your new custom domain, there is an option you can enable in the custom domain settings page which will do just that.
+62 174: 
+62 175: ### Coming up
+62 176: 
+62 177: Obsidian Publish is still in its early days. Here are some features we plan to add:
+62 178: 
+62 179: - Full custom domain support (with SSL certificate provisioning).
+62 180: - Full text search.
+62 181: - More built-in themes.
+62 182: 
+62 183: Please let us know if you have any Obsidian Publish feature requests by submitting a [forum request here](https://forum.obsidian.md/).
+62 184: 
+62 185: ### Pricing
+62 186: 
+62 187: For the pricing of Obsidian Publish, please visit [our pricing page](https://obsidian.md/pricing).
+62 188: 
+62 189: ### Technical details
+62 190: 
+62 191: Obsidian Publish uses Cloudflare as the CDN (content delivery network) to distribute your site across the globe for a faster access. This involves caching copies of the files of your site on some of the 200+ data centers to ensure the lowest latency for your readers and the site remain speedy and loads fast even if your viewer lives far away from our primary servers.
+62 192: 
+62 193: However, this does mean that when you change site settings, publish new content, or unpublish content, visitors might not see the latest version for a short while. Currently, our cache is configured to persist for an hour before it has to be "re-validated" to ensure the content hasn't changed.
+62 194: 
+62 195: If you've just published items but you are still seeing an older version, you can typically perform a "hard refresh" by holding the reload button and choosing "Hard reload" in the dropdown menu. Failing that, you can try clearing the browser cache or disabling cache using the developer tools in the network tab.
+62 196: 
+62 197: #### Hosting media files
+62 198: 
+62 199: While Obsidian Publish allows you to upload video clips, it is not optimized for video delivery. As such, your visitors may find that the videos on your site may not deliver a great experience.
+62 200: 
+62 201: We recommend using a proper video hosting service like YouTube or Vimeo to host your videos for Obsidian Publish. The advantages of using a proper video hosting site includes:
+62 202: - Automatic re-encoding ensures that your videos can be played on all mobile devices regardless of what encoding format you used in your original file.
+62 203: - Dynamic quality adjustment based on bandwidth availability and ensures that videos can be played smoothly without constantly pausing for "buffering".
+62 204: - High efficiency video compression to ensure that visitors don't blow through their data cap when viewing your site.
+62 205: - Global CDN allowing your videos to be loaded fast regardless of where your visitor is located in the world.
+62 206: 
+62 207: ---
+62 208: 
+62 209: ### Related
+62 210: 
+62 211: Refer to the [[Publish|Publish plugin]] for details on publishing your notes. 
+62 212: 
+63 1: Obsidian Sync™ is a paid service to sync notes between vaults on various devices.
+63 2: 
+63 3: ### How Obsidian Sync works
+63 4: 
+63 5: Obsidian Sync is fairly simple: once you hook up local vaults from multiple devices to the same remote vault, changes will be automatically synced between these local vaults, except for files and folders you instruct Obsidian to ignore.
+63 6: 
+63 7: ### Features
+63 8: 
+63 9: Currently, Obsidian Sync features:
+63 10: 
+63 11: - End-to-end encryption.
+63 12: - Version history integrated into Obsidian.
+63 13: - View & restore deleted files.
+63 14: - Synchronize settings, themes, CSS snippets, plugins, and plugin settings.
+63 15: - Selective sync.
+63 16: 	- Exclude certain folders.
+63 17: 	- Toggle syncing for images, audio, video, PDF, and unsupported files.
+63 18: - Switch between multiple remote vaults.
+63 19: 
+63 20: In the future, we'll improve Obsidian Sync with:
+63 21: 
+63 22: - Vault sharing
+63 23: 
+63 24: 
+63 25: ### Enable Obsidian Sync plugin
+63 26: 
+63 27: You can enable Obsidian Sync by enabling the "Sync" plugin under Settings => Core plugins.
+63 28: 
+63 29: ### Setting up remote vaults
+63 30: 
+63 31: Warning: We do not recommend using third party sync services to sync the same vault with Obsidian Sync. [[#Third party sync|More about this later]].
+63 32: 
+63 33: To start syncing, first you need to create a remote vault that stores your encrypted data.
+63 34: 
+63 35: To do that, go to Setting => Sync => Pick remote vault => Choose => Create new vault.
+63 36: 
+63 37: After creating it, you can immediately connect to the vault by clicking on the "Connect" button next to it.
+63 38: 
+63 39: You can choose to either start syncing immediately after connecting, or choose folders to ignore.
+63 40: 
+63 41: ##### Set encryption password 
+63 42: 
+63 43: By default, you need to set an encryption password for your vault. This password is used to encrypt and decrypt your data and is extremely important.
+63 44: 
+63 45: You'll be asked for the password any time you setup sync with an encrypted vault. ==If you forget or lose the password, your data will remain encrypted and unusable forever. We are unable to recover your password or any encrypted data for you.== Your local files are not affected.
+63 46: 
+63 47: You can also choose to turn off the "Custom end-to-end password" option to leave managing the encryption key to us. This is still fairly secure and provides the convenience of not having to remember a password.
+63 48: 
+63 49: ### Check sync status
+63 50: 
+63 51: After connecting to a remote vault, you can check the current sync status in the bottom status bar. You can hover over the status icon to read more about what's going on.
+63 52: 
+63 53: Clicking on the status icon will open up sync settings as a shortcut.
+63 54: 
+63 55: ### Version history
+63 56: 
+63 57: As you edit your notes, versions are saved approximately every 10 seconds. ==Version history is only available for notes, not attachments.==
+63 58: 
+63 59: You can right click a file in the file explorer pane to see its version history. This option is also available in the more options menu.
+63 60: 
+63 61: After selecting a version in the left column in the version history screen, you can restore the file to this version by clicking on the "Restore" button.
+63 62: 
+63 63: ### Deleted files
+63 64: 
+63 65: After you delete a file, you can view it in Setting => Sync => Deleted files => View.
+63 66: 
+63 67: Clicking on a deleted file will open its version history. You can then choose to restore the file back to a previous version.
+63 68: 
+63 69: ### Selective sync
+63 70: 
+63 71: You can selectively sync files by folder or file type. ==Selective sync only applies to future changes. Any files that have already been uploaded will not be deleted even if you choose to ignore them. Please be sure to configure it before starting the sync process.==
+63 72: 
+63 73: ##### Exclude folders
+63 74: 
+63 75: You can uncheck folders in Settings => Sync => Excluded folders => Manage to prevent them from getting synced.
+63 76: 
+63 77: Excluded folders will be ignored when both uploading and download changes.
+63 78: 
+63 79: #### File types
+63 80: 
+63 81: You can toggle sync for images, audio, video, PDFs, and unsupported files under Settings => Sync => Selective sync.
+63 82: 
+63 83: ### Synchronizing settings
+63 84: 
+63 85: In addition to your notes and attachments, Obsidian Sync offers individual toggles to synchronize these files:
+63 86: - The main app settings, including editor settings, files & links settings, etc.
+63 87: - Appearance settings, including dark mode, selected theme, and enabled snippets.
+63 88: - Themes and snippets that has been downloaded.
+63 89: - Hotkeys.
+63 90: - Which core plugins are enabled.
+63 91: - Core plugin settings.
+63 92: - Which community plugins are enabled.
+63 93: - Downloaded/installed community plugins, and their settings.
+63 94: 
+63 95: You can choose which ones to synchronize with your remote vault to best suite your use case of Obsidian.
+63 96: 
+63 97: Keep in mind that Obsidian does not apply your settings until you restart the application, or reload the vault. This normally isn't a problem on mobile since the app restarts often, but you may notice that settings you set on one desktop device is "synced" to another device, but doesn't take effect until the next restart.
+63 98: 
+63 99: Sync will respect your selection of the settings folder override in case you've set it to a folder other than `.obsidian`. You can take advantage of this to create different profiles in your remote vault to sync your settings. A common use case, for example, is to use a different profile for mobile devices vs desktop devices.
+63 100: 
+63 101: #### Settings version history
+63 102: 
+63 103: If something goes wrong, and you lost some of your settings, you can always revert the affected settings file through the "Settings version history" section in Sync.
+63 104: 
+63 105: ### Third party sync
+63 106: 
+63 107: If you are using Obsidian Sync, we do not recommend using third party sync services like Dropbox, Google Drive, OneDrive, or iCloud to sync the same vault between the same devices using Obsidian Sync. Doing so may cause conflicts, duplicate files, or in the worst case, could lead to corrupted files.
+63 108: 
+63 109: If you do setup Obsidian Sync and a third party sync service to sync a vault between two devices, then the following will happen:
+63 110: - If Obsidian Sync "wins" the race and syncs your file first, then your third party sync service will generate a "conflicted copy".
+63 111: - If your third party sync service "wins" the race and syncs your file first, then Obsidian Sync will attempt to merge the two slightly different versions, often causing the last few characters you just typed to be rolled back.
+63 112: 
+63 113: If you wish to maintain a backup of your vault using a third party sync service, you can still do so by setting up your sync provider on your primary single device, but not on your secondary devices. This will ensure that your third party sync service does not "race" with Obsidian Sync.
+63 114: 
+63 115: ### FAQ
+63 116: 
+63 117: ##### What is end-to-end encryption?
+63 118: 
+63 119: End-to-end encryption means the data is encrypted from the moment it leaves your device, and can only be decrypted using your encryption key once it's back on one of your devices.
+63 120: 
+63 121: We do not have the capability of reading your data, nor do any potential eavesdroppers, such as your internet service provider.
+63 122: 
+63 123: In the rare case of a complete server breach, your data will remain encrypted, and nobody will have the ability to decrypt your files without knowing your password.
+63 124: 
+63 125: ##### How many remote vaults can I have?
+63 126: 
+63 127: Each account with Obsidian Sync can have up to 5 remote vaults.
+63 128: 
+63 129: ##### How long is version history kept?
+63 130: 
+63 131: Version histories are kept for up to one year before we clean it up.
+63 132: 
+63 133: ##### How large can each remote vault be?
+63 134: 
+63 135: At the moment, each remote vault can have up to 4 GB of data, including version history.
+63 136: 
+63 137: ##### Is my data encrypted on my hard disk?
+63 138: 
+63 139: No, your data is still in plain text on your hard disk. If you wish to encrypt it from people who use your computer, you should look for a disk encryption solution.
+63 140: 
+63 141: ##### How long is my data kept after my subscription expires?
+63 142: 
+63 143: Data in your remote vaults, including version history, is kept for one month for you, after your subscription expires.
+63 144: 
+63 145: As long as you renew within one month, there should be no impact on your usage.
+63 146: 
+63 147: ##### Can I use Obsidian Sync as a backup solution?
+63 148: 
+63 149: Obsidian Sync is designed as a data synchronization service, rather than a backup service.
+63 150: 
+63 151: With version history, it does provide some backup features, however we still recommend having additional backup measures.
+63 152: 
+63 153: Obsidian Sync is currently in beta testing, so we strongly recommend having backups, in case of software bugs and glitches.
+63 154: 
+63 155: ##### Should I pick my own encryption password?
+63 156: 
+63 157: Pick your password if you require the highest level of security and privacy. This guarantees that anyone who doesn't know your password will never be able to read your notes.
+63 158: 
+63 159: Letting us manage your encryption key is more convenient, and you do not risk forgetting or losing your password.
+63 160: 
+63 161: Your local vault is not affected by this option. If you properly backup your local vault, this may not be a problem for you.
+63 162: 
+63 163: ##### Is the end-to-end encryption strong?
+63 164: 
+63 165: We use industry-standard AES-256 to encrypt your data. AES-256 is a military-grade encryption specification that is widely used in online banking.
+63 166: 
+63 167: Here are the technical details for those interested:
+63 168: 
+63 169: - Key derivation function used: scrypt with salt
+63 170: - Encryption algorithm used: AES-256 using GCM
+63 171: 
+63 172: ##### What does the `vault limit exceeded` error mean?
+63 173: 
+63 174: Each vault using Obsidian Sync has a maximum size of 4gb. This error indicates your vault has exceeded that limit in size. Don't forget: attachments and version history contributes to the maximum, so you may exceed your 4gb limit even if your vault's actual size is less than 4gb. 
+63 175: 
+63 176: If you see this error, Obsidian can help you identify and purge large files from the Vault. Go to the Obsidian Sync settings in Preferences => Sync and look for the "Vault size over limit" options. 
+63 177: 
+64 1: Obsidian Unlimited is a way to contribute a custom amount to Obsidian develop as you wish. You can also contribute multiple times at any time.
+64 2: 
+64 3: You can find this option at the bottom of the page in [your Obsidian account page](https://obsidian.md/account) after logging in.
+64 4: 
+64 5: Special thanks to the VIPs who proposed this "feature" to support Obsidian even more.
+64 6: 
+64 7: ==Contributing to Obsidian Unlimited does not let you give any additional features or benefits.== For this reason, we recommend upgrading to [[Catalyst license]] first, if you're looking to access [[Insider builds]] or get cool badges in our community.
+64 8: 
+64 9: Note: we've set the minimal amount to $5 (so that processing fees would make sense).
+65 1: ## Obsidian Catalyst and Unlimited
+65 2: 
+65 3: [[Catalyst license]] purchases and Obsidian Unlimited donations are to support Obsidian's development. ==They are not refundable.==
+65 4: 
+65 5: Although they might give you exclusive early access to insider builds or feature betas (such as mobile app or other major features), we do not sell them as a product.
+65 6: 
+65 7: We cannot provide refunds for Catalyst purchases. Thanks for your understanding!
+65 8: 
+65 9: If there is any issue with a transaction, please reach out to support@obsidian.md or on Discord.
+65 10: 
+65 11: ## All other services
+65 12: 
+65 13: For all other services and licenses, including [[Commercial license]], [[Obsidian Publish]], and [[Obsidian Sync]], you can request a full refund within 3 days of purchase with no questions asked. Please reach out to support@obsidian.md or on Discord.
+65 14: 
+65 15: Beyond 3 days, if you need a refund due to exceptional circumstances, feel free to reach out to us too.
+66 1: The Android app is now publicly available, and a link to the Play store listing can be found at https://obsidian.md/mobile
+66 2: 
+66 3: ## Where are my vaults stored?
+66 4: 
+66 5: On Android, the Obsidian home folder is stored in the public documents folder under `Documents/Obsidian`. The public `Documents` folder is typically stored in SD card or emulated storage.
+66 6: 
+66 7: Any folder in this home folder will be considered a vault. If you sync or copy a vault folder into this directory, it can be recognized when you open Obsidian.
+66 8: 
+66 9: ## Sync
+66 10: 
+66 11: On Android, you may choose to use [[Obsidian Sync]] to synchronize your files, or use any third party sync provider that can perform sync in the background.
+66 12: 
+66 13: ### Obsidian Sync
+66 14: 
+66 15: As with Obsidian desktop, we provide our built-in paid [[Obsidian Sync]] service.
+66 16: 
+66 17: To setup a synced vault through Obsidian Sync, first create a new empty local vault. You should name it the same as your desktop app to make [[Using obsidian URI|inter-vault URIs]] work.
+66 18: 
+66 19: Once the empty vault is open, open the left sidebar, tap the settings button, and setup Obsidian Sync just like you did on Desktop:
+66 20: 
+66 21: 1. Login to your Obsidian account in the Account tab.
+66 22: 2. Enable the Sync core plugin.
+66 23: 3. Open settings, and choose the "Sync" tab under "Plugin options".
+66 24: 4. Choose the remote vault to sync with.
+66 25: 5. Keep the app open until all your files have synced over.
+66 26: 
+66 27: To view the sync status of Obsidian Sync, swipe to pull out the right drawer, and you should see the status indicator just like it shows on the desktop app. Tap on it to get more information, such as viewing the sync log to debug any issues.
+66 28: 
+66 29: ### Third party sync
+66 30: 
+66 31: You can also use your preferred sync solution to keep the local folder on your phone in sync with other devices.
+66 32: 
+66 33: There are apps on the Play Store that let you sync a folder on your phone with other devices, for example [Dropsync](https://play.google.com/store/apps/details?id=com.ttxapps.dropsync) or [FolderSync](https://play.google.com/store/apps/details?id=dk.tacit.android.foldersync.lite).
+66 34: 
+66 35: ## Storage Permission
+66 36: 
+66 37: When starting Obsidian, you may notice that it prompts for permission to access your device's documents and media.
+66 38: 
+66 39: In an ideal world, we'd prefer to only ask for access rights to the vault folders you choose. However, Android's privacy-friendly file permission API (also known as "scoped storage") has a few restrictions that makes it impossible for Obsidian to function properly.
+66 40: 
+66 41: The two biggest roadblocks are:
+66 42: - Scoped storage performs many extra permission checks for every single file access, causing significant performance degradation when opening and using Obsidian.
+66 43: - Scoped storage does not provide a way to watch for external changes, which is critical when using Obsidian with a third-party synchronization tool.
+66 44: 
+66 45: Google specifically gives instructions for developers of this kind of apps a special permission. Obsidian belongs to two categories in the list of exceptions: "document management apps", and "on-device file search". [Read more about it here.](https://developer.android.com/training/data-storage/manage-all-files)
+66 46: 
+67 1: Names are not listed by amount of contribution, but alphabetically (or at least we try!).
+67 2: 
+67 3: ### Dev team
+67 4: 
+67 5: - Licat (Shida Li)<span class='flair mod-pop'>Obsidian office cat</span>
+67 6: - Silver (Erica Xu)<span class='flair mod-pop'>Team Little Silvers</span>
+67 7: 
+67 8: ### Moderators
+67 9: 
+67 10: - anthonyg ([Anthony Gold](https://www.anthonypgold.com/))<span class='flair mod-pop' style='background-color:#F1C40F;color:#000;'>Team Gold</span><span class='flair mod-pop'>Think Tank</span>
+67 11: - argentum<span class='flair mod-pop'>Team Little Silvers</span><span class='flair mod-pop'>Linux master</span><span class='flair mod-pop'>Zotero master</span>
+67 12: - cotemaxime ([Maxime Côté](https://www.maximecote.me/))<span class='flair mod-pop'>Linux master</span>
+67 13: - death_au ([website](https://about.me/death.au))<span class='flair mod-pop'>the Magician</span><span class='flair mod-pop' style='background-color:#F1C40F;color:#000;'>Team Gold</span>
+67 14: - Eleanor ([Eleanor Konik](https://eleanorkonik.com))<span class='flair mod-pop'>Halp Obsidian turned me into a dev</span>
+67 15: - koala<span class='flair mod-pop'>Extreme Bug Finder</span>
+67 16: - Leah ([Leah Ferguson](http://leahferguson.com))<span class='flair mod-pop'>Roll for initiative!</span><span class='flair mod-pop'>Non-techy Apple geek</span>
+67 17: - liam ([Liam Cain](https://liamca.in/)) <span class='flair mod-pop'>Maker of Calendar</span><span class='flair mod-pop'>Plugin API Master</span><span class='flair mod-pop'>Volcano Veteran</span>
+67 18: - mediapathic ([Steen Comer](http://mediapathic.net/))<span class='flair mod-pop'>Bad Cop</span>
+67 19: - nickmilo ([Nick Milo](https://publish.obsidian.md/lyt-kit/_START+HERE))<span class='flair mod-pop'>Mappy McMapster</span>
+67 20: - Reggie<span class='flair mod-pop' style='background-color:#0a8c28'>Go green or go home</span>
+67 21: - rigmarole ([Chris Lesage](http://rigmarolestudio.com))<span class='flair mod-pop'>Forum master</span>
+67 22: - ryanjamurphy ([Ryan](https://fulcra.design/) [J. A. Murphy](https://axle.design/))<span class='flair mod-pop'>That funny guy</span><span class='flair mod-pop'>Apple Fanboy</span><span class='flair mod-pop'>Forum master</span>
+67 23: - Sam Baron ([website](https://sambaron.coach/))<span class='flair mod-pop'>Think Tank</span><span class='flair mod-pop'>Forum master</span>
+67 24: - Santi Younger ([website](https://santiyounger.com/))<span class='flair mod-pop'>Forum master</span>
+67 25: - WhiteNoise<span class='flair mod-pop'>Think Tank</span><span class='flair mod-pop'>Zotero master</span><span class='flair mod-pop'>Bug report exterminator</span>
+67 26: - Carl the Turtle<span class='flair mod-pop'>Online 24/7</span><span class='flair mod-pop'>Easily triggered</span><span class='flair mod-pop'>Good and pure</span><span class='flair mod-pop' style='background-color:#0a8c28'>Go green or go home</span>
+67 27: 
+67 28: ### Translators
+67 29: 
+67 30: - Andrea Brandi (Italian)
+67 31: - canzi-teacher, 蚕子 (Chinese Simplified)
+67 32: - Daniel Mathiot (French)
+67 33: - Henrik Falk (Danish)
+67 34: - JxhnnyUt8h (Russian) 
+67 35: - k-andzhanovskii, Константин Анджановский (Russian)
+67 36: - lisachev, Сергей Лисачев (Russian)
+67 37: - mafsi, (Patrick Danilevici) (Română)
+67 38: - taksas, 中山 拓海 (Japanese)
+67 39: - VKondakoff, Валерий Кондаков (Russian)
+67 40: - yo-goto, ぱだわん (Japanese)
+67 41: 
+67 42: ### Builds
+67 43: 
+67 44: - jstone for maintaining our builds on flathub
+67 45: - adamgibbins and ran-dall for maintaining our builds on homebrew
+67 46: 
+67 47: ### Documentation
+67 48: 
+67 49: The first version of the help vault was written by Silver. Later part of it was written by [@mediapathic](http://mediapathic.net), with a big help from Reggie. We also got corrections from the many pairs of eyes in the Discord and forum community.
+67 50: 
+67 51: We now accept pull requests to the help vault in [our docs repo](https://github.com/obsidianmd/obsidian-docs/).
+67 52: 
+67 53: ##### Add your name
+67 54: 
+67 55: If you're a translator, please make a pull request to add "Your Name (contributed language)" to the section above. Please keep the list of names alphabetical, thanks!
+67 56: 
+67 57: If your name is not in English and can't be alphabetically listed, use this format: `your-github-username, [your name in your language] (Language name)`.
+67 58: 
+68 1: ## About this site
+68 2: Welcome to Obsidian's official help vault! This page contains a quick index to the things that you may be interested in.
+68 3: 
+68 4: See public hosted version: https://publish.obsidian.md/help
+68 5: 
+68 6: If you found mistakes or missing information, you can contribute to this site here: https://github.com/obsidianmd/obsidian-docs/
+68 7: 
+68 8: ## Other languages
+68 9: 
+68 10: This help site is also available in other languages:
+68 11: 
+68 12: - [Italiano](https://publish.obsidian.md/help-it)
+68 13: - [中文](https://publish.obsidian.md/help-zh)
+68 14: - [日本語](https://publish.obsidian.md/help-ja)
+68 15: - [Dansk](https://publish.obsidian.md/help-da)
+68 16: - [Русский](https://publish.obsidian.md/help-ru)
+68 17: - [Tiếng Việt](https://publish.obsidian.md/help-vi)
+68 18: 
+68 19: ## Credits
+68 20: 
+68 21: [[Credits|Our credits page]] lists all the amazing people who made Obsidian possible.
+68 22: 
+68 23: To read more about the makers, see the [about page](https://obsidian.md/about) on our official website.
+68 24: 
+68 25: ## Obsidian
+68 26: 
+68 27: ### About the app
+68 28: 
+68 29: - See [[Obsidian|our philosophy for the app]].
+68 30: 
+68 31: ### Getting started
+68 32: 
+68 33: - Looking for some functionality? Try the  [[command palette]], which contains all available actions you need to work with Obsidian. Just press `Ctrl/Cmd-P` and start typing.
+68 34: - Learn our flavor of Markdown with [[Format your notes|how to format your notes]].
+68 35: - Check out some tips on [[Create notes|creating new notes]].
+68 36: - Check out some tips on [[Internal link|creating internal links]].
+68 37: - Learn how to [[Embed files|embed other notes or attachments]].
+68 38: - See the [[Keyboard shortcuts|default keyboard shortcuts]].
+68 39: 
+68 40: ### Official plugins
+68 41: 
+68 42: ![[List of plugins#Current list of official plugins]]
+68 43: 
+68 44: ### Advanced guides
+68 45: 
+68 46: - [[Working with tags]]
+68 47: - [[Working with backlinks]]
+68 48: - [[Working with multiple notes]]
+68 49: - [[Pane layout]]
+68 50: - [[Working with multiple vaults]]
+68 51: - [[Working with multiple cursors]]
+68 52: - [[Using obsidian URI]]
+69 1: The iOS app is now publicly available, and a link to the app store listing can be found at https://obsidian.md/mobile
+69 2: 
+69 3: ## Where are my vaults stored?
+69 4: 
+69 5: If you choose, you can store your vaults in iCloud Drive. These vaults can be found in your iCloud Drive folder, under an app folder named "Obsidian" that shows the Obsidian logo.
+69 6: 
+69 7: If you choose not to use iCloud for a vault, then it will be stored in the sandboxed file system of the Obsidian app. The local vaults are accessible from any other apps that support picking a folder from the file system. As such, apps like Working Copy can be used to sync with Obsidian's local vaults.
+69 8: 
+69 9: ==Be aware that if you choose to store your vault locally, they will be automatically deleted by iOS when you uninstall Obsidian's app.==
+69 10: 
+69 11: ## Sync
+69 12: 
+69 13: ### Quick start
+69 14: 
+69 15: If you already have a vault on your desktop, here's the two ways to sync your vault to mobile and access it:
+69 16: 
+69 17: - [[#iCloud Drive Sync]]
+69 18: - [[#Obsidian Sync]]
+69 19: 
+69 20: The two current officially supported sync solutions are iCloud and Obsidian Sync.
+69 21: Working Copy (git) is another alternative that has been tested to work with Obsidian on iOS.
+69 22: 
+69 23: Currently, there is **no** known support for the following sync services on iOS yet:
+69 24: - Dropbox
+69 25: - Google Drive
+69 26: - OneDrive
+69 27: - Syncthing
+69 28: 
+69 29: If you find out a way to sync using these services on iOS with Obsidian, we would be glad if you can join our Discord server and teach us how to set it up.
+69 30: 
+69 31: In theory, any third party sync providers that can provide background-sync for a specific folder on your device should be able to work, but we are not aware of any other than Working Copy. This is due to the limitations of the highly complex mechanism of cross-app file sharing in iOS, unlike Android which allows easy cross-app file sharing. Because of this, most third party sync providers don't have a proper implementation for background sync on iOS.
+69 32: 
+69 33: Currently Obsidian does not support third party sync providers that expose a virtual file system through FileProvider. We will be attempting this in the future as an improvement.
+69 34: 
+69 35: ### Obsidian Sync
+69 36: 
+69 37: You can follow the same steps as Android's sync as shown below, making sure that you create a non-iCloud folder as we do not recommend using both Obsidian Sync and iCloud Sync concurrently, which has been reported to cause data loss due to [[Obsidian Sync#Third party sync|race conditions]].
+69 38: 
+69 39: ![[Android app#Obsidian Sync]]
+69 40: 
+69 41: ### iCloud Drive Sync
+69 42: 
+69 43: To setup a **new** synced vault through iCloud Drive:
+69 44: 
+69 45: 1. Start the iOS app and choose "Create a new vault";
+69 46: 2. On desktop, using the "Open another vault" option, point to the new vault location in iCloud.
+69 47: 
+69 48: To setup an **existing** vault to be synced through iCloud Drive:
+69 49: 
+69 50: 1. Start the app and choose "Create a new vault";
+69 51: 2. Name it the same as your desktop vault to make [[Using obsidian URI|inter-vault URIs]] work;
+69 52: 3. Wait for iCloud to sync this empty folder to your desktop;
+69 53: 4. Copy and paste everything under your vault to this empty folder, this will now be your synced folder location;
+69 54: 5. On desktop, using the "Open another vault" option, point to the new vault location in iCloud;
+69 55: 6. Wait for iCloud to sync everything to your mobile device.
+69 56: 
+69 57: ### Working Copy
+69 58: 
+69 59: You can alternatively setup Working Copy to use Git to sync your vault on iOS. To do this, you should create an empty local vault on your device first, then you can "Setup Folder Sync" and select a local vault inside the Obsidian app. Then, you can manually commit & push.
+69 60: 
+69 61: ### Third party sync support
+69 62: 
+69 63: Many users asks why Obsidian for Mobile doesn't support their preferred sync solution. Here's a brief explanation on the current state of mobile sync support.
+69 64: 
+69 65: The thing about Obsidian that's different from other apps like 1Writer and iA Writer is that Obsidian works on top of a vault rather than a single note. Many of the core Obsidian functionality depend on the whole vault and all the files inside, such as the link auto-complete, image embedding, tag pane, backlinks, and all the cross-note functionality.
+69 66: 
+69 67: In contrast, most Markdown editing apps simply "open" a single note, let the user perform edits, then save the note back. Because of this, the OS and third party sync providers typically only provide an API for accessing/working with a single file, but not so much for working with a vault (folder of files with potentially subfolders).
+69 68: 
+69 69: For sync, a regular markdown editor app can simply implement the basic "download file when you open a selected file" and "upload the file back when you press save". Obsidian has to download the whole vault to be useful, and keep track of all the modified files (like for example, when you perform a file rename, we might update a bunch of other files for links that has changed due to the rename). On top of that, we need a way to monitor for changes through the sync solution to be able to update our internal caches when files change, to provide accurate links.
+69 70: 
+69 71: Keeping all that in sync with a third party sync provider would be quite tedious - and this is actually part of the reason why most sync providers don't make a proper sync client for mobile and you have to use a third party app (like DropSync or FolderSync) to do it. Unfortunately, such apps don't exist on iOS because of app sandboxing.
+69 72: 
+69 73: ## Known issues
+69 74: 
+69 75: ### iCloud folder on macOS
+69 76: 
+69 77: If you find yourself unable to drag & drop things into the iCloud folder in Finder on macOS, please download the latest Obsidian Desktop release from https://obsidian.md as it contains a fix for this issue. Once it's installed, running the app should automatically cause iCloud to update the folder permissions. If this does not work right away, you may need to restart your machine.
+69 78: 
+69 79: ### Paste menu sometimes not appearing
+69 80: 
+69 81: Some users runs into an issue where tapping on the cursor does not show the paste menu. As a workaround, you can use the three-finger tap gesture to trigger a global edit menu which can be used to paste into the text.
+69 82: 
+70 1: ## Public release
+70 2: 
+70 3: The mobile apps are now officially publicly available. You can find the download links for the public versions at https://obsidian.md/mobile
+70 4: 
+70 5: ## Documentation
+70 6: 
+70 7: For more details on how to use Obsidian for Mobile, including guides for setting up sync, see [[Obsidian Mobile]].
+70 8: 
+70 9: ## Insider builds
+70 10: 
+70 11: If you're a holder of the [[Catalyst license]], you may wish to join our [[Insider builds|insider builds]] for mobile.
+70 12: 
+70 13: To keep feedback and releases centralized as we don't have the capacity to debug and collect feedback via email, we ask Catalyst users who would like to beta test to go through the following steps:
+70 14: 
+70 15: ### Step 1: join our Discord
+70 16: 
+70 17: First of all, please [join our Discord](https://discord.gg/veuWUTm).  
+70 18: 
+70 19: ### Step 2: claim your Catalyst badge to access \#insider-build-mobile channel
+70 20: 
+70 21: If you don't have your badge yet, [[Catalyst license#Discord badge|you can get it in your Account page]].
+70 22: 
+70 23: ### Step 3: get the app via TestFlight (iOS) or APK (Android)
+70 24: 
+70 25: Once you get your badge, you should be able to see the `#insider-build-mobile` channel along with regular channels like `#general` and `#publish`.
+70 26: 
+70 27: To find the instructions for installing the mobile apps, go to `#insider-build-mobile`, and open pinned messages.
+70 28: 
+70 29: On Discord web and desktop, you can open pinned messages of a channel by clicking on the pushpin icon near the search bar at the top. On Discord mobile, you'll need to swipe left to reveal the right sidebar and tap on the pushpin icon at the top.
+70 30: 
+70 31: For the iOS app, look for the TestFlight link. Make sure to open the link on your iPhone or iPad, rather than on your computer. For the Android app, install the APK from the latest pinned messages if there are several of them.
+70 32: 
+70 33: ## How do I provide feedback?
+70 34: 
+70 35: Before reporting an issue or submitting a feature request, please visit [the list of known issues on our forum](https://forum.obsidian.md/t/list-of-known-issues/14286) to see what's already known and on the roadmap.
+70 36: 
+70 37: The current group being rolled out can access the `#insider-build-mobile` channel on Discord as well as the new Mobile category on the forum.
+70 38: 
+70 39: To keep track of bug reports and feature requests, please direct them to the forum as usual. Thank you for trying out our beta!
+70 40: 
+71 1: # Obsidian for Android
+71 2: 
+71 3: See [[Android app]].
+71 4: 
+71 5: # Obsidian for iOS
+71 6: 
+71 7: See [[iOS app]].
+72 1: ## What is Obsidian
+72 2: 
+72 3: Obsidian is a both a Markdown editor and a knowledge base app.
+72 4: 
+72 5: Used in the most basic way, you can edit and preview Markdown files. But its true power lies in managing densely networked knowledge base.
+72 6: 
+72 7: How do we start creating a network, you ask? Let's first start making some [[Internal link|internal links]]!
+72 8: 
+72 9: ## How we're different
+72 10: 
+72 11: ==*We want you to own and control your data*==
+72 12: 
+72 13: We believe in plain text for something as important as your knowledge base. You don't want to put your own brain over someone else's neck, do you? Treat your second brain the same way.
+72 14: 
+72 15: Sync is only a utility to facilitate working on multiple devices, the data will always primarily live on your hard disk.
+72 16: 
+72 17: When the file system replaces the cloud, you get flexible options to work with your files: you can back them up with Dropbox, use Git to do versioning, or encrypt your disk for security. Whatever works on your file system will work on your Obsidian knowledge base.
+72 18: 
+72 19: ==*Links are first-class citizens*==
+72 20: 
+72 21: Links and connections are crucial to discovering the relations between what we know.
+72 22: 
+72 23: Obsidian greatly values this, and encourages it with [[Internal link]] and [[Graph view]], among other things.
+72 24: 
+72 25: As John Locke puts it...
+72 26: 
+72 27: > The acts of the mind, wherein it exerts its power over simple ideas, are chiefly these three:
+72 28: > 1. Combining several simple ideas into one compound one, and thus all complex ideas are made.
+72 29: > 2. The second is bringing two ideas, whether simple or complex, together, and setting them by one another so as to take a view of them at once, without uniting them into one, by which it gets all its ideas of relations.
+72 30: > 3. The third is separating them from all other ideas that accompany them in their real existence: this is called abstraction, and thus all its general ideas are made.
+72 31: 
+72 32:  \- John Locke, An Essay Concerning Human Understanding (1690)
+72 33:  
+72 34: Hierarchy gives us No. 1, and linking gives us No. 2. We're still unsure what No. 3 entails in the context of note-taking, but it might have something to do with programming or macros.
+72 35: 
+72 36: ==*Your own toolkit*==
+72 37: 
+72 38: Note-taking is a highly personal activity. Naturally there is no single all-encompassing solution for everyone.
+72 39: 
+72 40: Instead of providing you with an opinionated and assembled product, [[Obsidian]] gives you a foundation and numerous functional building blocks  to discover and build your own solution.
+72 41: 
+72 42: The foundation is to be able to view files, edit them, and search them. For the minimalist, that's enough.
+72 43: 
+72 44: On top of that, you can add isolated, independent building blocks to add features to your note-taking:
+72 45: 
+72 46: - If you're taking class notes, [[Audio recorder]] and LaTeX math might be useful;
+72 47: 
+72 48: - If you're taking work notes, [[Slides]] and [[Backlinks]] may come in handy;
+72 49: 
+72 50: - If you're a researcher, [[Graph view]] and [[Word count]] might be essential to your toolkit.
+72 51: 
+72 52: We don't expect plugins to be the silver bullet to solve all the problems, but it does get us closer than a monolith solution, without all the features that you don't need cluttering the interface.
+72 53: 
+72 54: We support [[Customizing CSS|custom CSS]] and have a [[Third-party plugins|beta plugin API]], which will enable even more interface customization and support less common use cases.
+72 55: 
+72 56: ## Follow our development
+72 57: 
+72 58: Obsidian is in public beta right now. We have [a roadmap](https://trello.com/b/Psqfqp7I/obsidian-roadmap) that you can check out.
+72 59: 
+72 60: Our Twitter handle is [@obsdmd](https://twitter.com/obsdmd), feel free to follow. We mostly tweet about product updates.
+72 61: 
+73 1: Panes can be linked together. This has two main effects:
+73 2: 
+73 3: - By default, when opening a new [[Preview and edit modes|preview pane]] from an editing pane, the new pane is linked to the old one. This means that any changes you make in the editor will show up in the preview in real time. It also means that scrolling one will scroll the other.
+73 4: 
+73 5: - When a new [[Working with backlinks|Backlink Pane]] is created from a note, it will be linked to that note. This means that backlinks will always be shown for the note that is in that pane. This is useful if you want to reference a set of backlinks but let the regular backlink panel change with whatever other note you are working on.
+73 6: 
+73 7: Linked panes will be marked with a link icon. You can hover the link to see which pane it's linked to, or click the icon to release it, so that they are no longer linked. This will not close the previously-linked pane.
+73 8: 
+74 1: One of the things that makes Obsidian different from other note-taking apps is how easy it is to open multiple files in your preferred configuration.
+74 2: 
+74 3: The window a file gets opened in is what we call a "pane". You can have as many panes as you like.
+74 4: 
+74 5: ### Open new panes
+74 6: 
+74 7: #### Open links
+74 8: 
+74 9: In general, you can click a link to a file while holding Ctrl (on Windows and Linux) or Cmd (on macOS) to open it in a new pane. This includes clicking on files in [[File explorer]], [[Search]] results, [[Backlinks]], [[Graph view]], etc.
+74 10: 
+74 11: The only notable exception is in the editor. Because in the editor, a single click edits the link text rather than following it, `Ctrl/Cmd-Click` is used to follow the link. Therefore, you'll need to hold Shift in addition to Ctrl/Cmd in order to open the link in a new pane.
+74 12: 
+74 13: #### Split current pane
+74 14: 
+74 15: You can also use the "More options" menu option of a pane to select "Split vertically" or "Split horizontally" to open two copies of that file.
+74 16: 
+74 17: #### Open linked views
+74 18: 
+74 19: Some options in the "More options" menu will also open a new pane that's linked to the current pane, such as "Open backlinks" and "Open local graph".
+74 20: 
+74 21: ### Rearrange panes
+74 22: 
+74 23: To move a pane, simply drag the pane icon in the top left corner of the pane. As you drag it around, a visual indicator will appear to show where the pane will be placed. Dropping onto each of the four sides of an existing pane creates a horizontal or vertical split, and dropping in the center swaps positions with the target pane. 
+74 24: 
+74 25: You can also drag panes into the two sidebars. Panes in the sidebar work a bit differently, for more please see the [[Pane layout#Panes in the sidebar]] section below.
+74 26: 
+74 27: ### Panes in the sidebar
+74 28: 
+74 29: There are some differences with panes that live in the sidebars.
+74 30: 
+74 31: #### Sidebar panes can share space with tabs
+74 32: 
+74 33: When your drop a pane onto a sidebar pane, a new tab will be created under that sidebar section. Different panes in the same sidebar section can be accessed by clicking on its tab icon.
+74 34: 
+74 35: #### Sidebar panes do not show titles
+74 36: 
+74 37: This reduces clutter, but also means it's best to keep one or two important files like a scratch pad or the daily note for quick access, rather than having a dozen files open.
+74 38: 
+74 39: To see the title of a file that's in the sidebar, hover over its tab icon.
+74 40: 
+74 41: #### Sidebar can be easily collapsed
+74 42: 
+74 43: If there are panes that you only need to look at from time to time, having them in the sidebar makes it really easy to toggle them with a hotkey or command.
+74 44: 
+74 45: #### Toggle editor and preview in sidebar
+74 46: 
+74 47: The hotkey to toggle between editor and preview only works in the main workspace. In the sidebar, you'll need to right click on the tab icon and select "Preview" or "Edit" to toggle between two modes.
+74 48: 
+74 49: ### Save and load pane layouts
+74 50: 
+74 51: The [[Workspaces]] plugin makes it easy to come back to a particular pane layout. Give it a try!
+74 52: 
+74 53: 
+75 1: Audio recorder is a plugin that lets you make a recording without leaving Obsidian. It's useful for class and meeting notes when you can't catch up for some reason, or for recording important discussions so you don't miss any details.
+75 2: 
+75 3: To use, simply click on the microphone icon in the left panel:
+75 4: 
+75 5: ![[Pasted image 8.png]]
+75 6: 
+75 7: The microphone will become colored while it's actively recording.
+75 8: 
+75 9: Click on it again to finish recording. The audio file is now saved in your [[vault]] and an embed the recording will be added to the end of your current note.
+75 10: 
+76 1: The backlinks plugin shows how the current note is referenced in other notes.
+76 2: 
+76 3: After enabling it, you'll see the backlink count in the status bar.
+76 4: 
+76 5: In the right side bar (if it's expanded), you should also see a panel that shows where the current note gets linked:
+76 6: 
+76 7: ![[Pasted image 9.png]]
+76 8: 
+76 9: Upon expanding the "Unlinked mentions" section, you can also see where the name of the note gets mentioned, but not explicitly linked (in other words, mentioned without the square brackets).
+76 10: 
+77 1: The Command Palette is enabled by default, as it is a very useful way to access nearly all the features of Obsidian without having to remember key strokes. Type `Ctrl/Cmd+P` to activate, then simply type in the name of the command. If a command has a hotkey, it will appear in on the right side.
+77 2: 
+77 3: Custom shorcuts can be added to the Command Palette in Settings => Hotkeys. Click on the `*` icon to the right of each key listed and type whatever key combination you would like.
+77 4: 
+77 5: ### Settings
+77 6: 
+77 7: #### Pinned commands
+77 8: 
+77 9: You can set a few pinned commands that will appear at top of the command palette. This lets you choose them without typing anything. It's a good place to put your most frequently used commands.
+77 10: 
+77 11: Pinned commands are managed on the Command palette options screen under Plugin Options. You can add pinned commands by entering the name in the "New pinned command" field. After you pick a command and hit `Enter`, the command will be added to the list above. You can reorder the list or delete existing pinned commands in the list.
+77 12: 
+77 13: ### Usage tips
+77 14: 
+77 15: - To see a list of all commands along with their shortcut, don't type anything into the prompt. The arrow keys will move up and down the list, and `Return` will activate the command. 
+77 16: 
+77 17: - Search in the command palette is fuzzy, so you can type part of the word to get matches. For example, you can use `trm` to search for "Toggle read mode".
+77 18: 
+77 19: 
+78 1: Daily Notes will create a new note that is automatically named with the current date. If it already exists, it will open that note. This is a useful way to create a daily log, todo list, or a list of links to notes that you have created on a specific day.  
+78 2: 
+78 3: The date format and default folder for Daily Notes can be set in Settings => Plugins, by clicking the gear next to the name.  The default date format is "YYYY-MM-DD" (ISO format). This format means that a list of daily notes, listed in alphabetical order, will also be in chronological order. 
+78 4: 
+78 5: You can create a Daily Note either by clicking on the calendar icon in the left panel, or with the [[Command palette]]. You can also set a hotkey in [[Keyboard shortcuts]].
+78 6: 
+78 7: ### Templates
+78 8: You can define a [[Templates|template file]] for daily notes. This file will be copied into your daily note when it's created, so it's a good place to put tags or links you use every day.
+78 9: 
+78 10: For the daily notes plugin, `{{date}}` and `{{time}}` do not work. Please use `{{date:YYYY-MM-DD}}` and `{{time:HH:mm}}` in your template.
+78 11: 
+79 1: The File explorer shows [[Accepted file formats|the list of files Obsidian can recognize]] in your vault. You can open notes, [[create notes]] and folders, and [[rename notes]] in it. Right clicking on a note or directory in the File explorer will bring up appropriate options, such as renaming or making a copy. This is also the best way to set your default folder for when you [[Embed files]].
+79 2: 
+79 3: It's one of the crucial plugins that we recommend you to keep enabled.
+79 4: 
+79 5: ### Usage tips
+79 6: 
+79 7: 1. If the list of files is cluttering the interface though, you can close it:
+79 8: 
+79 9: ![[Pasted image 15.png]]
+79 10: 
+79 11: 2. You can drag and drop to put one file into another folder.
+79 12: 
+79 13: 3. You can use the sort icon at the top to sort files by file name or last modified time.
+80 1: File recovery is a core plugin to help you recover your data in case of all kind of accidents - user error, power outage, or misbehaving plugins and scripts.
+80 2: 
+80 3: File recovery is default to enabled, because it's too late to enable when you've already lost data.
+80 4: 
+80 5: ## How it works
+80 6: 
+80 7: ### Snapshots
+80 8: 
+80 9: As long as this plugin is enabled, full snapshots of what you're working on get saved at fixed intervals (you can configure this interval). Snapshots get deleted after a fixed amount of retention time.
+80 10: 
+80 11: This process is automatic. By default, snapshots are made every 5 minutes, and snapshots are kept for 7 days.
+80 12: 
+80 13: ### Recovering
+80 14: 
+80 15: In case of data loss, here's how you can find saved snapshots:
+80 16: 
+80 17: 1. Open settings;
+80 18: 2. Open the "File recovery" tab under "Plugin options";
+80 19: 3. Click on the "View" button in "Snapshots" section;
+80 20: 4. In the search bar on the left, enter the name of file you want to recover. If the file name does not show it, it means no snapshots were saved for that file;
+80 21: 5. After selecting a file in the dropdown, a list of snapshots will appear on the left. Select the one you want to recover;
+80 22: 6. The content of that snapshot will show up on the right. You can click "Copy to clipboard" to copy the whole thing, or cherry-pick some of the content.
+80 23: 
+80 24: ## Options
+80 25: 
+80 26: ### Snapshot interval
+80 27: 
+80 28: Minimal number of minutes between two snapshots. Default is 5 minutes.
+80 29: 
+80 30: ### History length
+80 31: 
+80 32: Number of days to keep snapshots around for. Default is 7 days.
+80 33: 
+80 34: ### Clear history
+80 35: 
+80 36: You also have the option to wipe all history. ==Please be careful as this action is irreversible.==
+80 37: 
+80 38: ## Data storage
+80 39: 
+80 40: The file recovery data is stored in [[How Obsidian stores data#System directory|system directory]] in case of vault malfunctioning.
+80 41: 
+80 42: Please note that vaults are identified by their absolute path. If you've moved vault, you will need to move it back to its previous position in order to restore the snapshots while the vault was there.
+81 1: Shows a graph representation of the [[Internal link|internal links]] between your notes.
+81 2: 
+81 3: Notes with more notes referencing it appear as bigger nodes on the graph.
+81 4: 
+81 5: ![[Pasted image 10.png]]
+81 6: 
+81 7: ### Visualization tips
+81 8: 
+81 9: - You can hover each node to highlight its connections, fading everything else.
+81 10: - You can drag nodes around to rearrange the graph. This may be helpful if some nodes are overlaying others.
+81 11: 
+81 12: ### Navigation tips
+81 13: 
+81 14: - To zoom, you can use mouse wheel scroll, as well as the `+` and `-` keys.
+81 15: - To pan around, drag the background or use the keyboard arrow keys.
+81 16: - Hold `Shift` while navigating with the keyboard to speed things up.
+81 17: 
+81 18: ### Custom CSS
+81 19: 
+81 20: Since the graph is rendered using `<canvas>` and WebGL, [[Customizing CSS|CSS]] is unable to affect things like nodes and links. To customize graph view, we have provided a way to convert CSS colors into WebGL commands.
+81 21: 
+81 22: #### The following CSS classes are supported:
+81 23: 
+81 24: ```
+81 25: .graph-view.color-fill
+81 26: .graph-view.color-fill-tag (theme-dependent)
+81 27: .graph-view.color-fill-attachment (theme-dependent)
+81 28: .graph-view.color-arrow
+81 29: .graph-view.color-circle
+81 30: .graph-view.color-line
+81 31: .graph-view.color-text
+81 32: .graph-view.color-fill-highlight
+81 33: .graph-view.color-line-highlight
+81 34: .graph-view.color-fill-unresolved
+81 35: ```
+81 36: 
+81 37: \* theme-dependent means you may have to add `.theme-dark` or `.theme-light` to style it for different themes. See [[#Custom CSS#Defaults]] for explanation.
+81 38: 
+81 39: #### The following CSS rules are supported:
+81 40: 
+81 41: ```css
+81 42:  .graph-view.color-class {
+81 43: 	/* Supports all CSS color directives, like #HEX, rgb and rgba */
+81 44: 	color:   #FFF;
+81 45: 	color:   #FFFFFF;
+81 46: 	color:   rgb(0, 0, 0);
+81 47: 	color:   rgba(0, 0, 0, 1);
+81 48: 	/* Opacity (similar to rgba) will make the color transparent */
+81 49: 	opacity: 0.5;
+81 50: }
+81 51: ```
+81 52: 
+81 53: #### Defaults:
+81 54: 
+81 55: These CSS rules are the ones Obsidian use by default. You may override any of them using an identical or [more specific](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) CSS rule. This applies especially to `.color-fill-tag` and `.color-fill-attachment` As a last resort, add `!important` to the end of your rule.
+81 56: 
+81 57: ```css
+81 58: .graph-view.color-fill,
+81 59: .theme-dark .graph-view.color-fill-tag,
+81 60: .theme-light .graph-view.color-fill-tag,
+81 61: .theme-dark .graph-view.color-fill-attachment,
+81 62: .theme-light .graph-view.color-fill-attachment,
+81 63: .graph-view.color-arrow,
+81 64: .graph-view.color-circle,
+81 65: .graph-view.color-line,
+81 66: .graph-view.color-text,
+81 67: .graph-view.color-fill-highlight,
+81 68: .graph-view.color-line-highlight,
+81 69: .graph-view.color-fill-unresolved {}
+81 70: ```
+82 1: One of the most powerful aspects of [[Obsidian]] is the ability to add new functionality via plugins. It comes with several already, and many more are in development.
+82 2: 
+82 3: You can also build your own Obsidian plugin. See [[Third-party plugins]].
+82 4: 
+82 5: Plugins can be managed through the "Settings" button on the bottom left. Some of them have settings of their own that can be configured by clicking on the gear that appears next to each plugin when it is activated. 
+82 6: 
+82 7: ### Current list of official plugins
+82 8: 
+82 9: 1. [[File explorer]]
+82 10: 1. [[Search]]
+82 11: 1. [[Quick switcher]]
+82 12: 1. [[Graph view]]
+82 13: 1. [[Backlinks]]
+82 14: 1. [[Outgoing links]]
+82 15: 1. [[Tag pane]]
+82 16: 1. [[Page preview]]
+82 17: 1. [[Daily notes]]
+82 18: 1. [[Templates]]
+82 19: 1. [[Note composer]]
+82 20: 1. [[Command palette]]
+82 21: 1. [[Starred notes]]
+82 22: 1. [[Markdown format converter]]
+82 23: 1. [[Zettelkasten prefixer]]
+82 24: 1. [[Random note]]
+82 25: 1. [[Outline]]
+82 26: 1. [[Word count]]
+82 27: 1. [[Slides]]
+82 28: 1. [[Audio recorder]]
+82 29: 1. [[Open in default app]]
+82 30: 1. [[Workspaces]]
+82 31: 1. [[File recovery]]
+82 32: 1. [[Publish]]
+82 33: 1. [[Obsidian Sync|Sync]]
+83 1: It allows you to convert from other variations of Markdown format and link convention to Obsidian format.
+83 2: 
+83 3: Right now you can convert:
+83 4: 
+83 5: - Roam #tags to [[tags]]
+83 6: - Roam `^^highlight^^` to `==highlight==`
+83 7: - Bear `::highlight::` to `==highlight==`.
+83 8: - Zettelkasten `[[UID]]` links to full links `[[UID File Name]]`
+83 9: - Zettelkasten `[[UID]]` links to pretty links `[[UID File Name|File Name]]`, which will show up as just `File Name`
+83 10: 
+83 11: ---
+83 12: 
+83 13: ### Related
+83 14: 
+83 15: - [[Format your notes]]
+84 1: The Note composer plugin allows you to easily merge two note or extract part of a note into its own note.
+84 2: 
+84 3: ## Merge
+84 4: 
+84 5: When working with the file, you can choose "Merge entire file with..." in the More Options menu.
+84 6: 
+84 7: Alternatively, you can open [[Command palette]] and invoke the command "Note composer: Merge current file with another file...".
+84 8: 
+84 9: This will bring up a menu to choose a file to merge into. Once you confirm the merge, all links to the current note will be updated to the merged file.
+84 10: 
+84 11: The current note will be merged to the bottom by default; you can use `Shift-Enter` instead of `Enter` to merge it to the top.
+84 12: 
+84 13: ## Extract
+84 14: 
+84 15: When selecting text, you can either right click on it, select "Extract current selection", or use the [[Command palette]] to find the "Note composer: Extract current selection..." command.
+84 16: 
+84 17: Similar to merging, this will bring up a menu to choose a file to extract into. If no result can be found, a new note will be created. If you want to create a new note instead of using the first result, press `Ctrl-Enter` (or `Cmd-Enter` on macOS).
+84 18: 
+84 19: ## Options
+84 20: 
+84 21: Note Composer has a few helpful plugin options.
+84 22: 
+84 23: ### Text after moving
+84 24: 
+84 25: After you extract a piece of text, it's often a good idea to leave a link to the new file. By default, a link is created. But you can also change this option to have an embed created for you, or insert nothing at all.
+84 26: 
+84 27: ### Template file
+84 28: 
+84 29: When merging or extracting, instead of just sending over the content, you can also apply a template file to it.
+84 30: 
+84 31: This template file can contain the following variables:
+84 32: 
+84 33: - `{{content}}`: this is where the content will be placed. If you do not include this variable, the content will automatically be placed at the bottom of the template.
+84 34: - `{{fromTitle}}`: the name of the note where the new note comes from.
+84 35: - `{{newTitle}}`: the title of the new file. Convenient if you prefer to have a heading at the top of the file that's the same as the file name.
+84 36: - `{{date:FORMAT}}`: you can add multiple dates with your custom format. For example, you can do `{{date:YYYY-MM-DD}}` and it will resolve to the date or time when the note gets created.
+84 37: 
+84 38: ### Confirm file merge
+84 39: 
+84 40: Merging files will delete the file and is destructive, so by default we ask for your confirmation. If you prefer, you can choose to skip this confirmation.
+84 41: 
+84 42: In case you accidentally merged something and want to get it back, consider using the [[File recovery]] plugin to recover it.
+85 1: Opens the current file with default app on your computer. You can access it at the top right corner of the file top bar:
+85 2: 
+85 3: ![[Pasted image 5.png]]
+85 4: 
+85 5: It's useful for editing images or annotating PDFs, among other things.
+85 6: 
+86 1: The Outgoing Links plugin shows the links from the current note at a glance, as well as potential links to be made. If you're familiar with the [[Backlinks]] plugin, you can think of outgoing links as the opposite direction of backlinks.
+86 2: 
+86 3: After enabling the plugin, you should see a new pane in the right sidebar, which contains two sections: "Links" and "Unlinked mentions".
+86 4: 
+86 5: ### Links
+86 6: 
+86 7: The Links sections show links to other files, headings, and blocks. Clicking on a link will take you to that file.
+86 8: 
+86 9: Each type will have its own icon for you to distinguish them; links to files that are not created yet have special icons.
+86 10: 
+86 11: Underneath the title, you can also see the folder path of each file.
+86 12: 
+86 13: ### Unlinked mentions
+86 14: 
+86 15: If any text in the current note matches the name or [[Add aliases to note|alias]] of another note in your vault, you can see the context, highlighted match, and a button to Link it under "Unlinked mentions".
+86 16: 
+86 17: When you hover over the button, it will show the full path of the file if it's not in the vault root. If you have multiple files of the same name, this can help you distinguish them.
+86 18: 
+87 1: The outline plugin shows the list of headings for the current note, and allows you to navigate to another section by clicking on a heading.
+88 1: Page preview lets you preview a page when hovering an internal link, without needing to actually navigate to that page.
+88 2: 
+88 3: ![[Pasted image 13.png]]
+88 4: 
+88 5: This works on the preview pane. In the editor, you can hover a link while holding `Ctrl/Cmd`, which will open the preview too.
+88 6: 
+89 1: The Publish plugin lets you publish notes from your vault onto your site, all from within the Obsidian app.
+89 2: 
+89 3: For more information about the Obsidian Publish™ service, what's included, how it works, and privacy, see the [[Obsidian Publish]] add-on service.
+89 4: 
+89 5: ### Enable the plugin
+89 6: 
+89 7: From within Obsidian => Settings => Plugin, enable the Publish plugin. After that, a Publish icon (which looks like a paper plane) will appear in the ribbon pane.
+89 8: 
+89 9: Once enabled, you can also set a hotkey for this option, or use the command palette to access it.
+89 10: 
+89 11: ### Set up and Configure your site
+89 12: 
+89 13: Within the Publish plugin, you'll see an option to create a site by entering a unique site ID. Once published, your site will be available at `https://publish.obisidian.md/{site-id}`.
+89 14: 
+89 15: After creating a unique site ID, you'll have the option to give your site a name, select a home page, set a theme, and toggle various components such as graph view, table of contents, etc. You can toggle these options by clicking on the gear icon near your site name at the top of the Publish plugin.
+89 16: 
+89 17: ### Select files for publishing
+89 18: 
+89 19: After setting up your site, you can now publish your notes!
+89 20: 
+89 21: With a fresh, empty site, all your notes will appear under the "New" section, meaning they are new to your site. At this point, you may choose which files you want to publish, and then click the "Publish" button.
+89 22: 
+89 23: ==Privacy note: Obsidian Publish has no awareness (nor retention) of any notes you choose not to publish (nor any notes you subsequently remove from your published site).==
+89 24: 
+89 25: #### YAML support for Publish
+89 26: 
+89 27: As of 0.12.12, you can use YAML to flag notes to be published. (You can read more about YAML in Obsidian [[YAML front matter|here]].)
+89 28: 
+89 29: If you set `publish: true`, then new files will be automatically selected the next time you publish changes.
+89 30: 
+89 31: If you set `publish: false`, then the file will not be visble when publishing changes, and will not show up in new/changed files. If this file had been previously published, you will see an option to delete it instead.
+89 32: 
+89 33: If you do not use YAML to flag publish files, the default behaviour is to automatically select changed files, but not new files.
+89 34: 
+89 35: ### Make changes
+89 36: 
+89 37: As you make changes to notes that have already been published, those changes will be automatically selected when you open the Publish plugin dialog. You may uncheck any files you wish not to publish to your site.
+89 38: 
+89 39: ### Change site options
+89 40: 
+89 41: You can change various site options by clicking on the gear icon near your site name when in the "Publish changes" dialogue.
+89 42: 
+89 43: #### Metadata
+89 44: 
+89 45: In this section, you can set site name, home page file (the file visitors see when they land on your site), and manage custom domain (please see [[Obsidian Publish#Custom domain|this guide]] to set up your custom domain).
+89 46: 
+89 47: #### Appearance
+89 48: 
+89 49: Here you can change the theme between light and dark.
+89 50: 
+89 51: If you want more customization, you can look into setting up [[Obsidian Publish#Custom CSS|custom CSS]] and [[Obsidian Publish#Favicon|favicon]].
+89 52: 
+89 53: #### Reading experience
+89 54: 
+89 55: In this section, you can:
+89 56: 
+89 57: - Enable a special mode called "sliding windows" that looks like [Andy Matuschak's notes](https://notes.andymatuschak.org/);
+89 58: - Enable page preview on hover like when using [[Page preview]] plugin in the app;
+89 59: - Configure whether you want readable line length and strict line breaks.
+89 60: 
+89 61: #### Components
+89 62: 
+89 63: Your site comes with a few components that you can toggle on or off. These include:
+89 64: 
+89 65: - File explorer (default on)
+89 66: - Local graph (default on)
+89 67: - Outline (default off)
+89 68: - Backlink at the bottom (default off)
+89 69: - Search bar (default off, requires file explorer)
+89 70: 
+89 71: #### Security
+89 72: 
+89 73: Here you can set passwords to protect your site. Once set, all visitors need to enter one of the passwords to enter your site.
+89 74: 
+89 75: Multiple passwords facilitate sharing with multiple groups. When you no longer wish to share with one group of visitors, you can simply delete that password. Each password can be named for your convenience as well.
+89 76: 
+89 77: As of 2021/01/20, all notes on your site are protected by the same set of passwords.
+89 78: 
+89 79: ### Add linked notes
+89 80: 
+89 81: The "Add linked" button allows you to include for publishing any notes in your vault that are referenced (linked to) by any currently selected notes. This is a good way to ensure there are no dead links on your published site.
+89 82: 
+89 83: By way of example, let's assume you select Note A for publishing. Supposing Note A has links to Note P, Note Q, and Note R, then if you click the "Add linked" button, Notes P, Q, and R will all be selected for publishing along with the currently selected Note A.
+89 84: 
+89 85: Each time you click the "Add linked" button, the Publish plugin will look for links within every currently selected file to include for publication. Please be sure you review the list of selected files before clicking the "Publish" button.
+89 86: 
+89 87: ### Delete published notes
+89 88: 
+89 89: You always have the option of removing any notes that have been published to your site. Within the Publish plugin, all published notes will be listed, of which any/all can be selected for removal. Deleting a note from your site **does not** remove the note from your vault, thus giving you the option to re-publish the note again in the future.
+89 90: 
+89 91: ### Delete entire site
+89 92: 
+89 93: If you'd like to delete an entire site, click the switch-site (arrows) icon near the top of the Publish plugin. Then click the X button to delete your site. Note: this only removes your public site but does not affect any files in your vault. You can always choose to re-publish your notes. 
+89 94: 
+90 1: The Quick switcher lets you jump to other notes without leaving your keyboard. The shortcut to invoke it is `Ctrl/Cmd+O`. Just start typing, and matching filenames will be selected. Use up and down arrows to navigate the results, `Enter` to jump to a result, and  `Esc` to exit the quick switcher. Holding down `Cmd/Ctrl` will cause the note to open in a new pane. 
+90 2: 
+90 3: If you want to create a new note, typing a unique name will cause the Quick Switcher to create it. If the name is similar enough to an existing note, the Quick Switcher will default to opening the original note. To avoid this, holding down `shift` will force creation of a new note with whatever name is in the Quick Switcher. This can be combined with `Cmd/Ctrl` to create the new note in a new pane. 
+90 4: 
+90 5: ![[Pasted image 11.png]]
+90 6: 
+90 7: Before you enter anything, the top 5 most recently visited notes will be shown, so it's also useful to quickly switch two notes by doing `Ctrl/Cmd+O` → `Down arrow` → `Enter`.
+90 8: 
+90 9: 
+91 1: Random note does just that, opens a note at random from your Vault. Many people find this useful for surfacing thoughts they had not considered in a long time, or spot checking for things that they may have forgotten to link.
+91 2: 
+91 3: After you enable the Random Note plugin, you can create a [[Custom hotkeys|custom hotkey]] that opens a note at random.
+92 1: ![[Search.png]]
+92 2: 
+92 3: Search is a powerful feature, and has the potential to be confusing. In most cases, if you just type what you want to find, it will work. But search has many capabilities for narrowing down to find exactly what you want.
+92 4: 
+92 5: ## Quick tips
+92 6: 
+92 7: ### Start searching
+92 8: 
+92 9: You can invoke search by pressing `Ctrl-Shift-F` or `Cmd-Shift-F`. You can also customize this hotkey in Settings => Hotkeys. When search is invoked, focus will be automatically put in the search bar so you can start typing your query right away.
+92 10: 
+92 11: ### Search selected text
+92 12: 
+92 13: After you select text, you can search for it by simply invoking search like above.
+92 14: 
+92 15: ## Search history
+92 16: 
+92 17: Obsidian will remember your most recently used search queries.
+92 18: 
+92 19: These queries will be presented to you when your search query is empty. You can click on any one of them to search for it again, allowing you to easily re-run previous queries.
+92 20: 
+92 21: To clear search history, simply click on the "X" button.
+92 22: 
+92 23: ## Search Settings
+92 24: 
+92 25: There are a couple of toggles available while searching:
+92 26: 
+92 27: - `Match case` toggle case sensitive matching, but note that it can be overridden on a per-search basis using the `match-case:` and `ignore-case:` operators explained above.
+92 28: - `Explain search term` will show you what the search query actually does in plain terms.
+92 29: - `Collapse results` will toggle between just showing matching note names and showing the lines in which matches appear. These extended results can be toggled for each note by clicking on the folding triangle next to the file name.
+92 30: - `Show more context` will expand the display of the matches to show more text around the match.
+92 31: - `Change sort order` sorts the results by various orders, similar to how files are sorted in the [[File explorer]].
+92 32: 
+92 33: ## Copy search results
+92 34: 
+92 35: To quickly and easily take your search results to a list, use the "copy search result" option.
+92 36: 
+92 37: You can customize whether you want to show paths, which link style to use (wikilink or Markdown link), and how you want your list to appear.
+92 38: 
+92 39: ## Embed search results
+92 40: 
+92 41: You can embed search results in a note.
+92 42: 
+92 43: For example, if you write:
+92 44: 
+92 45: ```query
+92 46: embed OR search
+92 47: ```
+92 48: 
+92 49: You should see this embedded search view (note: it doesn't work on [[Obsidian Publish]] as of 2020/01/18):
+92 50: 
+92 51: ```query
+92 52: embed OR search
+92 53: ```
+92 54: 
+92 55: ## Search syntax
+92 56: 
+92 57: ### Combining sub-queries
+92 58: 
+92 59: When crafting a search query, remember that clicking "Explain Search Term" will give an explanation of what is being searched for, which can be very useful when debugging a complicated search.
+92 60: 
+92 61: - Words in the search query separated by space will be searched independently in each note. For example `foo bar` will find a note that includes both `foo` and `bar` anywhere in it.
+92 62: - `"Quoted strings"` can be used to search multiple consecutive words separated by space, or in other words, a phrase. So, searching for `"foo bar"` with quotes will only find notes that include those words next to each other. You can use backslash `\"` to escape double quotes if you actually want to search for a string that includes quotes. And `\\` will do the same for backslash.
+92 63: - Boolean operations can be used. Use `OR` to match one or another. Use `-` to negate a query. The space character is used for boolean "and".
+92 64:   - For example: `foo OR bar` will find all notes that contain either of those words, they don't have to be in the same note. `foo -bar` will find all notes that contain `foo`, but not if they also contain `bar`.
+92 65: - Parenthesis can be used to group boolean operations. For example `((a OR b) (c OR d))`. This can be useful when crafting complex searches to make sure things happen in the order you want.
+92 66: - Regular expressions (regex) can now be used in search. Use forward slash to denote a regular expression. For example: `/[a-z]{3}/`. Obsidian accepts the JavaScript flavor regular expressions. You can learn more about it [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).
+92 67: 
+92 68: ### Search operators
+92 69: 
+92 70: Several special operators are available. Some operators allow nesting queries using parenthesis, for example: `file:("to be" OR -"2B")`. You can use `-` to exclude specific results from search, for example: `foo -tag:#bar`.
+92 71: 
+92 72: - `file:(...)` will perform the following subquery on the file name. For example: `file:.jpg`. If you use Zettelkasten-style UIDs, this can be useful for narrowing a time range, for example `file:202007`for files created in July of 2020.
+92 73: - `path:(...)` will perform the following subquery on the file path, absolute from the root. For example: `path:"Daily Notes/2020-07"`.
+92 74: - `content:(...)` will perform the following subquery on the file content. For example: `content:"happy cat"`.
+92 75: - `match-case:(...)` and `ignore-case(...):` will override the case sensitive match logic for the following subquery.
+92 76: - `tag:` will search for your specified tag within a file, for example `tag:#work`. This is faster and more accurate than searching for the tag in plaintext `#work`, as it uses the cached information and ignores text in code blocks and sections that aren't markdown text.
+92 77: - `line:(...)` will perform the subquery on a line-by-line basis, rather than a file-by-file basis. For example, if you search for `foo bar`, this could match a file that has `foo` in the first paragraph and `bar` in the last paragraph. Searching for `line:(foo bar)` will only match if `foo` and `bar` are on the same line.
+92 78: - `block:(...)` will perform the subquery on a block-by-block basis, where each block defined as a markdown block, typically separated by empty lines or list items. This is expensive computationally as it requires parsing each file, which means this is likely slower than other modes.
+92 79: - `section:(...)` will perform the subquery on a section-by-section basis, where each section is the text between two headings, including the first heading.
+92 80: - `task:(...)` will perform the subquery only on each [[Format your notes#Task list|task]] and on a block-by-block basis. Use `task:""` to match all tasks.
+92 81: - `task-todo:(...)` will perform the subquery only on each _uncompleted_ [[Format your notes#Task list|task]] and on a block-by-block basis. Use `task-todo:""` to match all uncompleted tasks.
+92 82: - `task-done:(...)` will perform the subquery only on each _completed_ [[Format your notes#Task list|task]] and on a block-by-block basis. Use `task-done:""` to match all completed tasks.
+92 83: 
+93 1: Slides lets you do simple presentations right inside Obsidian.
+93 2: 
+93 3: ### Usage tips
+93 4: 
+93 5: 1. To separate slides, use newlines and the `---` separator.
+93 6: 
+93 7: 2. To start a presentation, click this button after opening a note:
+93 8: 
+93 9: ![[Pasted image 14.png]]
+93 10: 
+93 11: ### Demo
+93 12: 
+93 13: Check out the demo document: [[Slides demo]]
+93 14: 
+94 1: Starred notes are a convenient way of keeping important notes close at hand. Enabling the plugin will create a star icon on the left panel, which brings up a list of starred notes. 
+94 2: 
+94 3: To star a file, you have several options. You can do so from a right click in the file explorer, a click on the options menu of an open note, typing in the [[command palette]], or a hotkey that can be set in [[Keyboard shortcuts]].
+94 4: 
+94 5: Starred files and searches can be reordered by dragging them around.
+95 1: Adds a panel on the right that displays all the tags you have, along with their tag count.
+95 2: 
+95 3: When clicking on a tag, a search for the tag is activated. To ==toggle a tag== in search, Ctrl-click it instead.
+95 4: 
+95 5: ### Sorting
+95 6: 
+95 7: The tags are sorted from most frequently used to least frequently used. You can change the sort order to alphabetical or reverse it.
+95 8: 
+95 9: ### Nested tags
+95 10: 
+95 11: If you write your tags like `#inbox/to-read` and `#inbox/processing`, you can enable "show nested tags" to view them as a tree instead of a flat list.
+95 12: 
+95 13: Under the default flat view, the tag pane will look like:
+95 14: 
+95 15: ```
+95 16: - inbox/to-read
+95 17: - inbox/processing
+95 18: ```
+95 19: 
+95 20: Under the nested tag view, the tag pane will look like:
+95 21: 
+95 22: ```
+95 23: - inbox
+95 24: 	- to-read
+95 25: 	- processing
+95 26: ```
+95 27: 
+95 28: 
+96 1: The Templates plugin lets you quickly insert snippets of text into your current note.
+96 2: 
+96 3: ### Set up template folder
+96 4: 
+96 5: Each template snippet is just a normal Markdown note, like everything else in Obsidian.
+96 6: 
+96 7: To designate template files, put them into a folder, and choose that folder in Settings => Templates => "Template folder location" after enabling the plugin
+96 8: 
+96 9: ### Insert a template
+96 10: 
+96 11: After setting up the folder location, using the ribbon icon to insert the template. As always, you can also set a hotkey for this option, or use the command palette to access it.
+96 12: 
+96 13: The template snippet will be inserted in the current caret position, with special text replaced by their actual value at the time of the insertion (see below).
+96 14: 
+96 15: ### Insert title
+96 16: 
+96 17: If you want to insert the title of a note, you can set it in a template with `{{title}}`.
+96 18: 
+96 19: ### Insert date and time
+96 20: 
+96 21: In the plugin settings of Template, you can also set a date format and a time format.
+96 22: 
+96 23: After setting these formats, `{{date}}` and `{{time}}` in the template files will be replaced by the formatting current time.
+96 24: 
+96 25: For formatting syntax documentation, [please see here](https://momentjs.com/docs/#/displaying/format/).
+96 26: 
+96 27: _Tip: if you want to have two date formats or two time formats, you can use the other `{{time}}` as the second `{{date}}`, or `{{date}}` as the second `{{time}}`._
+96 28: 
+96 29: ### One-off date formats
+96 30: 
+96 31: In addition to `{{date}}` and `{{time}}`, which will work in all template files, you can also write `{{date:YYYY-MM-DD}}` to insert a date with a certain format just once. This will override the `{{date}}` format. Anything after `:` will be considered part of the date format.
+96 32: 
+96 33: `{{time:HH:mm}}` works similarly.
+96 34: 
+96 35: ### Using custom date formats elsewhere
+96 36: 
+96 37: Currently, dates like `{{date:YYYY-MM-DD}}` and `{{time:HH:mm}}` also work in the template file of the [[Daily notes]] and [[Zettelkasten prefixer]] plugins. However, `{{date}}` and `{{time}}` do not work yet.
+96 38: 
+97 1: Word count is a simple plugin that shows the word count of your current note in the bottom status bar.
+97 2: 
+97 3: It works for CJK characters too (Chinese, Japanese, and Korean), in which words are not separately by spaces but rather glued together.
+97 4: 
+98 1: 
+98 2: The Workspaces plugin lets you save and load "workspaces". Each workspace includes pane layout, sidebar state (expanded or collapsed), and file open states.
+98 3: 
+98 4: ![[Pasted image 19.png]]
+98 5: 
+98 6: ### Save a workspace
+98 7: 
+98 8: Either click on the workspace icon in the ribbon to open "Manage workspaces".
+98 9: 
+98 10: Give the current layout a new name, click on "Save", and it will appear in the list below.
+98 11: 
+98 12: ### Load a workspace
+98 13: 
+98 14: To load or restore a workspace, either open "Manage workspaces" and click on the "Load" button next to the workspace you wish to load, or use the "Load workspaces" command to bring up a command-palette-like interface to search and choose workspaces.
+98 15: 
+98 16: 
+98 17: ### Commands
+98 18: 
+98 19: This plugin has two commands that you can access through [[Command palette]]: manage workspaces and load workspaces. You can also define hotkeys for them.
+98 20: 
+99 1: Adds a new button to the left pane, which can be used to create a new file and prefix it for you using the current time. This can be beneficial if you are a follower of the Zettelkasten UID-in-filename method.
+99 2: 
+99 3: The default format is 12-digit timestamp, e.g. "202001010000".
+99 4: 
+99 5: ### Templates
+99 6: You can define a [[Templates|template file]] for your Zettelkasten notes. This file will be copied when a new Zettel note is created.
+99 7: 
+99 8: For the Zettelkasten prefixer plugin, `{{date}}` and `{{time}}` do not work. Please use `{{date:YYYY-MM-DD}}` and `{{time:HH:mm}}` in your template.
+99 9: 
+100 1: 
+100 2: ## Creating the site
+100 3: 
+100 4: 1. Fork to my Github site as a new repo, what2
+100 5: 2. Clone to a convenient folder on my pc
+100 6: 3. Add the following files and folders from the starter repo
+100 7:    - /lib/* - folder to provide the local js and css files needed
+100 8:    - /index.html as the site loader
+100 9:    - /index.md as the markdown home page used by index.html
+100 10:    - /server.js, workbox-config.js & /sw.js to allow webapp creation
+100 11:    - /generator.md to generate various optional site components
+100 12: 4. open in Obsidian
+100 13: 5. Open /generator
+100 14:    - Generate /sitemapRaw.txt from the first codeblock
+100 15:    - Generate /network.html for producing the on-line network graph
+100 16:    - Generate /sitemap.txt for SEO
+100 17:    - 
+101 1: -----------------------------------------------------------------------------
+101 2: title: Home page
+101 3: ----------------------------------------------------------------------------
+101 4: 
+101 5: <div hidden markdown>
+101 6: </div>
+101 7: 
+101 8: ## Zetti
+101 9: 
+101 10: *Zetti* is a showdown based static site generator for a personal knowledge base, or digital garden. Files are stored mainly in markdown format (notes), and can be edited in any text editor, or by using a note-taking app such as [Obsidian](https://obsidian.md). A range of other files is supported for deployment, including html, pdf, txt, image and javascript files. The site is generated using node.js scripts for initial setup (which can be executed from within obsidian), github pages for deployment, and can be hosted on any web server. The site generated includes full regex search and a powerful network graph view.
+101 11: 
+101 12: Yes - but why?
+101 13: 
+101 14: In "A Life of One's Own", Marion Milner (as Joanna Field) wrote (in 1932):
+101 15: 
+101 16: > The reason for writing the book was not the same as the reason for publishing it. It was written in the spirit of a detective who, baffled by the multitude of his facts, goes over and makes a summary of the progress of his investigations in the hope of finding something he has missed. So, when I began to write this book, in the fourth year of my enterprise, I did not know, or could only perceive very dimly, what the end would be. In this sense the book is a contemporary journal of an exploration which involved doubts, delays, and expeditions on false trails, and the writing of it was an essential part of the search.
+101 17: > The reason for publishing the book is that although what I found is probably peculiar to my own temperament and circumstances, I think the method by which I found it may be useful to others, even to those whose discoveries about themselves may be the opposite of my own. The need for such a method in these days is obvious, a method for discovering one's true likes and dislikes, for finding and setting up a standard of values that is truly one's own and not a borrowed mass-produced ideal.
+101 18: 
+101 19: 'Keeping notes', whether of one's own life, or of one's work, is a way of exploring and discovering. It is a way of making sense of the world, and of oneself. It is a way of learning, and of understanding. Publishing those notes is a way of sharing, and of communicating.
+101 20: 
+101 21: *Zetti* provides a fairly simple and straightforward means for publishing one's notes, thoughts and research in a form that is accessible to both oneself and to others, and which can be used for further exploration and discovery.
+101 22: 
+101 23: ### Links and embedding
+101 24: 
+101 25: Zetti is designed to be used with systems like Foam and Obsidian, and so uses link styles which are compatible with these approaches.
+101 26: [This note identifies the link styles](docs/links.md) and the outcomes for each. 'On-site' files/notes are those in the same site as the file/note being viewed, 'off-site' files are those in other sites.
+101 27: 
+101 28: ### Example notes & files
+101 29: 
+101 30: Markdown: [headaches](test/health/Headaches.md)
+101 31: Markdown with image: [helmets](test/bike/bicycle helmets the dutch way.md)
+101 32: Markdown with :gift_heart:: [[test/The book of secret knowledge.md|The book of secret knowledge]]
+101 33: Pdf: [inhalers](test/health/inhaled cortico steroids.pdf)
+101 34: Pdf: [the Portable Dragon](test/The Portable Dragon.pdf)
+101 35: 
+101 36: ### Katex
+101 37: 
+101 38: Latex style math can be used in markdown files using katex, eg.
+101 39: 
+101 40: $$x=\frac{ -b\pm\sqrt{ b^2-4ac } } {2a}$$
+101 41: 
+101 42: See [this note](docs/katex.md) for more examples.
+101 43: 
+101 44: ### Scripts and editable, executable javascript codeblocks
+101 45: 
+101 46: This doc file shows how scripts can be defined in  [[javascript|javascript codeblocks]], and executed.
+101 47: 
+101 48: ### Deployment
+101 49: Your site can be deployed to github pages, or any other web server. See [[docs/deployment.md|deployment]] for details.
+101 50: 
+101 51: ### Alternatives
+101 52: 
+101 53: Here are some [[docs/alternatives.md|alternatives]] for publishing notes and research to the web.
+101 54: 
+101 55: 
+101 56: 
+101 57: 
+101 58: 
+102 1: # What Template
+102 2: 
+102 3: **👋What Am I Going to do Now?**
+102 4: 
+102 5: ## Examples
+102 6: 
+102 7: - [Demo](https://demo-wiki.owenyoung.com) - ([Source](https://github.com/theowenyoung/gatsby-theme-primer-wiki/tree/main/example))
+102 8: 
+102 9: - [Everything I Know by Owen](https://wiki.owenyoung.com/) - ([Source](https://github.com/theowenyoung/wiki))
+102 10: 
+102 11: - [Foam Demo](https://demo-foam.owenyoung.com/) - ([Source](https://github.com/theowenyoung/foam-template-gatsby-theme-primer-wiki))
+102 12: 
+102 13: - [Obsidian Demo](https://demo-obsidian.owenyoung.com/) - ([Source](https://github.com/theowenyoung/obsidian-template-gatsby-theme-primer-wiki))
+102 14: 
+102 15: - [Gatsby Starter Demo](https://demo-gatsby-starter-primer-wiki.owenyoung.com/) - ([Source](https://github.com/theowenyoung/gatsby-starter-primer-wiki))
+102 16: 
+102 17: ## Features
+102 18: 
+102 19: - Support Local search, full-text search.
+102 20: 
+102 21: - Support Graph Visualisation with canvas.
+102 22: 
+102 23: - Support Tags, Tags First, Generating tag pages, also connecting with graph visualisation.
+102 24: 
+102 25: - Support [Gitbook](https://docs.gitbook.com/integrations/github/content-configuration#summary) styled `SUMMARY.md` for custom sidebar.
+102 26: 
+102 27: - Support `[[WikiLink]]`, But you'd better use [Link Reference Definitions](https://foambubble.github.io/foam/features/link-reference-definitions) with extensions, `"foam.edit.linkReferenceDefinitions": "withExtensions"`
+102 28: 
+102 29: - Support Light/Dark Theme
+102 30: 
+102 31: - Custom Header Nav Items
+102 32: 
+102 33: - Nested sidebar
+102 34: 
+102 35: - Support Google Analytics
+102 36: 
+102 37: - Support Sitemap/Robot
+102 38: 
+102 39: - SEO optimization
+102 40: 
+102 41: ## Principles
+102 42: 
+102 43: Here are my main ideas/principles in designing this theme.
+102 44: 
+102 45: 1. No vendor lock-in. The less vendor features you use, the better you'll be able to migrate, including this theme. So we should only write standard markdown. I like `[[WikiLink]]`, but I love standard markdown more. So we should always use standard markdown link `[text](https://example.com)`, or use [Wikilink](https://foambubble.github.io/foam/wikilinks) with [Link Reference Definitions](https://foambubble.github.io/foam/features/link-reference-definitions), and don't use any vendor locked-in feature. That give us the capability change our theme, or hosted place.
+102 46: 
+102 47: 2. Use meta data instead of special characters. We should use `tags` as the document's metadata, not `#tag` in the plain text.
+102 48: 
+102 49: 3. Use tags instead of categories. Minimal subfolders.
+102 50: 
+102 51: ## Quick Start
+102 52: 
+102 53: ### New Wiki
+102 54: 
+102 55: 1. Press "Use this template" button at [obsidian-template-gatsby-theme-primer-wiki](https://github.com/theowenyoung/obsidian-template-gatsby-theme-primer-wiki/generate) (that's this repository!) to fork it to your own GitHub account. If you want to keep your thoughts to yourself, remember to set the repository private.
+102 56: 
+102 57: 2. [Clone the repository to your local machine](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) and open it in Obsidian
+102 58: 
+102 59: 3. Delete all `.md` files you don't need, Change Site settings at `.layouts/gatsby-config.js`, change your CNAME at `.layouts/static/CNAME`, change your icon at `.layouts/static/logo.png`, commit your changes, and push to github, change your page settings at Github, make sure you set the page branch to `gh-pages`, then when github actions runed, you can visit your site.
+102 60: 
+102 61: ### Exist Wiki
+102 62: 
+102 63: 1. Clone this repo to your local machine
+102 64: 
+102 65: ```bash
+102 66: git clone https://github.com/theowenyoung/obsidian-template-gatsby-theme-primer-wiki.git
+102 67: ```
+102 68: 
+102 69: 2. Copy `.layouts`, `.github` `.gitignore` to your wiki folder.
+102 70: 
+102 71: ### Local Preview
+102 72: 
+102 73: ```bash
+102 74: 
+102 75: cd .layouts
+102 76: 
+102 77: npm i
+102 78: 
+102 79: npm start
+102 80: 
+102 81: ```
+102 82: 
+102 83: ### Deploy
+102 84: 
+102 85: Deploy to Github Pages, see `.github/workflows/deploy.yml`
+102 86: 
+102 87: ## Obsidian Quick Start
+102 88: 
+102 89: If you're in a hurry, here's some quick places to dive in:
+102 90: 
+102 91: - The [[Command palette]] contains most of the commands you need to work with Obsidian. Just press `Ctrl/Cmd-P` and start typing.
+102 92: - How to [[Create notes|create new notes]].
+102 93: - How to create [[Internal link|internal links]]
+102 94: - How to use Markdown to [[Format your notes]]
+102 95: - How to [[embed files]], or embed other notes
+102 96: - [[Keyboard shortcuts]]
+102 97: - How to [[Working with multiple notes|open multiple files side by side]]
+102 98: - Obsidian can be extended with [[List of plugins|plugins]]. Several are available by default, and can be enabled or disabled according to your needs.
+102 99: 
+102 100: If you want a more thorough introduction, including a bit about our philosophy, check out [[Obsidian]].
+102 101: 
+102 102: And if you'd like a gentle introduction, or just want to get started but don't know how, head over to [[Basic note taking]].
+102 103: 
+102 104: If you are a [Catalyst supporter](https://obsidian.md/pricing), and want to turn on Insider Builds, see [[Insider builds]].
+102 105: 
+102 106: ## Workflows
+102 107: 
+102 108: Obsidian is a tool that can be used in many ways, from a simple list of notes to a very powerful knowledge management system. We suggest you start at your own pace, and build it into the tool you need.
+102 109: 
+102 110: Here are a few ways to get started:
+102 111: 
+102 112: If you want to just start taking notes, check out [[Basic note taking]]
+102 113: 
+102 114: If you already have a collection of notes in markdown format, just choose them for your Vault. Choose "Vault" in the lower left and select the directory your notes are in.
+102 115: 
+102 116: If you have notes from Roam Research, Notion, or other systems, [[Import data|here's how to import them]].
+102 117: 
+102 118: If you'd like to know more about Obsidian, you can [[Obsidian|read about our story]].
+102 119: 
+102 120: By the way, you can feel free to edit these help docs, but when you open it again, they will be overwritten. So, don't put anything in them you want to keep.
+102 121: 
+102 122: ## I have questions.
+102 123: 
+102 124: Then you should join our [community!](https://obsidian.md/community). We have active Discord and Forums, and the community is generally quite helpful.
+102 125: 
+103 1: Hi there! I'm a note in your vault.
+103 2: 
+103 3: At the same time, I'm also just a Markdown file sitting on your hard disk. It's all in plain text, so you don't need to worry about losing me in case [[Obsidian]] disappears one day.
+103 4: 
+103 5: ## Quick Start
+103 6: 
+103 7: If you're in a hurry, here's some quick places to dive in:
+103 8: 
+103 9: - The [[Command palette]] contains most of the commands you need to work with Obsidian. Just press `Ctrl/Cmd-P` and start typing.
+103 10: - How to [[Create notes|create new notes]].
+103 11: - How to create [[Internal link|internal links]]
+103 12: - How to use Markdown to [[Format your notes]]
+103 13: - How to [[embed files]], or embed other notes
+103 14: - [[Keyboard shortcuts]]
+103 15: - How to [[Working with multiple notes|open multiple files side by side]]
+103 16: - Obsidian can be extended with [[List of plugins|plugins]]. Several are available by default, and can be enabled or disabled according to your needs.
+103 17: 
+103 18: 
+103 19: If you want a more thorough introduction, including a bit about our philosophy, check out [[Obsidian]].
+103 20: 
+103 21: And if you'd like a gentle introduction, or just want to get started but don't know how, head over to [[Basic note taking]].
+103 22: 
+103 23: If you are a [Catalyst supporter](https://obsidian.md/pricing), and want to turn on Insider Builds, see [[Insider builds]].
+103 24: 
+103 25: ## Workflows
+103 26: 
+103 27: Obsidian is a tool that can be used in many ways, from a simple list of notes to a very powerful knowledge management system. We suggest you start at your own pace, and build it into the tool you need.
+103 28: 
+103 29: Here are a few ways to get started:
+103 30: 
+103 31: If you want to just start taking notes, check out [[Basic note taking]]
+103 32: 
+103 33: If you already have a collection of notes in markdown format, just choose them for your Vault. Choose "Vault" in the lower left and select the directory your notes are in.
+103 34: 
+103 35: If you have notes from Roam Research, Notion, or other systems, [[Import data|here's how to import them]].
+103 36: 
+103 37: If you'd like to know more about Obsidian, you can [[Obsidian|read about our story]].
+103 38: 
+103 39: By the way, you can feel free to edit these help docs, but when you open it again, they will be overwritten. So, don't put anything in them you want to keep.
+103 40: 
+103 41: ## I have questions.
+103 42: 
+103 43: Then you should join our [community!](https://obsidian.md/community). We have active Discord and Forums, and the community is generally quite helpful.
+103 44: 

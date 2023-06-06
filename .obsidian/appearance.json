@@ -1,3 +1,11 @@
 {
-  "baseFontSize": 16
+  "accentColor": "#ab8e73",
+  "theme": "moonstone",
+  "cssTheme": "Prism",
+  "showViewHeader": true,
+  "baseFontSize": 14,
+  "monospaceFontFamily": "Segoe UI",
+  "interfaceFontFamily": "Segoe UI",
+  "textFontFamily": "Segoe UI",
+  "enabledCssSnippets": []
 }
